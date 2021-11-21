@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+/* 기업평판 Layer 공통 */
+.reputeLayer {z-index:99999;position:fixed;top:0;left:0;width:100%;height:100%}
+.reputeLayer-wrap {overflow-y:scroll;z-index:99999;position:fixed;background-color:#fff}
+#ReputePointLayer .reputeLayer-h1, #ReputeCareer .reputeLayer-h1 {text-align:center}
+.reputeLayer-h1 {padding:0 20px;height:50px;font-size:17px;line-height:52px;border-bottom:2px solid #ffd200;color:#222}
+.reputeLayer-h1>a {display:inline-block;width:93px;height:30px;margin-left:10px;line-height:30px;text-align:center;color:#333;background-color:#f2f2f2}
+.reputeLayer-helpGuide {padding:10px 15px 10px 25px;border-bottom:1px solid #ededed;background-color:#fafafa}
+.reputeLayer-helpGuide>li {font-size:12px;line-height:1.4;color:#888}
+.reputeLayer-helpGuide>li::before {content:"-";position:absolute;left:15px}
+
+.reputeLayer-content {padding:0 15px}
+.reputeLayer-action {}
+.reputeLayer-close {z-index:99999;position:absolute;right:0;top:0;width:50px;height:50px;font:0/0 dotum;text-align:center;color:transparent}
+.reputeLayer-close::before,
+.reputeLayer-close::after {left:50%;width:24px;height:1px;margin-left:-12px;background:#000}
+.reputeLayer-helpBtn {display:block;height:43px;font-size:15px;font-weight:bold;line-height:43px;text-align:center;background:#f2f2f2}
+.reputeLayer-helpBtn>.cssIcon-arrow::before ,
+.reputeLayer-helpBtn>.cssIcon-arrow::after {border-width:1px}
+.reputeLayer-helpBtn>.cssIcon-arrow.top {top:4px;margin-left:7px}
+.reputeLayer-helpBtn>.cssIcon-arrow.bottom {top:-2px;margin-left:7px}
+.reputeLayer-wrap .square {position:relative;display:inline-block;width:2px;height:2px;margin-right:4px;vertical-align:middle;border-radius:50%;background:#888}
+/* 기업평판 - 작성하기 */
+html.ios #ReputeWriteLayer .reputeLayer-wrap {position:absolute}
+#ReputeWriteLayer .reputeLayer-wrap {top:0;left:0;right:0;bottom:0}
+.reputeLayer-help {display:none;padding:0 18px 18px !important;border:0 !important;background:#f2f2f2}
+.reputeLayer-help>li {margin-top:6px !important;padding:0 !important;font-size:12px;line-height:1.4;color:#888}
+.reputeLayer-help>li:first-child {margin-top:0 !important}
+.reputeLayer-help>li>em {color:#333}
+.reputeLayer-guide>li {padding:15px 0 !important;margin:0 !important;font-size:12px;line-height:1.4;color:#888}
+.reputeLayer-guide>li>strong {color:#333}
+.reputeLayer-company {position:relative;padding:15px 0 15px 58px;margin-top:20px;font-size:20px;font-weight:bold;border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;color:#333}
+.reputeLayer-company>span {position:absolute;left:2px;top:50%;width:34px;height:16px;padding:3px 5px;margin-top:-12px;font-size:12px;font-weight:normal;line-height:16px;border:1px solid #ffd100;border-radius:10px;color:#ffd100;background:#fff}
+.reputeLayer-request {display:none}
+.reputeLayer-request-guide {}
+.reputeLayer-request-action {}
+.reputeLayer-list::after {content:"";display:block;clear:both}
+.reputeLayer-list>dt {position:relative;padding:16px 0 2px 6px;clear:both;font-size:12px;font-weight:bold;color:#000}
+.reputeLayer-list>dt>span {position:absolute;left:2px;bottom:8px;width:2px;height:2px;background:#185cc2}
+.reputeLayer-list>dd {float:left;width:49%;margin:6px 2% 0 0}
+.reputeLayer-list>dd:nth-child(odd) {margin-right:0}
+.reputeLayer-list>dd>.input {display:block}
+.reputeLayer-list>dd>.input>label {display:block;height:36px;padding:0;font-size:15px;font-weight:bold;line-height:36px;text-align:center;border:1px solid #bbb;background:none;color:#bbb;background-image:none !important}
+.reputeLayer-list>dd>.input>input:checked+label {border-color:#185cc2;color:#185cc2}
+.reputeLayer-add {display:block;height:43px;margin-top:13px;font-size:15px;line-height:43px;font-weight:bold;text-align:center;background:#f2f2f2;color:#333}
+.reputeLayer-request {padding:16px 10px;background:#f2f2f2}
+.reputeLayer-request-guide {padding:10px 0}
+.reputeLayer-request-guide>li {padding:0;font-size:12px;color:#888}
+.reputeLayer-request-actionReg {position:relative;height:43px;padding:0 67px 0 0;margin-top:6px}
+.reputeLayer-request-actionReg>input[type="text"] {width:100%;height:43px;line-height:43px;border:0}
+.reputeLayer-request-actionReg>a {position:absolute;right:0;top:0;width:67px;height:43px;line-height:43px;text-align:center;color:#fff}
+.reputeLayer-request-actionReg>a.add ,
+.reputeLayer-request-actionReg>a.del {background:#aaa}
+.reputeLayer-request-action>.request {display:block;height:43px;margin-top:13px;font-size:15px;line-height:43px;font-weight:bold;text-align:center;background:#808080;color:#fff}
+.reputeLayer-action {position:relative;padding:8px 0}
+.reputeLayer-action::after {content:"";display:block;clear:both}
+.reputeLayer-action>a {box-sizing:border-box;float:left;width:32.6%;height:38px;margin-left:1%;font-size:15px;font-weight:bold;line-height:38px;text-align:center;border:1px solid #bbb;background:#fff;color:#333}
+.reputeLayer-action>a:first-child {margin-left:0}
+.reputeLayer-action>a.save {border-color:#ffd100;background:#ffd100}
+
+/* 기업평판 채용정보 목록 */
+#ReputeViewLayer .reputeLayer-wrap {top:0;left:0;right:0;bottom:0;margin:0 !important}
+#ReputeViewLayer .reputeLayer-content {padding:0}
+#ReputeViewLayer .reputeLayer-content li .info span.name {display:block;font-weight:bold;font-size:12px;color:#000}
+#ReputeViewLayer .reputeLayer-content li .info span.title {display:block;padding:5px 0 4px;font-weight:bold;font-size:15px;color:#000}
+
+/* 기업평판 채용정보 목록 - 이력서 분기 - */
+#resumeCareer #ReputeViewLayer .reputeLayer-content {padding:10px 15px 15px}
+
+/* 기업평판 - 내가 작성한 평판 */
+.reputeState {position:relative;padding:0 70px 18px 0;margin-bottom:20px;border-bottom:1px dashed #eee}
+.reputeState-company {padding:15px 0 6px;font-size:16px;color:#222}
+.reputeState-write {padding-top:6px;font-size:11px;color:#aaa}
+.reputeState-like {position:absolute;top:0;right:0;width:70px;height:54px;padding-top:12px;font-size:25px;font-weight:bold;text-align:center;background:url('//image.alba.kr/m/repute_countBg.png') no-repeat;background-size:70px 66px;color:#0c59b8}
+html.ios .reputeState-like {height:47px;padding-top:19px}
+.reputeState-word>.field {position:relative;padding:15px 0 10px 6px;margin-top:-5px;clear:both;font-size:12px;font-weight:bold;color:#000}
+.reputeState-word>.field:first-child {padding-top:0;margin-top:0}
+.reputeState-word>.field>span {position:absolute;left:2px;bottom:16px;width:2px;height:2px;background:#222}
+.reputeState-word>.reputeState-wordItem {display:inline-block;margin:0 5px 5px 0;padding:0 7.5px;height:24px;line-height:24px;font-size:13px}
+.reputeState-word>.reputeState-wordItem.reputeState-word-positive {border:1px solid #e0edfd;color:#0c59b8;background:#f2f8ff}
+.reputeState-word>.reputeState-wordItem.reputeState-word-negative {border:1px solid #eaeaea;color:#666;background:#f7f7f7}
+
+/* 기업평판 - 작성 가능 리스트 */
+#ReputeCareer .reputeLayer-wrap {top:50%;left:10px;right:10px;border-radius:5px}
+#ReputeCareer .reputeLayer-content {padding:20px 20px}
+#ReputeCareer .reputeLayer-content>.intro {position:relative;padding-left:7px;font-size:12px;line-height:1.5;color:#aaa}
+#ReputeCareer .reputeLayer-content>.intro>span {position:absolute;left:2px;top:7px;display:inline-block;width:2px;height:2px;background:#aaa;border-radius:50%}
+#ReputeCareer .reputeLayer-content>.intro>strong {font-weight:normal;color:#000}
+#ReputeCareer .reputeLayer-careerWriteList {overflow-y:scroll;max-height:180px;margin-top:20px;border:0 none}
+#ReputeCareer .reputeLayer-careerWriteList>li {position:relative;margin-top:-1px;padding:0;border-top:1px solid #f4f4f4;border-bottom:1px solid #f4f4f4}
+#ReputeCareer .reputeLayer-careerWriteList>li:first-child {margin-top:0}
+#ReputeCareer .reputeLayer-careerWriteList>li>span {display:block;padding:17px 70px 17px 0;font-size:14px;color:#222}
+#ReputeCareer .reputeLayer-careerWriteList>li>a {display:-webkit-flex;display:flex;position:absolute;top:50%;right:0;padding-top:2px;margin-top:-11.5px;width:59px;height:23px;box-sizing:border-box;justify-content:center;align-items:center;font-size:12px;border:1px solid #2346e4;border-radius:3px;background:#fff;color:#2346e4}
+#ReputeCareer .reputeLayer-careerBtn {padding:15px 33px;border-top:1px solid #ddd;font-size:0;text-align:right}
+#ReputeCareer .reputeLayer-careerBtn::after {content:"";display:block;clear:both}
+#ReputeCareer .reputeLayer-careerBtn>a {display:inline-block;margin-left:45px;font-size:13px;color:#2346e4}
+#ReputeCareer .reputeLayer-careerBtn>a:first-child {margin-left:0}
+#ReputeCareer .reputeLayer-careerBtn>a.cancel {color:#888}
+
+/* 기업평판 - 자세히보기 */
+#ReputeDetailview #Contents {padding:0}
+.reputeDetailHead {position:relative;padding:18px 75px 18px 15px;margin:6px 0;background:#fff}
+.reputeDetailHead-text {overflow:hidden;padding:3px 0 2px;font-size:13px;text-overflow:ellipsis;white-space:nowrap;color:#333}
+.reputeDetailHead-text>span {display:inline-block;width:58px;color:#999}
+.reputeDetailHead-text>em {color:#185cc2}
+.reputeDetailHead-text>a>em {position:relative;display:inline-block;width:61px;height:23px;line-height:23px;text-align:center;border:1px solid #185cc2;color:#185cc2;background:#fff}
+.reputeDetailHead-state {position:absolute;right:10px;top:50%;width:61px;height:23px;margin-top:-12px;line-height:23px;text-align:center;border:1px solid #185cc2;color:#185cc2 !important}
+.reputeDetailHead-mapBtn {position:absolute;right:15px;top:50%;padding:3px;height:18px;margin-top:-16px;font-size:13px;line-height:18px;border:1px solid #bbb;color:#bbb !important}
+.reputeDetailArea>.reputewrap {position:relative;padding:0 15px 15px;background:#fff}
+.reputeDetailArea-count {height:42px;margin:0 -15px;border-bottom:1px solid #e1e1e1;line-height:42px;text-align:center}
+.reputeDetailArea-count em {color:#2346e4}
+.reputeDetailArea-count .reputeScore {margin-left:25px}
+.reputeDetailArea-info {position:relative;padding:0 70px 22px 0}
+.reputeDetailArea-info-title {padding:15px 0 5px;font-size:15px;color:#222}
+.reputeDetailArea-info-title strong {font-weight:normal;color:#2346e4}
+.reputeDetailArea-info-category {font-size:11px;color:#999}
+.reputeDetailArea-info-value {padding-top:4px;font-size:13px;color:#333}
+.reputeDetailArea-info-like {position:absolute;top:15px;right:0;width:62px;height:48px;padding-top:9px;font-size:20px;font-weight:bold;text-align:center;line-height:normal;background:url('//image.alba.kr/m/repute_count.png') no-repeat;background-size:62px 57px;color:#2346e4}
+.reputeDetailArea-word>span {display:inline-block}
+.reputeDetailArea-word>.field {position:relative;margin-top:-5px;padding:10px 0 5px;clear:both;font-size:13px;color:#222}
+.reputeDetailArea-word>.field:first-child {margin-top:0;padding-top:0}
+.reputeDetailArea-word>.field>span {position:absolute;left:2px;bottom:11px;width:2px;height:2px;background:#222}
+.reputeDetailArea-word>.word {display:inline-block;margin:0 5px 5px 0;padding:0 8px;height:25px;box-sizing:border-box;line-height:23px;font-size:12px}
+.reputeDetailArea-word>.word.positive {border:1px solid #dde2ff;color:#2346e4;background:#eff2ff}
+.reputeDetailArea-word>.word.negative {border:1px solid #eee;color:#999;background:#f9f9f9}
+.reputeDetailArea-recommend {display:-webkit-flex;margin:0 auto;width:230px;padding:10px 0 15px;align-items:center;justify-content:center;font-size:13px;line-height:30px}
+.reputeDetailArea-recommend>span {display:inline-block;height:30px;margin-left:5px;padding:0 12px;box-sizing:border-box;border-radius:15px;border:1px solid #ddd;line-height:29px}
+.reputeDetailArea-recommend>span::before {content:'';display:inline-block;position:relative;top:3px;width:15px;height:13px;margin-right:4px;background:url('//image.alba.kr/m/repute_list_bg.png') no-repeat -72px 0;background-size:216px 36px}
+.reputeDetailArea-recommend.on>span::before {background-position:-108px 0}
+.reputeDetailArea-recommend>em {color:#222}
+.reputeDetailArea-blur {position:relative}
+.reputeDetailArea-blur>img {width:100%}
+.reputeDetailArea-blur>.reputeDetailArea-blurBtn {position:absolute;left:50%;top:50%;width:250px;height:50px;margin:-25px 0 0 -125px}
+.reputeDetailArea-blur>.reputeDetailArea-blurBtn>a {display:block;width:250px;height:50px;font-size:15px;line-height:50px;text-align:center;background:#aaa;color:#fff}
+.reputeDetailArea-blur>.reputeDetailArea-blurBtn>a:first-child {background:#185cc2}
+
+/* .repute-more {border-top:1px solid #eee}
+.repute-more>a {display:flex;display:-webkit-flex;height:48px;line-height:48px;align-items:center;justify-content:center;font-size:14px;color:#222;background:#fff}
+.repute-more>a .repute-more__ico {display:inline-block;margin-left:12px;width:20px;height:20px}
+.repute-more>a .repute-more__ico img {width:100%;vertical-align:top} */
+.reputeDetailArea .reputeReportBtn {z-index:10;position:absolute;padding:10px 10px 10px 17px;right:0;top:80px;font-size:12px;line-height:13px;color:#888}
+.reputeDetailArea .reputeReportBtn>span {position:absolute;top:10px;left:0;display:block;margin-top:-2px;width:12px;height:13px;background:url('//image.alba.kr/m/repute_list_bg.png') no-repeat -180px 0;background-size:216px 36px}
+.reputeDetailArea .repute-page-wrap {margin-top:-15px;padding:0 15px;background:#fff}
+.reputeDetailArea .repute-page {position:relative;padding:14px 0 30px;border-top:1px solid #ebebeb;text-align:center;background:#fff}
+.reputeDetailArea .repute-page>.repute-pageNum {display:inline-block;height:22px;margin:0 10px;vertical-align:top;font-size:14px;letter-spacing:0;line-height:20px;color:#ddd}
+.reputeDetailArea .repute-page>.repute-pageNum strong {color:#222}
+.reputeDetailArea .repute-page>a {display:inline-block;padding:4px;font-size:0;vertical-align:top;color:transparent}
+.reputeDetailArea .repute-page>a::before {content:'';display:block;width:10px;height:14px;background:url('//image.alba.kr/m/pagination_arrow.png') no-repeat 0 -36px;background-size:36px 72px}
+.reputeDetailArea .repute-page>a.page-arrowPrev {}
+.reputeDetailArea .repute-page>a.page-arrowNext {-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.reputeDescription {margin:0 !important;padding:0 15px 20px 28px !important;background-color:#fff;border:0 none !important}
+.reputeDescription>li {position:static !important;min-height:auto !important;margin:0 !important;padding:0 !important;font-size:12px;line-height:1.4;color:#aaa}
+.reputeDescription>li::before {content:"※";position:absolute;left:15px}
+html.ios .reputeDetailArea .repute-page>.repute-pageNum {line-height:22px}
+html.ios .reputeDetailArea-info-like {height:44px;padding-top:13px}
+html.ios .reputeDetailArea-recommend>span {line-height:30px}
+
+/* 기업평판 - 포인트레이어 */
+#ReputePointLayer .reputeLayer-wrap {top:50%;left:10px;right:10px;border-radius:5px}
+.reputeLayer-point {padding:0}
+.reputeLayer-point .reputeLayer-point__wrap {padding:20px 20px 25px}
+.reputeLayer-point .reputeLayer-point__wrap>.intro {position:relative;margin-bottom:20px;padding-left:7px;font-size:12px;color:#aaa}
+.reputeLayer-point .reputeLayer-point__wrap>.intro>span {position:absolute;top:50%;left:0;margin-top:-2px;display:inline-block;width:2px;height:2px;background:#aaa;border-radius:50%}
+.reputeLayer-point .reputeLayer-point__wrap>.intro>strong {font-weight:normal;color:#222}
+.reputeLayer-point .reputeLayer-point__wrap>.point {display:-webkit-flex;display:flex;height:66px;justify-content:center;align-items:center;background:#fdfbea}
+.reputeLayer-point .reputeLayer-point__wrap>.point::after {content:"";display:block;clear:both}
+.reputeLayer-point .reputeLayer-point__wrap>.point>.point-title {margin-top:3px;margin-right:20px;font-size:14px;line-height:66px;color:#222}
+.reputeLayer-point .reputeLayer-point__wrap>.point>.point-title>span {display:inline-block;margin-right:8px;width:31px;height:66px;vertical-align:bottom;background:url('//image.alba.kr/m/repute_list_bg.png') no-repeat -144px 17px;background-size:216px 36px}
+.reputeLayer-point .reputeLayer-point__wrap>.point>.point-val {padding-top:3px;font-size:24px;font-weight:bold;line-height:66px;color:#222}
+.reputeLayer-point .reputeLayer-point__wrap>.description {margin-top:20px;font-size:14px;line-height:1.5;color:#666}
+.reputeLayer-point .reputeLayer-point__wrap>.description>strong {font-weight:normal;color:#222}
+.reputeLayer-point .reputeLayer-point__wrap>.description>strong>span {color:#ff4b64}
+.reputeLayer-point>.reputeLayer-pointBtn {padding:19px 33px 15px 33px;border-top:1px solid #ddd;font-size:0;text-align:right}
+.reputeLayer-point>.reputeLayer-pointBtn::after {content:"";display:block;clear:both}
+.reputeLayer-point>.reputeLayer-pointBtn>a {display:inline-block;margin-left:45px;font-size:13px;color:#2346e4}
+.reputeLayer-point>.reputeLayer-pointBtn>a:first-child {margin-left:0}
+.reputeLayer-point>.reputeLayer-pointBtn>a.cancel {color:#888}
+
+/* 기업평판 - 신고레이어 */
+.reputeReportLayer {z-index:99999;overflow-y:scroll;width:100%;height:100%;position:fixed;left:0;top:0;right:0;bottom:0;background:#fff}
+.reputeReportLayer .cssIcon-close {z-index:99999;position:absolute;right:15px;top:12px;width:22px;height:22px;font:0/0 dotum;color:transparent}
+html.ios .reputeReportLayer .cssIcon-close {top:14px}
+.reputeReportLayer .cssIcon-close::before,
+.reputeReportLayer .cssIcon-close::after {height:1px;background:#000}
+.reputeReportLayer .title {padding:0 20px;height:50px;font-size:17px;line-height:50px;border-bottom:2px solid #ffd200;color:#222}
+html.ios .reputeReportLayer .title {line-height:52px}
+.reputeReportLayer .guideTxt {margin:0 20px;padding:17px 0 16px;font-size:12px;line-height:1.5;color:#aaa}
+.reputeReportLayer .guideTxt strong {color:#666}
+.reputeReportLayer .guideTxt p {margin:10px 0 0;padding:5px 10px;font-size:0.917em;color:#3983b2;background:#f6f6f6;border:1px solid #b5b5b5}
+.reputeReportLayer .guideTxt span {font-size:0.917em;color:#626262}
+.reputeReportLayer ul {margin:0 20px;padding-bottom:30px}
+.reputeReportLayer ul li:first-child {margin-top:0}
+.reputeReportLayer ul li {position:relative;margin-top:15px;padding-left:80px;line-height:28px}
+.reputeReportLayer ul li .item {position:absolute;left:0;top:0;font-size:14px;line-height:28px;color:#888}
+.reputeReportLayer ul li.reportWrite-content .item, .reputeReportLayer ul li.reportWrite-title .item {padding-left:9px}
+.reputeReportLayer ul li .item em {font-weight:bold;color:#fe7801}
+.reputeReportLayer ul li .item em.icon-bg {display:inline-block;position:absolute;top:50%;left:0;margin-top:-4px;width:6px;height:7px;background:url("//image.alba.kr/m/ResumeBullet_bg.png") no-repeat 0 0;background-size:36px 360px}
+.reputeReportLayer ul li input[type='text'],
+.reputeReportLayer ul li input[type='email'],
+.reputeReportLayer ul li input[type='tel'] {height:28px;padding:0;border:none;border-bottom:1px solid #eee;border-radius:0;font-size:14px;color:#222;line-height:28px}
+.reputeReportLayer ul li input::-webkit-input-placeholder {font-size:12px;color:#aaa;-webkit-text-fill-color:#aaa;-webkit-opacity:1;background:transparent}
+.reputeReportLayer ul li input:focus {outline:none !important;border-bottom:1px solid #2346e4}
+.reputeReportLayer ul li.reportWrite-name {font-weight:bold}
+.reputeReportLayer ul li.reportWrite-name .item {font-weight:normal}
+.reputeReportLayer ul li.reportWrite-num {}
+.reputeReportLayer ul li.reportWrite-num>.three::after {content:"";display:block;clear:both}
+.reputeReportLayer ul li.reportWrite-num>.three>input[type='tel'] {box-sizing:border-box;display:block;float:left;width:24%}
+.reputeReportLayer ul li.reportWrite-num>.three>.bar {box-sizing:border-box;display:block;float:left;width:14%;height:22px;line-height:22px;text-align:center}
+.reputeReportLayer ul li.reportWrite-email>input[type='email'],
+.reputeReportLayer ul li.reportWrite-title>input[type='text'] ,
+.reputeReportLayer ul li.reportWrite-content>textarea {width:100%}
+.reputeReportLayer ul li.reportWrite-content>textarea {height:110px;padding:5px;box-shadow:none !important;-webkit-appearance:none;border-radius:0;border:1px solid #eee;font-size:14px;color:#222}
+.reputeReportLayer ul li.reportWrite-content>textarea:focus {outline:none !important;border:1px solid #2346e4}
+.reputeReportLayer .reportWrite-action {padding-top:28px;padding-bottom:30px;text-align:center}
+.reputeReportLayer .reportWrite-action>a {display:block;width:210px;height:45px;margin:0 auto;border-radius:25px;font-weight:bold;text-align:center;font-size:16px;line-height:45px;background:#ffd200;color:#000}
+
+/* 개인정보동의 */
+.reputeReportLayer .agree-area {margin:0 20px;padding:20px 21px 17px;border:1px solid #eee;background:#f6f6f6}
+.reputeReportLayer .agree-title {padding-bottom:7px;font-size:12px;color:#666}
+.reputeReportLayer .agree-cont p {display:table;width:100%;margin-top:5px}
+.reputeReportLayer .agree-cont p span {display:table-cell;font-size:12px;line-height:1.5;color:#aaa}
+.reputeReportLayer .agree-cont p span:first-child {width:60px;white-space:nowrap}
+.reputeReportLayer .agree-cont p span:nth-child(2) {color:#888}
+.report-input span.input {display:block;margin:0 20px;padding:20px 0 0;text-align:left}
+.report-input span.input label {font-size:14px;color:#222}
+
+/* 기업평판 - 공고상세 */
+#InfoDetail #ReputeDetailList {padding:0}
+
+/* 기업평판 리스트 카운트 */
+.repute-count {height:40px;line-height:40px;color:#222}
+.repute-count em {font-weight:bold;color:#2346e4}
+.repute-count--company::before {content:"|";margin:0 6px 0 3px;color:#bbb}

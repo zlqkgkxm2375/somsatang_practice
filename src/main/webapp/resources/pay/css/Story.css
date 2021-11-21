@@ -1,0 +1,1157 @@
+@charset "utf-8";
+#StoryMain #Section {background-color:#eee}
+#AlbaStoryList #Section {margin-top:-1px}
+
+select {padding:0 0 0 10px;height:38px;box-sizing:border-box;border-radius:0;border:1px solid #ddd;line-height:36px;-webkit-appearance:none;font-size:14px;color:#222;/*background:url('//image.alba.kr/m/selectbox_arrow.png') no-repeat;background-size:8px 6px;background-position:right 10px top 15px*/background:url('//image.alba.kr/m/resume/select_arrow.png') no-repeat;background-size:8px 6px;background-position:right 9px center}
+select:invalid,
+select.on {font-size:12px;color:#bbb}
+option[disabled] {display:none}
+option {color:#222}
+@-moz-document url-prefix() {
+  select {-moz-appearance:none;text-indent:0.01px;text-overflow:""}
+}
+
+body.albaStory {padding-bottom:68px}
+body.albaStory>#Footer,
+body.albaStory .pagination {display:none}
+body#StoryMain .adBannerBottom {padding:30px 0 0;background-color:#eee}
+/* 알바스토리 - 공지 */
+.storyNotice {overflow:hidden;position:relative;padding:16px 15px 16px 75px;line-height:18px;white-space:nowrap;text-overflow:ellipsis;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.09)}
+.storyNotice a {color:#707070}
+.storyNotice em {position:absolute;left:15px;top:16px;line-height:18px;vertical-align:top;color:#2346e4}
+.storyNotice span {display:inline-block;width:23px;height:18px;margin-right:4px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -504px -108px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.storyNotice span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 알바스토리 - 공통 */
+.boardIcon {display:inline-block;margin-right:3px;vertical-align:middle;background:url('//image.alba.kr/m/icon_story.png') no-repeat;background-size:216px 216px}
+.boardIcon.board101 {width:25px;height:23px;background-position:0 0} /* 공감스토리 */
+.boardIcon.board104 {width:33px;height:26px;background-position:-36px 0} /* 알친찾기 */
+.boardIcon.board122 {width:24px;height:20px;background-position:-72px 0} /* 알바이어받기 */
+.boardIcon.board103 {width:29px;height:24px;background-position:-108px 0} /* 고민상담&TIP */
+.boardIcon.board110 {width:24px;height:21px;background-position:-144px 0} /* 알바현장취재 */
+
+.storyHead {padding:12px 14px;border-bottom:1px solid #d4d4d4;background:#fff}
+.storyHead h1 {display:block;margin-bottom:6px;font-size:16px;vertical-align:top;color:#333}
+.storyHead p {font-size:12px;color:#999}
+.storyHead .guide {margin-top:15px}
+.storyHead .guide li {position:relative;padding-left:60px;font-size:11px;line-height:1.6;color:#000}
+.storyHead .guide li span {position:absolute;left:0;top:0;color:#999}
+.albaStandardList .storyHead {height:146px;padding:0;background:#fff url('//image.alba.kr/m/albaStandard_bg.png') no-repeat -10px 0;background-size:344px 146px}
+.albaStandardList .storyHead * {font:0/0 Dotum;color:transparent}
+.storyWrite {z-index:9999;overflow:hidden;position:fixed;top:auto;bottom:0;left:0;width:100%;height:54px;padding:0;box-sizing:border-box}
+.storyWrite>.btn {display:block;width:100%;height:54px;font-weight:bold;font-size:15px;line-height:54px;color:#000;text-align:center;background:#79ABFF}
+
+html.app .storyWrite.app-style {z-index:9999;padding:15px 0;width:100%;height:auto;position:fixed;top:auto;bottom:0;left:0;text-align:center;background:-webkit-linear-gradient(top, rgba(255,255,255,0), #fff 100%)}
+html.app .storyWrite.app-style>.btn {display:inline-block;margin:0 auto;width:210px;height:45px;border-radius:22.5px;font-size:16px;line-height:45px;text-align:center;font-weight:bold;color:#000;background:#ffd200}
+html.app .storyWrite.app-style>.btn>span {display:none}
+
+.jobSummary {position:relative;margin:0;padding:5px 0;border:3px solid #79ABFF}
+.jobSummary table {width:100%}
+.jobSummary table th {width:60px;padding:0 0 0 12px;font-weight:normal;text-align:left;color:#999}
+.jobSummary table td {width:auto;padding:5px 10px 5px 0;color:#000}
+.jobSummary table .first th,
+.jobSummary table .first td {border-top:0 none}
+.jobSummary .jobSummaryFilter {position:absolute;left:0;top:0;width:100%;height:100%;background:url('//image.alba.kr/story/jobSummary_filter.png') repeat}
+.jobSummary .endJobInfo {position:absolute;left:0;top:0;width:90%;padding:100px 5% 0;line-height:1.8;text-align:center}
+.jobSummary .endJobInfo em {color:#f1183c}
+.jobSummary .jobDetailBtn {position:absolute;right:2px;top:2px;;height:26px;padding:0 10px;font-size:12px;line-height:26px;color:#000;background:#79ABFF}
+
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.storyWrite .btn span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 정렬조건 */
+.sorting-item {margin-top:0}
+
+/* 알바스토리 - 메인 */
+.StoryMainContent>article>h1 {padding:15px 0 5px;font-weight:normal;font-size:18px}
+.StoryMainContent>article>.viewMore {position:absolute;top:18px;right:10px}
+.StoryMainContent>article>.viewMore>a {font-size:13px;color:#444}
+.StoryMainContent>article>.viewMore>a>span {position:relative;top:4px;display:inline-block;width:5px;height:8px;font-size:0;line-height:0;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/community/community_icon.png') no-repeat -144px -36px;background-size:216px 108px}
+.ios .StoryMainContent>article>.viewMore>a>span {top:3px}
+
+.storyMain-content-area {margin-bottom:10px;padding:0 10px 10px;background-color:#fff}
+
+.storyMainPersonal {position:relative;background-color:#fff}
+.storyMainPersonal-nick {position:relative;box-sizing:border-box;height:80px;padding:20px 15px 15px 80px;border-bottom:1px solid #f2f2f2}
+.storyMainPersonal-nick-photo {position:absolute;top:12px;left:15px;width:55px;height:55px;border-radius:50%}
+.storyMainPersonal-nick-photo>a>img {width:55px;height:55px;border-radius:50%}
+.storyMainPersonal-nick-nick {margin:0 0 4px;font-size:15px}
+.storyMainPersonal-nick-nick>span {font-size:18px;color:#333}
+.storyMainPersonal-nick-nick>a {float:right;height:26px;padding:0 5px;font-size:15px;line-height:26px;color:#888;background-color:#fff;border:1px solid #ededed}
+.storyMainPersonal-nick-nick>.nickReg {display:inline-block;width:78px;height:28px;margin-top:-6px;margin-left:8px;font-size:13px;line-height:28px;text-align:center;vertical-align:top;color:#222;border:1px solid #ccc;border-radius:15px}
+.storyMainPersonal-nick-nick>.nickMod {display:none;position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:79px;padding:21px 122px 0 58px;background-color:#fff}
+.storyMainPersonal-nick-nick .nickMod-label {position:absolute;left:14px;height:38px;font-size:13px;line-height:38px;color:#666}
+.storyMainPersonal-nick-nick .nickMod-input {display:block;box-sizing:border-box;width:100%;height:38px;padding:0 10px;font-size:13px;border:1px solid #ddd;border-radius:4px;color:#333}
+.storyMainPersonal-nick-nick .nickMod__buttonbox {overflow:hidden;position:absolute;top:21px;right:14px;width:104px}
+.storyMainPersonal-nick-nick .nickMod__button {display:block;float:left;box-sizing:border-box;width:50px;height:38px;border:1px solid #aaa;border-radius:4px;font-size:13px;line-height:38px;text-align:center}
+.storyMainPersonal-nick-nick .nickMod__button:first-child {margin-right:4px}
+.storyMainPersonal-nick-point {font-size:13px;color:#333}
+.storyMainPersonal-nick-point>strong {margin-left:4px;color:#2346e4}
+.storyMainPersonal-content {position:relative;overflow:hidden;height:40px}
+.storyMainPersonal-content>li {float:left;width:29.44%}
+.storyMainPersonal-content>li>.type {display:block;height:30px;padding:9px 0 0;border-bottom:1px solid #eee;font-size:14px;text-align:center;color:#333}
+.storyMainPersonal-content>li>.type>span {display:inline-block;box-sizing:border-box;padding:2px 15px 4px;border-radius:13px;background-color:#fff;color:#999}
+.storyMainPersonal-content>li.on>.type>span {display:inline-block;padding:2px 15px 4px;border-radius:13px;background-color:#ffe100;color:#222}
+.ios .storyMainPersonal-content>li>.type>span {padding:3px 15px 1px}
+.ios .storyMainPersonal-content>li.on>.type>span {padding:3px 15px 1px}
+.storyMainPersonal-content-help {position:absolute;bottom:0;left:0;box-sizing:border-box;width:100%;height:40px;padding:1px 55px 0 15px;font-size:11px;line-height:40px;color:#666;background-color:#fff;border-top:1px solid #eee;box-sizing:border-box}
+.storyMainPersonal-content-help.scrap {padding-top:5px;line-height:1.4}
+.storyMainPersonal-content-help>strong {font-weight:normal}
+.storyMainPersonal-content-help>a {position:absolute;top:13px;right:15px;width:76px;height:22px;line-height:22px;font-size:12px;text-align:center;background-color:#fff;border:1px solid #ddd}
+.storyMainPersonal-content-item {display:none;position:absolute;top:40px;left:0;width:100%;height:310px;background-color:#fff}
+.storyMainPersonal-content-box {overflow-x:hidden;overflow-y:auto;height:258px;padding:6px;background:#eee}
+.storyMainPersonal-content-list>li {box-sizing:border-box;margin-top:4px;border:1px solid #e1e1e1;background-color:#fff}
+.storyMainPersonal-content-list>li:first-child {margin-top:0}
+.storyMainPersonal-content-list>li.noInfo {box-sizing:border-box;height:258px;padding:99px 0 0;text-align:center;border-radius:8px;color:#999}
+.storyMainPersonal-content-list>li.noInfo:before {content:'';display:block;width:32px;height:32px;margin:0 auto 10px;background:url('//image.alba.kr/m/community/community_icon.png') no-repeat;background-size:216px 108px}
+.alarm .storyMainPersonal-content-list>li.noInfo:before {background-position:0 -72px}
+.write .storyMainPersonal-content-list>li.noInfo:before {background-position:-36px -72px}
+.comment .storyMainPersonal-content-list>li.noInfo:before {background-position:-72px -72px}
+.storyMainPersonal-content-list>li>.date {padding:0 0 3px 6px;color:#444}
+.storyMainPersonal-content-list>li>a {display:block;padding:15px 10px 10px 15px}
+.storyMainPersonal-content-list>li>a>span {overflow:hidden;display:block;margin:0 0 5px;font-size:12px;text-overflow:ellipsis;white-space:nowrap;color:#999}
+.storyMainPersonal-content-list>li>a>span.msg {font-size:12px;color:#000}
+.storyMainPersonal-content-list>li>a>span.title,
+.storyMainPersonal-content-list>li>a>span.reply {font-size:15px;color:#000;line-height:18px}
+.storyMainPersonal-content-list>li>a>span.alarm>strong {font-weight:normal;font-size:15px;color:#333}
+.storyMainPersonal-content>li.on>.type>span {border-bottom-color:#79ABFF}
+.storyMainPersonal-content>li.on>.storyMainPersonal-content-item {display:block}
+.storyMainPersonal-expand {position:absolute;top:80px;right:0;width:11.68%;height:39px;border-bottom:1px solid #eee;text-align:center}
+.storyMainPersonal-expand>a {display:block;height:100%;font-size:0;line-height:0;color:transparent}
+.storyMainPersonal-expand>a:before {content:'';clear:both;position:absolute;left:50%;top:50%;width:12px;height:7px;margin:-3px 0 0 -6px;background:url('//image.alba.kr/m/community/community_icon.png') no-repeat -180px 0;background-size:216px 108px}
+.storyMainPersonal-expand>a.top:before {-webkit-transform:rotate(180deg)}
+.storyMainPersonal-close {display:none;position:absolute;bottom:0;right:0;width:55px;height:45px;font-size:13px;line-height:45px;text-align:center;color:#333}
+.comment .storyMainPersonal-content-list>li>a>span.title {font-size:12px}
+
+.storyMainCommunity-title>img {width:100%;vertical-align:top}
+.storyMainCommunity-appl {margin:0 0 10px;height:50px;padding-right:25px;line-height:50px;font-size:13px;text-align:center;color:#333;background-color:#fffbe9}
+.storyMainCommunity-appl>a {display:none;height:50px}
+.storyMainCommunity-appl>a>.ing {color:#ff4b64}
+.storyMainCommunity-appl>a>.state {display:inline-block;height:20px;margin-left:4px;padding:0 7px;line-height:20px;border:1px solid #333;border-radius:11px}
+.storyMainCommunity-appl>a>.new {position:absolute;margin:5px 0 0 -4px;width:49px;height:36px;background:url('//image.alba.kr/m/StorySubScribe_new.png') no-repeat 0 0;background-size:49px 36px}
+#StoryMain .storyMainCommunity-appl {display:none}
+
+.storyMainCommunity-content {position:relative;height:545px;padding-bottom:40px}
+.storyMainCommunity-content>li {overflow:hidden;float:left;width:50%;background-color:#fff}
+.storyMainCommunity-content-type {z-index:2;position:relative;display:block;height:40px;border-bottom:1px solid #eee;text-align:center}
+.storyMainCommunity-content-type>span {display:inline-block;box-sizing:border-box;height:40px;padding:0 5px;border-bottom:2px solid #fff;line-height:40px;font-size:14px;color:#999}
+.storyMainCommunity-content>li.on .storyMainCommunity-content-type span {font-weight:bold;border-bottom:2px solid #222;color:#222}
+.storyMainCommunity-content-list {display:none;position:absolute;top:40px;left:0;box-sizing:border-box;width:100%;height:505px;background-color:#fff}
+.storyMainCommunity-content-list>li {overflow:hidden;border-top:1px solid #eee}
+.storyMainCommunity-content-list>li:first-child {border-top:0 none}
+.storyMainCommunity-content-list>li>a {display:block;padding:12px 14px 10px}
+.ios .storyMainCommunity-content-list>li>a {padding-top:14px}
+.storyMainCommunity-content-list>li>a>span {display:block;margin:0 0 4px;font-size:12px;color:#888}
+.storyMainCommunity-content-list>li>a>span.title {overflow:hidden;font-size:15px;text-overflow:ellipsis;white-space:nowrap;color:#000}
+.storyMainCommunity-content-list>li>a>span.title>em {vertical-align:top;color:#ff4b64}
+.storyMainCommunity-content-list>li>a>span.title>em.newIcon {display:inline-block;width:12px;height:12px;margin:2px 0 0 5px;font:0/0 Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1_300.png') no-repeat -432px -144px;background-size:720px 432px}
+.storyMainCommunity-content-list>li.noInfo {text-align:center}
+.storyMainCommunity-content-view {display:none;position:absolute;bottom:0;left:0;width:100%;height:40px;padding-right:15px;border:1px solid #eee;font-size:13px;line-height:40px;text-align:center;background-color:#fff;color:#444 !important;box-sizing:border-box}
+.storyMainCommunity-content-view:after {content:'';position:relative;top:15px;display:inline-block;width:5px;height:8px;margin-left:4px;vertical-align:top;background:url('//image.alba.kr/m/community/community_icon.png') no-repeat -144px -36px;background-size:216px 108px}
+.storyMainCommunity-content>li.on>.storyMainCommunity-content-list,
+.storyMainCommunity-content>li.on>.storyMainCommunity-content-link,
+.storyMainCommunity-content>li.on>.storyMainCommunity-content-view {display:block}
+
+.storyMainInterview {position:relative}
+.storyMainInterview-list {overflow:hidden}
+.storyMainInterview-list>li {overflow:hidden;float:right;width:48.85%;background-color:#fff;box-sizing:border-box;border:1px solid #eee;background-color:#fff}
+.storyMainInterview-list>li:first-child {float:left}
+.storyMainInterview-list>li>a {display:block;padding-bottom:10px}
+.storyMainInterview-list>li>a>img {display:block;width:100%}
+.storyMainInterview-list>li>a>.title {overflow:hidden;display:block;box-sizing:border-box;height:42px;padding:10px 10px 0;font-size:13px;line-height:16px}
+
+.storyMainRights-list {overflow:hidden;box-sizing:border-box;border:1px solid #eee;background-color:#fff}
+.storyMainRights-list>li {position:relative;float:left;box-sizing:border-box;width:50%;height:60px;background-color:#fff}
+.storyMainRights-list>li>a {display:block;box-sizing:border-box;height:60px;padding:21px 0 0 15px;color:#333}
+.storyMainRights-list>li>a>span {position:absolute;top:15px;right:15px;width:30px;height:30px;background:url('//image.alba.kr/m/community/community_icon.png') no-repeat;background-size:216px 108px}
+.storyMainRights-list>li.consult {border-top-left-radius:8px;border-right:1px solid #eee;border-bottom:1px solid #eee}
+.storyMainRights-list>li.consult>a>span {background-position:0 -36px}
+.storyMainRights-list>li.overdue {border-top-right-radius:8px;border-bottom:1px solid #eee}
+.storyMainRights-list>li.overdue>a>span {background-position:-36px -36px}
+.storyMainRights-list>li.contract {border-bottom-left-radius:8px;border-right:1px solid #eee}
+.storyMainRights-list>li.contract>a>span {background-position:-72px -36px}
+.storyMainRights-list>li.overdueOwner {border-bottom-right-radius:8px}
+.storyMainRights-list>li.overdueOwner>a {padding-top:14px}
+.storyMainRights-list>li.overdueOwner>a>span {background-position:-108px -36px}
+
+.storyMainResearch {position:relative}
+.storyMainResearch-list>li {position:relative;padding:16px 15px 16px 100px;box-sizing:border-box;border:1px solid #eee;background-color:#fff;background-color:#fff}
+.storyMainResearch-list>li>a {display:block}
+.storyMainResearch-list>li .img {overflow:hidden;position:absolute;top:50%;left:15px;width:75px;height:50px;border-radius:4px;margin-top:-25px}
+.storyMainResearch-list>li .img>img {width:75px;height:50px}
+.storyMainResearch-list>li .title {display:block;margin:0 0 3px;font-weight:normal;font-size:15px;color:#333}
+.storyMainResearch-list>li .title>em {color:#ff4b64}
+.storyMainResearch-list>li .date {font-size:11px;color:#888}
+
+.storyMainFunstory {position:relative}
+.storyMainFunstory>.pageBtnGroup {top:20px;right:15px}
+.yes24Estory-ul {padding:15px 15px 0 0;box-sizing:border-box}
+.yes24Estory-li {box-sizing:border-box;position:relative;float:left;width:33.33%;padding-left:15px;box-sizing:border-box}
+.yes24Estory-a {display:block;height:100%;color:#fff;background-color:#fff}
+.yes24Estory-img {width:100%;max-width:100%;background-color:#fff}
+.yes24Estory-textBox {display:block;padding:8px 6px}
+.yes24Estory-textBox>span {overflow:hidden;display:block;height:12px;padding-bottom:2px;color:#999}
+.yes24Estory-textBox>.yes24Estory-title {height:34px;margin-bottom:5px;font-size:15px;color:#000}
+.yes24Estory-textBox>.yes24Estory-author {font-size:10px}
+.yes24Estory-textBox>.yes24Estory-publish {max-width:95%;padding-bottom:0;font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+
+.storyMainSns-list {overflow:hidden;box-sizing:border-box;border:1px solid #eee;background-color:#fff;background-color:#fff}
+.storyMainSns-list>li {float:left;width:23%}
+.storyMainSns-list>li>a {display:block;height:53px;padding-top:22px}
+.storyMainSns-list>li>a>span {display:block;height:36px;margin:0 auto;font:0/0 dotum;color:transparent;background:url('//image.alba.kr/sns/sns_mo.png') no-repeat;background-size:180px 36px}
+.storyMainSns-list>li.facebook>a>span {width:12px;background-position:0 0}
+.storyMainSns-list>li.youtube {width:31%}
+.storyMainSns-list>li.youtube>a>span {width:62px;background-position:-36px 0}
+.storyMainSns-list>li.blog>a>span {width:30px;background-position:-108px 0}
+.storyMainSns-list>li.instagram>a>span {width:28px;background-position:-144px 0}
+
+/* 알바스토리 - 글쓰기 */
+.storyRegist {padding:10px;background-color:#f5f6f8}
+.storyRegist .btnAction .btn {box-sizing:border-box;box-shadow:none}
+.storyRegist .btnAction .btnType1 {border:1px solid #ccc}
+
+.storyRegist .infoBase {padding:0;border:1px solid #ddd;background:#fff}
+.storyRegist .infoBase ul li {position:relative;border-top:1px solid #e0e4eb}
+.storyRegist .infoBase ul li:first-child {border-top:0}
+.storyRegist .infoBase ul li.userid {font-weight:bold;font-size:16px}
+
+.storyRegist .infoBase ul li.laborConsult {display:none;border-top:0 none}
+.storyRegist .infoBase ul li.laborConsult li {position:relative;padding:0 0 0 90px;border-top:1px solid #e0e4eb}
+.storyRegist .infoBase ul li.laborConsult li:first-child {border-top:0 none}
+.storyRegist .infoBase ul li.laborConsult li .item {position:absolute;left:0;top:0;width:80px;height:40px;padding:0 0 0 10px;line-height:40px;color:#000}
+.storyRegist .infoBase ul li.laborConsult li .item.multi {height:38px;padding:2px 0 0 10px;line-height:1.3}
+.storyRegist .infoBase ul li.laborConsult li .item em {font-weight:bold;color:#ff0000}
+.storyRegist .infoBase ul li.laborConsult li .selectContents .etc {width:15%}
+.storyRegist .infoBase ul li.laborBirth .selectContents .col.different {width:50%}
+.storyRegist .infoBase ul li.laborPay .selectContents .col.different {width:75%}
+.storyRegist .infoBase ul li.laborWork .selectContents .col.different {width:35%}
+.storyRegist .infoBase ul li.laborPayAdd .selectContents .col.different {width:75%}
+.storyRegist .infoBase ul li.laborEmployee .selectContents .col.different {width:85%}
+.storyRegist .infoBase ul li.laborWork .selectContents .col.different input,
+.storyRegist .infoBase ul li.laborTime .selectContents .col.different input,
+.storyRegist .infoBase ul li.laborEmployee .selectContents .col.different input {text-align:right}
+.storyRegist .infoBase ul li.laborTime .selectContents .etc {border-left:1px solid #e0e4eb}
+
+.storyRegist .infoBase ul li.searchSelect {margin:0;border-bottom:0 none}
+.storyRegist .infoBase ul li.searchSelect .searchWrap {margin:0}
+.storyRegist .infoBase ul li.searchSelect .searchWrap .selectOpen {height:40px;line-height:40px}
+.storyRegist .infoBase ul li.searchSelect .selectList li {border-top:0 none}
+.storyRegist .infoBase ul li.jobSummary {display:none;border-top:3px solid #79ABFF}
+.storyRegist .infoBase ul li.detail textarea {height:150px;padding:10px;line-height:1.6}
+.storyRegist .infoBase ul li.detail textarea.placeholder {background:url('//image.alba.kr/m/bg_storyRegist.png') no-repeat 10px 10px;background-size:290px 70px}
+.storyRegist .infoBase ul li.file {padding:7px}
+.storyRegist .infoBase ul li.file .col {border:0 none}
+.storyRegist .infoBase ul li.file .formInputFile .inputFile {height:30px}
+.storyRegist .infoBase ul li.file .formInputFile .btn {height:28px;line-height:28px}
+.storyRegist .infoBase ul li.file .formInputFile input[type="text"] {height:30px;line-height:30px}
+.storyRegist .infoBase ul li.file .guide {display:block;padding:0 0 12px;font-size:11px;color:#2346e4}
+
+/* 알바스토리 - 상세 */
+.albaStoryDetail {position:relative}
+.storyDetail {padding:15px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.09)}
+.storyDetail .subInfo {display:block;margin:0 0 10px;font-size:12px;color:#000}
+.storyDetail .detailTitle {position:relative}
+.storyDetail .detailTitle .title {display:block;margin:0 0 2px;font-size:16px}
+.storyDetail .detailTitle span {display:inline-block;padding-right:1px;font-size:12px;color:#999}
+.storyDetail .detailTitle .bar {padding:0 4px}
+.storyDetail .westoryAppLink {padding-top:10px}
+.storyDetail .westoryAppLink .btn {position:relative;padding:5px 17px 5px 23px;font-size:11px;color:#888}
+.storyDetail .westoryAppLink .btn span {position:absolute;top:50%;background:url('//image.alba.kr/m/icon_v1.png') no-repeat}
+.storyDetail .westoryAppLink .btn .icon {left:5px;width:14px;height:10px;margin-top:-5px;background-position:-432px -252px}
+.storyDetail .westoryAppLink .btn .arrow {right:7px;width:4px;height:7px;margin-top:-4px;background-position:-468px -252px}
+.storyDetail .jobSummary {display:none;margin:10px -15px 0}
+.storyDetail .standardContents {margin:-15px -15px 15px;text-align:center}
+.storyDetail .standardContents img {max-width:100%}
+.storyDetail .content {padding:15px 0 20px;font-size:12px;line-height:1.6}
+.storyDetail .content .questionIcon {display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;color:#fff;background:#e92b2b;border-radius:50%}
+.storyDetail .content img {display:block;max-width:100%;margin:0 auto}
+.storyDetail .content img.displayNo {display:none}
+.storyDetail .content table {width:100%;font-size:0.917em}
+.storyDetail .content table td {padding:0 !important}
+.storyDetail .content table td * {font-size:12px}
+.storyDetail .content table td p {margin:0}
+.storyDetail.noticeDetail .list li span.userid,
+.storyDetail.noticeDetail .list li span.jobKind {display:none}
+.storyDetail .answer {margin:15px -15px -15px;padding:15px;font-size:12px;border-top:1px solid #bec0c5}
+.storyDetail .answer .etc {padding-bottom:6px;font-size:11px;color:#999}
+.storyDetail .answer .etc .name {color:#000}
+.storyDetail .answer .etc .bar {padding:0 4px}
+.storyDetail .answer .anwerTxt {line-height:1.6;color:#666;word-break:break-all}
+.storyDetail .answer .anwerTxt .anwerIcon {display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;color:#fff;background:#31c5b5;border-radius:50%}
+.contentAction {overflow:hidden;width:100%;padding:3px 0 0}
+.contentAction .btn {float:right;margin:0 0 0 18px;font-size:12px}
+.contentAction .btn.approval {float:left;margin:0}
+.contentAction .btn.report {float:left;margin-left:10px;padding-left:10px;border-left:1px solid #999}
+.contentAction .btn span {display:inline-block;margin:-3px 3px 0 0;line-height:18px;vertical-align:middle;color:#666;background:url('//image.alba.kr/m/icon_v1.png') no-repeat}
+.contentAction .btn.delBtn span {width:14px;height:16px;background-position:-576px -72px}
+.contentAction .btn.modBtn span {width:16px;height:16px;background-position:-612px -72px}
+.contentAction .btn.approval span {width:19px;height:17px;background-position:-612px -108px}
+.contentAction .btn.approval.on span {background-position:-684px -108px}
+.contentAction .btn.report span {width:14px;height:16px;background-position:-369px -332px}
+.contentAction .btn.report.on span {background-position:-468px -324px}
+
+.bothList {margin-top:10px}
+.bothList li {background:#f5f6f7;box-shadow:0 1px 3px rgba(0,0,0,.09)}
+.bothList li.next {margin-bottom:3px}
+.bothList li a {overflow:hidden;position:relative;display:block;padding:0 10px 0 30px;line-height:38px;height:38px;color:#333;white-space:nowrap;text-overflow:ellipsis}
+.bothList li a span {position:absolute;left:12px;top:50%;width:10px;height:5px;margin:-3px 0 0;font:0/0 Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat}
+.bothList li.next a span {background-position:-360px -108px}
+.bothList li.prev a span {background-position:-396px -108px}
+
+.detailAction {z-index:201;position:fixed;top:0;right:8px}
+.detailAction .additionalBtn {display:block;height:33px;padding:16px 13px 0}
+.detailAction .additionalBtn span {display:block;width:4px;height:21px;margin:0;font:0/0 Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v2.png') no-repeat -324px -216px}
+.detailAction .additional {display:none;position:fixed;right:13px;top:40px;padding:5px 10px;background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.4)}
+.detailAction .additional li {padding:5px 0}
+.detailAction .additional li a {display:block;font-size:14px;line-height:18px;vertical-align:middle}
+html.ios .detailAction {position:absolute;top:-49px}/* IOS 헤더 픽스 예외처리 */
+html.ios .detailAction .additional {position:absolute;width:100px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.storyDetail .detailTitle .viewcnt span,
+	.storyDetail .detailTitle .approval span,
+	.storyDetail .westoryAppLink .btn span,
+	.contentAction .btn span,
+	.bothList li a span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+	.detailAction .additionalBtn span {background-image:url('//image.alba.kr/m/icon_v2_300.png');background-size:360px 360px}
+}
+
+/* 알바스토리 - 댓글 */
+.replyWrap {position:relative;margin:15px -15px -15px}
+.replyWrap h2 {height:23px;padding:0 15px;font-weight:normal;font-size:12px;line-height:23px;border-bottom:1px solid #bec0c5}
+.replyWrap .replyWrite {position:relative;padding:15px;text-align:right;background:#f5f6f7}
+.replyWrap .replyWrite textarea {width:100%;height:60px;padding:5px;background-color:transparent}
+.replyWrap .replyWrite textarea.placeholder {background:transparent url('//image.alba.kr/m/bg_reply.png') no-repeat 5px 5px;background-size:265px 32px}
+.replyWrap .replyWrite .input {position:absolute;left:15px;bottom:15px;margin-top:7px;color:#666}
+.replyWrap .replyWrite .btn {height:20px;margin-top:5px;padding-left:20px;font-size:12px;line-height:20px}
+.replyWrap .replyList {font-size:12px}
+.replyWrap .replyList li {position:relative;border-top:1px solid #dfe2e7}
+.replyWrap .replyList li .replyContent {padding:15px}
+.replyWrap .replyList li .replyInfo {display:block;font-size:11px;vertical-align:middle;color:#999}
+.replyWrap .replyList li .replyInfo .bar {padding:0 4px}
+.replyWrap .replyList li .replyInfo .userId {color:#000}
+.replyWrap .replyList li .replyDetail {display:block;margin-top:7px;line-height:1.6;word-break:break-all;color:#666}
+.replyWrap .replyList li .replyDetail em {padding-right:5px;color:#999}
+.replyWrap .replyList li .replyAct {position:absolute;right:15px;top:10px}
+.replyWrap .replyList li .replyAct a {height:20px;padding:0 0 0 10px;line-height:20px;text-align:right}
+.replyWrap .replyList li .replyWrite {display:none;padding:15px;background:#f5f6f7;border-top:1px solid #dfe2e7}
+.replyWrap .replyList li .replyContent .replyWrite {padding:15px 0 0;background:none;border:0 none}
+.replyWrap .replyList li .replyContent .replyWrite .input {left:0;bottom:0}
+.replyWrap .replyList li .secretIcon {display:inline-block;width:12px;height:12px;margin:0 2px 0 0;vertical-align:text-top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -540px -144px}
+.replyWrap .replyList li .comment {background:#f5f6f7}
+.replyWrap .replyList li .comment li .replyContent {padding-left:27px}
+.replyWrap .replyList li .comment li .icon {position:absolute;left:15px;top:17px;width:7px;height:7px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -288px -252px}
+.replyWrap .replyList li.noInfo {padding:15px 0;text-align:center}
+
+.replyWrap .replyList li .modBtn,
+.replyWrap .replyList li .delBtn {display:none}
+.replyWrap .replyList li.secret .replyDetail,
+.replyWrap .replyList li.secret .rereplyBtn {/*display:none*/}
+.replyWrap .replyList li.my .rereplyBtn,
+.replyWrap .replyList li.my .modBtn,
+.replyWrap .replyList li.my .delBtn {display:inline-block}
+.replyWrap .replyList li.my .replyDetail {display:block}
+
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.replyWrap .replyList li .secretIcon,
+	.replyWrap .replyList li .comment li .icon {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 앱다운로드 프로모션 */
+.promotionStory {display:none;position:absolute;left:0;top:0}
+.promotionStory .filter {z-index:99998;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.promotionStory .layerContents {z-index:99999;position:fixed;left:50%;top:50%;width:320px;height:569px;margin:-285px 0 0 -160px;font:0/0 Dotum;color:transparent;background:url('/images/appdownPromotion_AL.png') no-repeat center;background-size:320px 569px}
+.promotionStory .layerContents a {position:absolute}
+.promotionStory .layerContents a.downloadBtn {left:55px;top:426px;width:210px;height:43px}
+.promotionStory .layerContents a.closeBtn {left:121px;top:494px;width:74px;height:14px}
+
+/* 설문조사 - 리스트 */
+#Research #Section {padding-bottom:30px;background-color:#fff}
+#Research .storyList {padding:0}
+#ResearchList {box-sizing:border-box;padding:0 15px;border-top:10px solid #eee}
+#ResearchList>li {border:0 none;border-bottom:1px solid #eee}
+#ResearchList>li>.info {padding:13px 0}
+#ResearchList>li>.info::after {content:"";display:block;clear:both}
+#ResearchList>li>.info>.research-thumb {float:left;overflow:hidden;width:110px;height:74px;margin-right:10px;border-radius:8px}
+#ResearchList>li>.info>.research-thumb>img {max-width:100%}
+#ResearchList>li>.info>.research-textBox {display:block;overflow:hidden}
+#ResearchList>li>.info>.research-textBox>.state {display:block;padding:7px 0}
+#ResearchList>li>.info>.research-textBox>.state>span {display:inline-block;width:46px;height:14px;border-width:1px;border-style:solid;border-radius:10px;font-size:10px;line-height:14px;text-align:center}
+#ResearchList>li>.info>.research-textBox>.state>span.ing {border-color:#2346e4;color:#2346e4}
+#ResearchList>li>.info>.research-textBox>.state>span.end {border-color:#ddd;color:#999}
+#ResearchList>li>.info>.research-textBox>.title {margin-bottom:2px}
+#ResearchList>li>.info>.research-textBox>.title>strong {max-width:95%;font-size:14px}
+#ResearchList>li>.info>.research-textBox>.stateInfo {overflow:hidden;position:relative;display:block}
+#ResearchList>li>.info>.research-textBox>.stateInfo>span {font-size:14px;color:#999}
+.notice-thumb {display:block;float:left;margin-right:10px}
+.notice-textBox {display:block;overflow:hidden;position:relative}
+.ios #ResearchList>li>.info>.research-textBox>.state {padding-top:9px}
+.ios #ResearchList>li>.info>.research-textBox>.state>span {line-height:16px}
+/* 설문조사 - View */
+.research-view {background-color:#eee}
+.research-view__title {padding:20px 15px 18px;margin-bottom:8px;font-size:14px;border-bottom:1px solid #ddd;color:#999;background-color:#fff}
+.research-view__title strong {display:block;margin-bottom:5px;font-size:18px;color:#222}
+.research-view__info-wrap {padding:20px 15px 15px;background-color:#fff}
+.research-view__info {margin-bottom:20px;font-size:15px;line-height:1.5}
+.research-view__info-detail {position:relative;min-height:60px;margin-top:15px;padding-top:14px;border-top:1px solid #ddd}
+.research-view__info-detail__banner {position:absolute;top:14px;right:0}
+.research-view__info-detail__banner>img {width:90px;height:60px}
+.research-view__info-detail>ul {padding-right:95px}
+.research-view__info-detail::after {content:'';clear:both;display:block}
+.research-view__info-detail>ul>li {position:relative;padding:3px 0 2px 80px;margin-top:7px;font-size:15px}
+.research-view__info-detail>ul>li:first-child {margin-top:0}
+.research-view__info-detail>ul>li span {position:absolute;top:0;left:0;padding:2px 7px;font-size:14px;font-weight:bold;text-align:center;border:1px solid #ddd;border-radius:13px;color:#888}
+html.ios .research-view__info-detail>ul>li span {padding:3px 7px 1px}
+.research-view__myinfo {margin-bottom: 15px;border:1px solid #ddd;background-color:#fff;}
+.research-view__myinfo-field {padding:15px 5px 9px;border-bottom:1px solid #ddd;background-color:#f5f5f5}
+.research-view__myinfo-field::after {content:'';clear:both;display:block}
+.research-view__myinfo-field>li {float:left;position:relative;width:50%;height:30px;padding:0px 5px 0 60px;margin-bottom:6px;line-height:30px;box-sizing:border-box}
+.research-view__myinfo-field>li.full {width:100%}
+    .myinfo-field__item {position:absolute;left:5px;width:55px;font-size:14px;font-weight:bold;color:#666}
+    .myinfo-field__content {width:100%;height:30px;line-height:28px}
+    .myinfo-field__content input[type="text"] {width:100%;height:30px;font-size:14px}
+    .myinfo-field__content select {width:100%;height:30px;padding:0 0 0 7px;line-height:28px;background-color:#fff}
+.research-view__myinfo-notice {padding:12px;border-top:1px solid #ddd}
+	.myinfo-notice__title {font-weight:bold;font-size:13px;color:#666}
+	.myinfo-notice__title::before {content:"";display:inline-block;width:14px;height:14px;margin:1px 4px 0 0;vertical-align:top;background:url('//image.alba.kr/comm/icon_exclamation2.png') no-repeat 0 0;background-size:14px 14px}
+	.myinfo-notice__item {position:relative;margin-top:5px;padding-left:8px;font-size:13px;line-height:1.4;color:#666}
+	.myinfo-notice__item::before {content:"-";position:absolute;top:-2px;left:0}
+.research-view__myinfo-agree {padding:10px}
+    .myinfo-agree__title {margin-top:5px;font-size:13px}
+	.myinfo-agree__title:first-child {margin-top:0}
+    .myinfo-agree__title button {float:right;font-size:13px;text-decoration:underline;cursor:pointer;background:none}
+    .myinfo-agree__content {display:none;margin-top:5px;padding:12px 8px;background-color:#f8f8f8}
+    .myinfo-agree__content li {position:relative;padding-left:8px;font-size:12px;line-height:1.5;color:#999}
+	.myinfo-agree__content li::before {content:"·";position:absolute;top:-1px;left:0}
+.research-view__question-wrap {display:none;padding:20px 15px 15px;background-color:#fff}
+.research-view__question-item {padding:30px 0;font-size:15px;border-top:1px solid #eee}
+.research-view__question-item:first-child {padding-top:0;border-top:0}
+.research-view__question-title {margin-bottom:20px;font-size:16px;line-height:1.4}
+.research-view__answer-list {margin-left:6px}
+.research-view__answer-item {padding-top:12px}
+.research-view__answer-item:first-child {padding-top:0}
+.research-view__answer-item.etc {padding-top:7px}
+.research-view__answer-item span.input label {height:auto;font-size:15px}
+input[type="text"].research-view__answer-etc {width:76%;height:30px;padding:0 10px;margin-left:6px;font-size:15px;border:1px solid #ddd;vertical-align:middle}
+.research-view__answer-textarea {width:100%;height:130px;padding:10px;font-size:15px;box-sizing:border-box;border:1px solid #ddd}
+.research-view__answer-unit {width:100px;height:30px ​!important;padding:10px;font-size:15px;box-sizing:border-box;border:1px solid #ddd}
+.research-view__action {display:block;width:100%;height:50px;line-height:50px;font-size:15px;text-align:center;cursor:pointer;outline:none;background-color:#ffe000}
+
+/* 노무상담 */
+.consult-head {position:relative}
+.consult-head>div {text-align:center}
+.consult-head>div img {max-width:100%;vertical-align:top}
+.consult-head-top {position:relative;margin-bottom:7px;background-color:#fff}
+.consult-head-top>h1,
+.consult-head-top>p,
+.consult-head-top>dl {font-size:0;line-height:0;color:transparent}
+.consult-head__center {position:absolute;bottom:12%;left:2%;width:46%;height:7%}
+.consult-head__sns {position:absolute;bottom:3%;width:12%;height:7.5%}
+.consult-head__facebook {left:58%}
+.consult-head__instagram {left:70%}
+.consult-head__youtube {left:82.7%}
+.consult-headBanner {background-color:#fff}
+.consult-headBanner a {display:block;padding:0 10px}
+.consult-title {position:relative}
+.consult-title>h2 {padding:12px 0 7px}
+.consult-stateBar {padding:10px 0;margin-bottom:20px;font-size:0.928em;font-weight:bold;text-align:center;color:#fff;background:#978d84}
+.consult-stateBar.complete {background:#fdbc02}
+.consult-wait-comment {padding:30px 0;margin-bottom:10px;line-height:1.8;text-align:center;border:1px solid #e0e0e0}
+.board-manage {z-index:1;position:absolute;right:0;top:8px}
+.board-manageBtn {z-index:1;display:inline-block;width:87px;height:21px;font:0/0 dotum;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/board_manageBtn.png') no-repeat;background-size:87px 21px}
+.board-managePop {display:none;z-index:99999;position:fixed;left:50%;top:50%;width:320px;height:346px;margin:-173px 0 0 -160px;background:url('//image.alba.kr/m/board_manage.png') no-repeat;background-size:320px 346px}
+.board-managePop * {font:0/0 dotum;color:transparent}
+.board-managePop .board-managePop-close {position:absolute;left:50%;bottom:29px;width:270px;height:28px;margin-left:-135px}
+.reply-State {display:block;box-sizing:border-box;position:absolute;right:10px;bottom:10px;padding:5px 14px;font-size:0.857em;font-weight:bold;text-align:center;color:#fff !important}
+.reply-StateY {border:1px solid #daa302;background:#fdbc02}
+.reply-StateN {border:1px solid #726962;background:#978d84}
+.agree-check {position:relative;margin-top:10px}
+.agree-check-box {box-sizing:border-box;padding:10px;border:1px solid #ddd;background:#fff}
+.agree-check-box>p {padding-bottom:5px}
+.agree-check-box>ul>li {font-size:12px;line-height:1.6}
+.agree-check-box>ul>li>strong {font-size:13px;color:#36c}
+.agree-check .checkbox {margin-top:5px}
+.consult-info {position:relative;margin-top:10px;padding:7px;font-size:0.857em;line-height:1.6;border:1px solid #e0e0e0}
+.consult-write>dd#trContents>textarea {width:100%;height:100px;border:1px solid #e0e0e0}
+.consult-write>dd.action {text-align:center}
+.consult-write>dd.action>a {display:inline-block;height:20px;padding:10px 10px 0;line-height:20px;color:#2346e4}
+
+/* Yes24 */
+.pointYes24 {position:relative;padding:15px 10px;background:#eef7fc}
+.pointYes24-guide {margin-bottom:15px}
+.pointYes24-state {position:relative;display:block;height:60px}
+.pointYes24-state>li {position:absolute;top:0;width:112px}
+.pointYes24-state>li>.category {display:block;margin-bottom:6px;font-size:11px;font-weight:bold;text-align:center}
+.pointYes24-state>li>strong {box-sizing:border-box;display:block;padding:10px 20px;text-align:center;border-radius:18px;color:#fff}
+.pointYes24-state-alpo {left:2%}
+.pointYes24-state-alpo>.category {color:#ffaf00}
+.pointYes24-state-alpo>.pointYes24-state-point {border:1px solid #ffa400;background:#ffb400}
+.pointYes24-state-yes24 {right:2%}
+.pointYes24-state-yes24>.category {color:#003f9d}
+.pointYes24-state-yes24>.pointYes24-state-point {border:1px solid #0055a4;background:#1a6ab3}
+.pointYes24-change {position:absolute;left:50%;top:78px;margin-left:-18px;width:36px;height:36px}
+.pointYes24-help {margin-top:20px;font-size:12px;font-weight:bold;text-align:center;letter-spacing:-1px;color:#000}
+
+.layerPointYes24 {z-index:99999;display:none;position:fixed;top:0;left:0;width:100%;height:100%}
+.layerPointYes24-wrap {z-index:99999;box-sizing:border-box;position:fixed;top:50%;left:50%;width:320px;height:365px;margin:-182px 0 0 -160px;border:1px solid #90939a;background-color:#f6f7f9}
+.layerPointYes24-pointBox {padding:0 18px}
+.layerPointYes24-point {overflow:hidden;position:relative}
+.layerPointYes24-point>li {width:120px}
+.layerPointYes24-point>li:first-child {float:left}
+.layerPointYes24-point>li:last-child {float:right}
+.layerPointYes24-point>li>.category {display:block;margin-bottom:6px;font-size:11px;font-weight:bold;text-align:center}
+.layerPointYes24-point>li>strong {box-sizing:border-box;display:block;height:35px;line-height:35px;text-align:center;border-radius:18px;color:#fff}
+.layerPointYes24-now {padding:25px 6px 12px}
+.layerPointYes24-now>.layerPointYes24-point-alpo>.category {color:#f69500}
+.layerPointYes24-now>.layerPointYes24-point-alpo>strong {color:#f69500;border:1px solid #f69500}
+.layerPointYes24-now>.layerPointYes24-point-yes24>.category {color:#0052a8}
+.layerPointYes24-now>.layerPointYes24-point-yes24>strong {color:#0052a8;border:1px solid #0052a8}
+.layerPointYes24-after {padding:15px 6px}
+.layerPointYes24-after>.layerPointYes24-point-alpo>.category {color:#f69500}
+.layerPointYes24-after>.layerPointYes24-point-alpo>strong {border:1px solid #f69500;background:#f69500}
+.layerPointYes24-after>.layerPointYes24-point-yes24>.category {color:#0052a8}
+.layerPointYes24-after>.layerPointYes24-point-yes24>strong {border:1px solid #0052a8;background:#0052a8}
+.layerPointYes24-change {clear:both;position:relative;padding:17px 70px 17px 0;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc}
+.layerPointYes24-change>input[type="tel"] {width:100%;height:36px;line-height:34px}
+.layerPointYes24-change>input[type="image"] {position:absolute;right:0;top:17px;height:36px}
+.layerPointYes24-guide {clear:both;padding:12px 24px;background:#3a3d44}
+.layerPointYes24-guide>li {position:relative;padding-left:8px;margin-bottom:3px;font-size:12px;line-height:1.4;color:#fff}
+.layerPointYes24-guide>li>span {position:absolute;left:0;top:0;font-weight:bold}
+.layerPointYes24-guide>li>em {color:#b4b5b4}
+.layerPointYes24-close {position:absolute;right:5px;top:5px;width:16px;height:16px;font:0/0 Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -540px -72px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.layerPointYes24-close {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 임금체불신고센터 */
+.overdue-head {position:relative}
+.overdue-head .overdue-headTop {background:#fff}
+.overdue-head .overdue-headBottom {background:#f7f7f7}
+.overdue-head .overdue-head-box {position:relative;width:320px;margin:0 auto;text-align:center}
+.overdue-head .overdue-head-box>img {max-width:100%;vertical-align:top}
+.overdue-head .overdue-head-box>a {position:absolute;font:0/0 dotum;color:transparent}
+.overdue-head .overdue-head-box>a.overdue-klac {left:117px;top:29px;width:84px;height:85px}
+.overdue-head .overdue-head-box>a.overdue-detailview {left:170px;top:148px;width:52px;height:15px}
+.overdue-head .overdue-head-box>a.overdue-klac-info {left:187px;top:167px;width:96px;height:16px}
+.overdue-head .overdue-head-box>a.overdue-write {left:79px;top:203px;width:161px;height:40px}
+.overdue-head .overdue-head-box>a.overdue-center {bottom:40px;left:47px;width:198px;height:37px}
+.overdue-layer {z-index:1000;display:none;position:fixed;left:50%;top:50%;text-indent:-999em}
+.overdue-layer.overdue-layer-klac {width:285px;height:320px;margin:-160px 0 0 -142px;background:url('//image.alba.kr/m/overdue_klac_pop.png') no-repeat;background-size:285px 320px}
+.overdue-layer.overdue-layer-detail {width:285px;height:300px;margin:-150px 0 0 -142px;background:url('//image.alba.kr/m/overdue_disbursement_pop.png') no-repeat;background-size:285px 300px}
+.overdue-layer.overdue-layer-detail .overdue-layer-moelBtn {position:absolute;left:56px;top:252px;width:174px;height:30px}
+.overdue-layer-filter {display:none;z-index:999;position:fixed;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.4;filter:alpha(opacity=40);touch-action:none;-webkit-touch-action:none}
+.overdue-layer-close {position:absolute;right:13px;top:13px;width:15px;height:15px}
+.overdue-list .title {font-size:14px;font-weight:bold}
+.overdue-list .overdue-state {position:absolute;right:10px;bottom:10px}
+.overdue-list .overdue-state>em {display:block;box-sizing:border-box;padding:5px 14px;font-size:0.857em;font-weight:bold;text-align:center;color:#fff}
+.overdue-list .overdue-state>em.overdue-state-complete {border:1px solid #fdbc02;background:#fdbc02}
+.overdue-list .overdue-state>em.overdue-state-ing {border:1px solid #978d85;background:#978d85}
+.overdue-infomation-text {padding:10px 0 5px;font-size:12px}
+.overdue .address-searchbtn {position:relative;display:block;height:40px;line-height:40px;text-align:center;vertical-align:top;color:#fff;background:#aaa}
+.overdue .storyRegist .infoBase ul li.laborConsult li {padding-left:105px}
+.overdue .storyRegist .infoBase ul li.laborConsult li .item {width:100px;padding-left:5px;font-size:13px}
+.overdue .storyRegist .infoBase ul li.laborConsult li .overdue-text {display:block;min-height:40px;padding-left:10px;line-height:40px}
+.overdue .storyRegist .infoBase ul li.laborConsult li .mark {position:relative;top:-1px;display:inline-block;width:16px;height:16px;margin-right:4px;font-size:13px;font-weight:bold;line-height:15px;text-align:center;vertical-align:middle;background:#fdbc02;color:#fff;border-radius:50%}
+.overdue .storyRegist .infoBase ul li.laborConsult li .col.addr1 {border-bottom:1px solid #e0e4eb}
+.overdue .storyRegist .infoBase ul li.laborConsult li .col.addr1 input {float:left;width:70%}
+.overdue .storyRegist .infoBase ul li.laborConsult li .col.addr1 .address-searchbtn {float:right;width:30%;font-size:13px}
+.overdue .storyRegist .infoBase ul li.laborConsult li.overdue-confirmation .col.wide {width:100%;height:40px;line-height:40px;text-align:center;border-top:1px solid #e0e4eb}
+
+/* 임금체불 사업주 */
+.laborOverdueOwner {background:#ece8e3}
+.laborOverdueOwner-head {padding:13px 14px;margin-bottom:6px;background:#fff;box-sizing:border-box;border:1px solid #eee;background-color:#fff}
+.laborOverdueOwner-head-h1 {font-size:17px;color:#222}
+.laborOverdueOwner-head-dl {padding:0 0 13px;margin-bottom:13px;border-bottom:1px solid #e8e8e8;color:#222}
+.laborOverdueOwner-head-dl>dt {padding:5px 0 4px;font-size:15px}
+.laborOverdueOwner-head-dl>dd {font-size:12px;line-height:1.5}
+.laborOverdueOwner-head-ul>li {position:relative;padding-left:10px;font-size:12px;line-height:1.5;color:#999}
+.laborOverdueOwner-head-ul>li>span {position:absolute;left:2px}
+.laborOverdueOwner-head-ul>li>a {display:block;font-weight:bold;font-size:12px;text-decoration:underline;color:#2346e4}
+.laborOverdueOwner-search {position:relative;padding:10px 14px 14px;margin-bottom:6px;background:#fff;box-sizing:border-box;border:1px solid #eee;background-color:#fff}
+.laborOverdueOwner-search__title {padding:0 0 5px;font-weight:bold;font-size:17px}
+.laborOverdueOwner-search__input {overflow:hidden;position:relative;box-sizing:border-box;width:100%;height:38px;padding:0 68px 0 0;border-radius:4px;border:1px solid #ddd;background-color:#fff}
+.laborOverdueOwner-search__input input {box-sizing:border-box;width:100%;height:36px;padding:0 0 0 11px;line-height:34px;border:0 none;font-size:16px;color:#222}
+.laborOverdueOwner-search__input input::-webkit-input-placeholder,
+.laborOverdueOwner-search__input input::placeholder {font-size:13px;letter-spacing:-0.05em;color:#ccc}
+.laborOverdueOwner-search__input button {position:absolute;top:0;font-size:0;line-height:0;height:36px;color:transparent;background:none}
+.laborOverdueOwner-search__input button[type="button"] {right:35px;width:32px}
+.laborOverdueOwner-search__input button[type="button"]>span {position:absolute;top:50%;left:50%;width:18px;height:18px;margin:-9px 0 0 -9px;background:url('//image.alba.kr/m/story/LaborOverdueOwner_search.png') no-repeat -36px 0;background-size:72px 36px}
+.laborOverdueOwner-search__input button[type="submit"] {right:0;width:35px}
+.laborOverdueOwner-search__input button[type="submit"]>span {position:absolute;top:11px;right:10px;width:17px;height:17px;background:url('//image.alba.kr/m/story/LaborOverdueOwner_search.png') no-repeat 0 0;background-size:72px 36px}
+.laborOverdueOwner-count {padding:0 0 5px 6px;font-size:13px}
+.laborOverdueOwner-count span {color:#2346e4}
+.laborOverdueOwner-list {position:relative;padding:6px}
+.laborOverdueOwner-tablebox {position:relative;padding:20px 16px;border-radius:8px;background:#fff;box-sizing:border-box;border:1px solid #eee;background-color:#fff}
+.laborOverdueOwner-table {margin:0 15px 15px;border-collapse:collapse;background:#fff}
+.laborOverdueOwner-table>thead th {padding:9px 0;font-weight:normal;border-top:1px solid #ddd;border-bottom:1px solid #ddd;background:#f6f5f2;color:#444}
+.laborOverdueOwner-table>tbody td {padding:9px 0;line-height:1.3;border-bottom:1px solid #ddd;color:#000}
+.laborOverdueOwner-table>thead th:nth-child(1) ,
+.laborOverdueOwner-table>tbody td:nth-child(1) {padding-left:12px;text-align:left}
+.laborOverdueOwner-tablebox .pagination {border-radius:0;box-shadow:none !important}
+.laborOverdueOwner-tablebox .pagination a {width:35px}
+.laborOverdueOwner-help {padding:13px 14px;margin:6px 0;border:1px solid #cec9c2;border-radius:8px;font-size:12px;background:#f0edea}
+.laborOverdueOwner-link {display:block;height:52px;border-radius:8px;font-size:18px;line-height:52px;letter-spacing:-0.05em;text-align:center;background:#ffe100;-webkit-box-shadow:0 1px 2px 0 rgba(0, 0, 0, .2);box-shadow:0 1px 2px 0 rgba(0, 0, 0, .2)}
+
+/* 면접비 보상 */
+.interviewReward * {font-size:0;color:transparent}
+.interviewReward img {width:100%}
+.interviewReward-appl {padding:20px 77px 30px;text-align:center;background-color:#fff}
+.interviewReward-appl img {width:100%}
+
+/* 광고스토리 */
+#CfStory {padding:30px 15px;background:#f6f6f6}
+#CfStory h2 {margin-bottom:7px;font-weight:normal;font-size:18px;text-align:center}
+#CfStory h2 em {display:block;margin-bottom:10px;font-size:12px;color:#cf9700}
+#CfStory p {font-size:11px;line-height:1.4;text-align:center;color:#7e7e7e}
+#CfStory iframe {width:100%;height:51.7vw;margin:15px auto 25px}
+#CfStory .action {text-align:center}
+#CfStory .action .btn {width:85px;height:25px;font-size:11px;line-height:25px}
+#CfStory .action .btn span {display:inline-block;width:13px;height:13px;margin-top:-2px;margin-left:5px;line-height:25px;vertical-align:middle;background:url('//image.alba.kr/corp/corp.png') no-repeat}
+#CfStory .action .btn.copyBtn span {background-position:0 -72px}
+#CfStory .action .btn.downBtn span {background-position:-36px -72px}
+
+#AdStoryList {padding:35px 15px;background-color:#fff}
+#AdStoryList .subSelect select {width:100%}
+.cfList {display:none;position:relative}
+.cfList.on {display:block}
+.cfList ul {position:relative}
+.cfList ul li {margin-top:15px;border:1px solid #dcdcdc}
+.cfList ul li.first {margin-left:0}
+.cfList ul li span {display:block}
+.cfList ul li .img {border-bottom:1px solid #dcdcdc}
+.cfList ul li .img a {overflow:hidden;display:block;text-align:center}
+.cfList ul li .img a img {width:248px;height:165px}
+.cfList ul li .info {position:relative;padding:15px 90px 15px 15px}
+.cfList ul li .info em {overflow:hidden;display:block;font-size:16px;line-height:24px;white-space:nowrap;text-overflow:ellipsis}
+.cfList ul li .info a {position:absolute;right:15px;top:15px;width:70px;height:22px;font-size:11px;line-height:22px}
+.cfList ul li .info a span {display:inline-block;width:9px;height:5px;margin-left:7px;vertical-align:middle;background:url('//image.alba.kr/corp/corp.png') no-repeat 0 -36px}
+
+/* 언론속의 알바천국 */
+.newsReport {padding:20px 15px;background-color:#fff}
+.newsReport h2 {margin-bottom:10px;font-weight:normal;font-size:18px}
+.formList {position:relative;border-top:1px solid #5c5c5c}
+.formList li {position:relative;border-bottom:1px solid #e7e7e8}
+.formList .info {position:relative;display:block;padding:10px;line-height:1.4}
+.formList .info:hover {background:#fafafa}
+.formList .info span {overflow:hidden;display:block;font-size:12px;color:#999;white-space:nowrap;text-overflow:ellipsis}
+.formList .info .title {font-size:14px;color:#262626}
+
+.formView {position:relative;border-top:1px solid #5c5c5c;border-bottom:1px solid #c8c8c8}
+.formView dt {padding:10px;line-height:1.4;background:#fafafa;border-bottom:1px solid #e7e7e8}
+.formView dt span {overflow:hidden;display:block;font-size:12px;vertical-align:middle;color:#999;white-space:nowrap;text-overflow:ellipsis}
+.formView dt .title {font-size:14px;color:#262626}
+.formView dd {padding:20px 10px;line-height:1.4}
+.formView dd p {margin:5px 0}
+.formView dd img {max-width:100%;height:auto}
+
+.listPreview li {overflow:hidden;position:relative;padding:13px 20px 12px 100px;font-size:12px;color:#999;border-bottom:1px solid #c8c8c8;white-space:nowrap;text-overflow:ellipsis}
+.listPreview li .item {position:absolute;left:20px;top:13px;color:#575757}
+.listPreview li .item span {display:inline-block;width:14px;height:8px;margin:-2px 0 0 10px;vertical-align:middle;background:url('//image.alba.kr/corp/corp.png') no-repeat}
+.listPreview li.prev .item span {background-position:-180px -108px}
+.listPreview li.next .item span {background-position:-216px -108px}
+.listPreview li a {color:#999}
+
+.goList {margin:15px 0 0;text-align:right}
+.goList .btn.listBtn {width:50px;height:20px;font-size:12px;line-height:20px;color:#282828;background:#fff;border:1px solid #ffc600}
+
+/* 알바리뷰 */
+.repute-select {overflow-x:scroll;-webkit-overflow-scrolling:auto;position:relative;box-sizing:border-box;margin:10px 10px 0 0;padding:0 10px}
+.repute-select:after {content:"";display:block;clear:both}
+.repute-select::-webkit-scrollbar {display:none}
+.repute-select__list>li {float:left;box-sizing:border-box;width:120px;height:63px;margin-left:5px;border:1px solid #ddd;line-height:1.3;text-align:center;background-color:#fff}
+.repute-select__list>li:first-child {margin-left:0}
+.repute-select__list>li a {display:block;box-sizing:border-box;height:100%;padding-top:12px}
+.repute-select__list>li em {color:#2346e4}
+.repute-select__list>li.on a {border-bottom:3px solid #5b79fe}
+
+.reputeHead {position:relative;padding:15px;margin-bottom:10px;background:#fff}
+.reputeHead>h1 {position:relative;font-size:16px;font-weight:bold;color:#333}
+.reputeHead>h1>img {margin:-2px 0 0;vertical-align:middle}
+.reputeHead>p {padding:4px 0 0;font-size:12px;line-height:1.4;color:#999}
+.reputeSearch {position:relative;padding:10px 15px 7px 60px;background:#fff}
+.reputeSearch>label {position:absolute;left:15px;top:50%;height:16px;margin-top:-8px;font-size:14px;line-height:16px;color:#666}
+.reputeSearch>.reputeSearchBar {position:relative;height:38px;padding-right:45px;border:1px solid #bbb}
+.reputeSearch>.reputeSearchBar>input[type="text"] {width:100%;height:38px;line-height:38px;border:0}
+.reputeSearch>.reputeSearchBar>a {position:absolute;right:11px;top:50%;width:22px;height:23px;margin-top:-11px;font:0/0 dotum;color:transparent;background:url('//image.alba.kr/m/repute_searchBtn.png') no-repeat;background-size:22px 23px}
+#ReputeList .repute-list-state {position:absolute;right:10px;top:50%;width:61px;height:23px;margin-top:-12px;line-height:23px;text-align:center;border:1px solid #185cc2;color:#185cc2}
+.moreView {height:40px !important;margin-top:5px;font-size:13px;line-height:40px !important;text-align:center;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.09)}
+.moreView a {display:block;color:#868686}
+.moreView span {display:none;overflow:hidden;width:23px;height:23px;font:0/0 dotum;color:transparent;vertical-align:middle;background:url('/images/icon1.png') no-repeat 0 -576px}
+.moreView.on a {display:none}
+.moreView.on span {display:inline-block;-webkit-animation:moreLoading 1.5s linear infinite;animation:moreLoading 1.5s linear infinite}
+
+.mapNoInfo {width:100%}
+
+/* 청년긴급지원기금 */
+#SupportFund .support * {font:0/0 Dotum;color:transparent}
+.support__box-wrap {background-color:#f8f8f8}
+.support__box-wrap--white {background-color:#fff}
+
+.support__box {position:relative;margin:0 auto}
+.support__box--header {width:286px}
+.support__box--contents {width:320px;margin-bottom:7px}
+.support__box--center {width:292px}
+
+.support-img {width:100%}
+.support__btn {position:absolute}
+.support__btn--call {top:192px;right:14px;width:79px;height:24px}
+.support__btn--application {top:233px;left:0;width:87px;height:87px}
+.support__btn--pledge {top:333px;left:59px;width:87px;height:87px}
+.support__btn--submit {bottom:29px;left:46px;width:229px;height:49px}
+.support__btn--center {bottom:30px;left:45px;width:199px;height:38px}
+
+.support-layer {display:none}
+.support-layer__content {z-index:99999;position:absolute;top:50%;left:50%;width:290px}
+.support-layer__content * {font:0/0 Dotum;color:transparent}
+.support-layer__content--application {height:285px;margin:-143px 0 0 -145px;background:url('//image.alba.kr/m/support_layer_application.jpg') no-repeat 0 0;background-size:290px 285px}
+.support-layer__content--pledge {height:177px;margin:-89px 0 0 -145px;background:url('//image.alba.kr/m/support_layer_pledge.jpg') no-repeat 0 0;background-size:290px 177px}
+.support-layer__close {position:absolute;width:16px;height:16px}
+.support-layer__close--application {top:9px;right:11px}
+.support-layer__close--pledge {top:13px;right:14px}
+
+/* 앱다운로드 모달 배너 */
+#appdown-modal {display:none}
+.appdownBox {z-index:100001;position:fixed;top:21%;left:14%;width:72%}
+.appdownBox img {width:100%}
+.appdownBox .appdownBox_btnWrap .appdownBtn {position:absolute;right:0;bottom:0;left:0;height:13%;font-size:0;color:transparent}
+.appdownBox .appdownBox_btnWrap .closeBtn {position:absolute;top:0;right:0;width:15%;height:12%;font-size:0;color:transparent}
+
+/* 알바급여 계산기 */
+#Calculator #Section {background:#fff}
+.icon-help {display:inline-block;width:15px;height:15px;margin-top:11px;font:0/0 dotum;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/calculator_icon_2019.png') no-repeat 0 -36px;background-size:72px 72px}
+.icon-help--holiday {margin-top:13px}
+.calculator-reset {position:absolute;right:0;top:0;height:44px;padding:0 15px;line-height:44px;color:#000}
+.calculator__notice {height:40px;padding-left:15px;border-bottom:1px solid #eee;font-size:12px;line-height:40px;background-color:#f8f8f8;color:#666}
+html.ios .calculator__notice {line-height:42px}
+.calculator__notice>strong {font-weight:normal;color:#222}
+.calculator__setting {padding:15px 15px 20px 15px}
+.calculator__select {padding-bottom:15px;border-bottom:1px solid #eee}
+.calculator__select:after {content:'';clear:both;display:block}
+.calculator__select-column {position:relative}
+.calculator__select-unit {position:absolute;top:0;right:30px;font-size:15px;line-height:38px;color:#999}
+.calculator__select-space {height:38px;font-size:15px;line-height:38px;text-align:right;color:#222}
+.calculator__select-column select {font-size:15px}
+.calculator__select-column--pay-type {float:left;width:108px;margin-right:5px}
+.calculator__select-column--pay-type select {width:100%}
+.calculator__select-column--write {overflow:hidden;padding-right:20px;}
+.calculator__select-column--write input {width:100%;height:38px;padding-right:25px;font-size:15px;text-align:right}
+.calculator__select-column--write .calculator__select-space {position:absolute;right:0;top:0;width:20px;height:100%;text-align:right}
+.calculator__select-column--full {clear:both;padding:6px 0 0}
+.calculator__select-column--full select {width:108px;margin-right:6px}
+.calculator__select-column--holiday {overflow:hidden}
+.calculator__select-column--holiday input {width:100%;height:38px;padding-right:25px;text-align:right}
+.calculator__select-column--holiday .calculator__select-unit {position:absolute;right:0;top:0;width:30px;height:100%;text-align:center}
+.calculator__setup {position:relative}
+.calculator__setup-list {padding:15px 0;border-bottom:1px solid #eee}
+.calculator__setup-list li {position:relative;padding-left:153px;margin-top:6px}
+.calculator__setup-list li:after {content:'';clear:both;display:block}
+.calculator__setup-list li:first-child {margin-top:0}
+.calculator__setup-list .item {position:absolute;left:0;top:0;width:153px;height:38px;font-size:15px;line-height:38px;color:#222}
+.calculator__setup-list .icon-help {margin-top:12px}
+.calculator__setup-list select {width:100%;font-size:13px}
+.calculator__setup-list select.invalid {color:#999}
+.calculator__setup-list label {box-sizing:border-box;float:left;width:48.9%;height:38px;border:1px solid #ddd;font-size:13px;line-height:38px;text-align:center;color:#999}
+.calculator__setup-list label:nth-of-type(1) {margin-right:2.2%}
+.calculator__setup-list input:checked+label {border-color:#5b79fe;color:#2346e4}
+.calculator__setup-list .calculator__setup-time,
+.calculator__setup-list .calculator__setup-minute {box-sizing:border-box;float:left;width:48.9%;height:38px}
+.calculator__setup-list .calculator__setup-minute {margin-left:2.2%}
+.calculator__setup--history {padding:15px 15px 20px 15px}
+.calculator__setup--history input,
+.calculator__setup--history select {font-size:15px}
+.calculator__setup-submit {display:block;width:100%;height:50px;margin-top:15px;font-size:15px;line-height:50px;text-align:center;background-color:#79ABFF}
+.calculator__comment {font-size:15px}
+.calculator__result {position:relative;padding:5px 15px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;background:#f6f6ff}
+.calculator__result--holiday {padding-top:0}
+.calculator__result-rows {overflow:hidden;padding-bottom:12px}
+.calculator__result-rows:first-child {padding-top:11px}
+.calculator__result-item {float:left;font-size:15px;}
+.calculator__result-pay {float:right;font-size:15px;}
+.calculator__result-price {color:#222}
+.calculator__result-total {height:53px;padding:0;border-top:1px solid #eee;line-height:56px}
+.calculator__result-total .calculator__result-item {font-weight:bold}
+.calculator__result-total .calculator__result-price {position:relative;top:2px;font-weight:bold;font-size:18px;color:#2346e4;}
+.calculator__result-total--holiday {border-top:0 none}
+.calculator__info {padding:10px 15px}
+.calculator__info-item {position:relative;padding:0 0 0 5px;font-size:11px;line-height:17px;color:#999}
+.calculator__info-item em {color:#222}
+.calculator__info-item:after {content:'';position:absolute;left:0;top:9px;width:4px;height:1px;background:#999}
+.calculator__button-wrapper {padding:20px 15px}
+.calculator__button {display:block;position:relative;box-sizing:border-box;height:44px;padding:0 15px;line-height:44px;border:1px solid #eee}
+.calculator__button:before {content:'';position:relative;top:14px;display:inline-block;width:15px;height:15px;margin-right:4px;vertical-align:top;background:url('//image.alba.kr/m/calculator_icon_2019.png') no-repeat;background-size:72px 72px}
+.calculator__button:after {content:'';position:absolute;right:15px;top:50%;width:7px;height:12px;margin-top:-6px;background:url('//image.alba.kr/m/calculator_icon_2019.png') no-repeat -36px -36px;background-size:72px 72px}
+.calculator__button--holiday:before {background-position:0 0}
+.calculator__button--calculator:before {background-position:-36px 0}
+
+.ios .calculator__setup-list .icon-help {margin-top:10px}
+.ios .calculator__select-unit {padding-top:2px}
+.ios .calculator__select-column--write .calculator__select-space {padding-top:2px}
+.ios .calculator__info-item:after {top:7px}
+.ios .calculator__button {padding-top:1px}
+.ios .calculator__button:before {top:14px}
+.ios .icon-help--holiday {margin-top:12px}
+
+/* modal-layer */
+#ModalMemoProbation {width:155px;margin-top:-4px;box-sizing:border-box}
+
+.modallayertxt {font-size:15px}
+.modallayertxt__h2 {margin:0 0 15px;font-weight:bold}
+.modallayertxt__h2>span {display:inline-block;width:14px;height:14px;border:2px solid #ffd100;border-radius:50%;font-weight:normal;font-size:10px;line-height:14px;text-align:center;vertical-align:top;color:#ffd100}
+.modallayertxt__list {margin:0 0 15px}
+.modallayertxt__list>li {margin:0 0 8px;padding-left:12px}
+.modallayertxt__list>li>span {position:absolute;width:3px;height:3px;margin:7px 0 0 -7px;background-color:#ffd100}
+.modallayertxt__guide {margin:0 0 15px;padding-left:4px;line-height:1.4}
+.modallayertxt__help {padding:15px;font-size:13px;line-height:1.4;background-color:#f1f0f0}
+.modallayertxt__insurance {margin:0 0 30px}
+.modallayertxt__income .modallayertxt__guide {padding-left:12px;color:#737373}
+
+.modallayerholiday {font-size:15px}
+.modallayerholiday__define {margin:0 0 13px;padding:0 10px}
+.modallayerholiday__define--last {margin-bottom:25px}
+.modallayerholiday__define dt {margin:0 0 7px;font-weight:bold}
+.modallayerholiday__define dd {line-height:1.4}
+.modallayerholiday__define span {position:absolute;width:3px;height:3px;margin:7px 0 0 -7px;background-color:#ffd100}
+.modallayerholiday__guide {margin:0 0 10px;padding:15px 0 0;border-top:1px solid #ededed;font-size:13px}
+.modallayerholiday__link {display:inline-block;height:32px;padding:0 15px 0 20px;border-radius:16px;font-weight:bold;font-size:13px;line-height:32px;background-color:#ffd100}
+
+/* 허위정보신고 */
+.storyreport {padding:17px 20px 30px;background:#fff}
+.storyreport .title {height:30px;border-bottom:1px solid #959595}
+.storyreport .guideTxt {font-size:12px;line-height:1.5;color:#aaa}
+.storyreport .guideTxt strong {color:#666}
+.storyreport .guideTxt p {margin:5px 0 0;font-size:12px;color:#2346e4}
+.storyreport .guideTxt span {font-size:0.917em;color:#626262}
+.storyreport ul li:first-child {margin-top:16px}
+.storyreport ul li {position:relative;margin-top:15px;padding-left:90px}
+.storyreport ul li.company .item {padding-left:0}
+.storyreport ul li .item {position:absolute;left:0;top:0;padding-left:9px;font-size:14px;line-height:28px;color:#888}
+.storyreport ul li .item em {font-weight:bold;color:#fe7801}
+.storyreport ul li .item em.icon-bg {display:inline-block;position:absolute;top:50%;left:0;margin-top:-4px;width:6px;height:7px;background:url("//image.alba.kr/m/ResumeBullet_bg.png") no-repeat 0 0;background-size:36px 360px}
+.storyreport ul li .memo {display:block;margin-top:5px;font-size:0.786em;color:#cfaf6a}
+.storyreport ul li input[type='text'],
+.storyreport ul li input[type='email'],
+.storyreport ul li input[type='tel'] {height:28px;padding:0;border:none;border-bottom:1px solid #eee;border-radius:0;font-size:14px;color:#222;line-height:28px}
+.storyreport ul li input::-webkit-input-placeholder {font-size:12px;color:#aaa;-webkit-text-fill-color:#aaa;-webkit-opacity:1;background:transparent}
+.storyreport ul li input:focus {outline:none !important;border-bottom:1px solid #2346e4}
+.storyreport ul li input {width:100%}
+.storyreport ul li.company input {font-weight:bold;letter-spacing:-1px;background:none;border:0 none}
+.storyreport ul li.contents textarea {width:100%;height:110px;padding:5px;box-shadow:none !important;-webkit-appearance:none;border-radius:0;border:1px solid #eee;font-size:14px;color:#222}
+.storyreport ul li.contents textarea:focus {outline:none !important;border:1px solid #2346e4}
+.storyreport p.layerAction {padding-top:15px;text-align:center}
+.storyreport p.layerAction em {display:block;padding:10px 0 15px;font-size:0.786em;line-height:1.4;text-align:left;color:#8c8c8c;border-top:1px solid #959595}
+.storyreport p.layerAction em .input {display:block;margin-top:5px}
+.storyreport p.layerAction .btn {width:140px;height:40px;line-height:40px}
+.storyreport a.close {position:absolute;right:15px;top:15px;width:18px;height:18px;font:0/0 Dotum;color:transparent;background:url('/images/icon1_200.png') no-repeat -288px -544px;background-size:320px 640px}
+
+/* 개인정보동의 */
+.agree-area {margin-top:30px;padding:20px 21px 17px;border:1px solid #eee;background:#f6f6f6}
+.agree-title {padding-bottom:7px;font-size:12px;color:#666}
+.agree-cont p {display:table;width:100%;margin-top:5px}
+.agree-cont p span {display:table-cell;font-size:12px;line-height:1.5;color:#aaa}
+.agree-cont p span:first-child {width:60px;white-space:nowrap}
+.agree-cont p span:nth-child(2) {color:#888}
+.report-agree span.input {display:block;padding:20px 0 0;text-align:left}
+.report-agree span.input label {font-size:14px;color:#222}
+
+/* 취업사기안심서비스 */
+#ReliefService #Section {padding:0}
+.relief-field {padding:18px 20px 20px;background:#fff}
+.relief-field__top {position:relative;padding-bottom:16px;border-bottom:1px solid #f6f6f6}
+.relief-field__top.none {border-bottom:none}
+.relief-field__top .field-title {font-size:18px;line-height:21px;color:#222}
+.relief-field__top .field-icon {display:inline-block;margin:-3px 0 0 2px;width:17px;height:17px;font-size:0;vertical-align:text-top;color:transparent;background:url("//image.alba.kr/m/ReliefBg.png") no-repeat 0 0;background-size:72px 144px}
+html.ios .relief-field__top .field-icon {margin-top:-2px}
+.relief-field__top .beta {margin:4px 0 0 2px;font-size:11px;line-height:13px;color:#438de1}
+.relief-field__top .switch-toggle-btn {position:absolute;top:-5px;right:0}
+
+.switch-toggle-link {display:inline-block;position:absolute;top:-3px;right:0}
+.switch-toggle-link span {display:inline-block;position:relative;padding-left:33px;width:77px;height:28px;box-sizing:border-box;font-size:13px;line-height:28px;border-radius:14px 14px 14px 14px;color:#fff;font-weight:normal;background:#ccc}
+.switch-toggle-link span:before {display:inline-block;content:"미사용";height:28px;line-height:29px}
+.switch-toggle-link.on span:before {content:"사용"}
+.switch-toggle-link.on span {padding-left:16px;background:#ffd200}
+.switch-toggle-link.on span:after {left:inherit;right:2px;box-shadow:0 1px 1px #e0b800}
+.switch-toggle-link span:after {display:inline-block;position:absolute;top:2px;left:2px;content:"";width:24px;height:24px;border-radius:50%;box-shadow:0 1px 1px #b3b3b3;background:#fff}
+
+.field-layer {display:none;position:absolute;top:28px;left:80px;box-sizing:border-box;padding:21px 22px 18px;width:240px;border:2px solid #ffd200;border-radius:5px;background:#fff}
+.field-layer .close_btn {position:absolute;top:12px;right:12px;width:15px;height:15px;text-indent:-9999px}
+.field-layer .close_btn::before {display:block;content:"";position:absolute;top:0;left:50%;width:1px;height:15px;transform:rotate(-135deg);background:#ffd200}
+.field-layer .close_btn::after {display:block;content:"";position:absolute;top:0;left:50%;width:1px;height:15px;transform:rotate(-45deg);background:#ffd200}
+.field-guide .field-guide__title {margin-bottom:9px;font-size:13px;font-weight:bold;line-height:16px;color:#000}
+.field-guide .field-guide__contents {font-size:13px;line-height:18px;color:#666}
+
+.relief-field__contents {padding-top:20px}
+.field-list .field-list__item:first-child {margin-top:0}
+.field-list .field-list__item {margin-top:18px;padding-left:8.5px;text-indent:-8.5px;font-size:12px;line-height:18px;color:#aaa}
+
+.relief-search {position:relative}
+.relief-search .relief-search__btn {display:block;padding:14px 18px;width:17px;height:18px;position:absolute;top:0;right:0;font-size:0;color:transparent;background:url("//image.alba.kr/m/ReliefBg.png") no-repeat 18px -22px;background-size:72px 144px}
+.relief-search input[type="text"].relief-search__input {padding:0 59px 0 12px;width:100%;height:46px;border-radius:0;box-sizing:border-box;border:3px solid #ffd200;-webkit-appearance:none;font-size:18px;font-weight:bold;line-height:46px;color:#222}
+.relief-search input[type="text"].relief-search__input::-webkit-input-placeholder {font-size:14px;line-height:46px;font-weight:normal;color:#aaa;-webkit-text-fill-color:#aaa;-webkit-opacity:1;background:transparent}
+
+.search-result {text-align:center}
+.search-result .search-result__btn {display:inline-block;width:210px;height:45px;border-radius:25px;font-size:16px;font-weight:bold;line-height:45px;color:#000;background:#ffd200}
+.search-result--default {padding:60px 0 85px;font-size:12px;line-height:18px;color:#aaa}
+.search-result--none {display:none;padding:40px 0 109px}
+.search-result--none::before {display:inline-block;content:"";margin-bottom:20px;width:36px;height:36px;background:url("//image.alba.kr/m/ReliefBg.png") no-repeat 0 -72px;background-size:72px 144px}
+.search-result--none .search-result__title {margin-bottom:20px;font-size:16px;line-height:20px;color:#222}
+.search-result--none .search-result__detail {margin-bottom:20px;font-size:12px;line-height:18px;color:#aaa}
+.search-result--yes {display:none;padding:40px 0 109px}
+.search-result--yes::before {display:inline-block;content:"";margin-bottom:20px;width:38px;height:36px;background:url("//image.alba.kr/m/ReliefBg.png") no-repeat 0 -108px;background-size:72px 144px}
+.search-result--yes .search-result__title {margin-bottom:20px;font-size:16px;line-height:20px;color:#222}
+.search-result--yes .search-result__detail {margin-bottom:20px;font-size:12px;line-height:18px;color:#aaa}
+
+.case-list {margin-bottom:20px;padding:15px 20px;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5}
+.case-list__title {margin-bottom:8px;font-size:14px;line-height:17px;text-align:left;color:#666}
+.case-list__field {text-align:left}
+.case-list__field .detail-list li:first-child {margin-top:0}
+.case-list__field .detail-list li {margin-top:5px;font-size:14px;line-height:18px;color:#222}
+
+#agreeModal.modal-layer .filter {z-index:-1}
+.modal-agree__about {font-size:14px;line-height:20px;color:#666}
+.modal-agree__about .point {color:#222}
+a.modal-agree__link {display:inline-block;margin-top:8px;text-decoration:underline;font-size:12px;line-height:20px;color:#aaa}
+
+/* 4대 사회보험/두루누리 지원사업 */
+.insurance__head * {font-size:0;color:transparent}
+.insurance__head img {width:100%}
+.insurance__content * {font-size:0;color:transparent}
+.insurance__content img {width:100%}
+.insurance__tab {position:relative}
+.insurance__tab a {position:absolute;top:23%;left:49.5%;width:43%;height:51%}
+.insurance__tab--support a {left:7.5%}
+.insurance-support__title {position:relative}
+.insurance-support__video {position:absolute;top:45%;left:7.7%;width:84.6%;height:46.2%}
+
+/* 청소년근로보호센터 */
+#ProtectionCenter img {width:100%}
+#Section.protection {padding:8px 0 0;background-color:#fff}
+.protection__header {margin-bottom:38px}
+.protection__navigation {margin:0 10px}
+.protection__navigation::after {content:'';clear:both;display:table;width:100%;height:0}
+.protection-nav-btn {position:relative;float:left;width:50%;height:68px;padding:14px 0;box-sizing:border-box;line-height:40px;text-align:center;color:#222}
+.protection-nav-btn::after {content:'';position:absolute;bottom:0;left:0;width:100%;height:4px}
+.protection-nav-btn.on::after {background-color:#ffd200}
+
+.protection__contents-inner {display:none;margin:0 20px;padding-bottom:70px}
+.protection__contents-inner.active {display:block}
+.protection__explain-title {margin-bottom:25px;font-size:28px;font-weight:bold;line-height:1.36;letter-spacing:-0.1em}
+.protection__explain-title--first {margin-bottom:22px}
+.protection__explain-data {margin-bottom:20px;font-size:18px;line-height:1.56}
+.protection__explain-data--btn:last-child {margin-bottom:0}
+.protection__sub-explain {padding:20px 0 68px;font-size:16px;letter-spacing:-0.3px !important;color:#979797}
+
+.protection-tel-btn {display:block;height:50px;box-sizing:border-box;border:1px solid #d5d5d5;line-height:48px;text-align:center}
+.protection-tel-text {display:inline-block;position:relative;padding-right:32px}
+.protection-tel-text::after {content:'';position:absolute;top:50%;;right:0;width:24px;height:24px;-webkit-transform:translate(0, -50%);background:url('//image.alba.kr/m/protectionCenter.png') no-repeat 0 0;background-size:72px 72px}
+.protection-tel-text--sms::after {background-position:-36px 0}
+.protection-tel-text--kakao::after {background-position:0 -36px}
+.protection-tel-emphasis {font-weight:bold}
+
+.protection__ten-item {position:relative;padding:0 0 50px 42px}
+.protection__ten-item:last-child {padding-bottom:0}
+.protection-ten-num {position:absolute;top:-2px;left:0;font-size:24px;font-weight:bold;letter-spacing:-0.5px;color:#979797}
+html.ios {top:0}
+
+.protection__ten-title {display:block;padding-bottom:8px;font-size:18px;font-weight:bold;line-height:1.33;letter-spacing:-0.9px}
+.protection__ten-guide {line-height:1.57;letter-spacing:-0.5px;color:#979797}
+
+/* 알Live */
+.swiper-slide-img {width:100%}
+.swiper-pagination {bottom:30px;left:0;width:100%;text-align:center}
+.swiper-pagination .swiper-pagination-bullet {width:8px;height:8px;margin:0 7px;background-color:#fff;opacity:0.5}
+.swiper-pagination .swiper-pagination-bullet-active {opacity:1}
+
+#LiveJobMain #Section {padding:0;background-color:#fff}
+.livejobmain__banner {margin:0 0 20px}
+.livejobmain__list {background-color:#fff}
+.livejobmain__list>li {padding-bottom:110px}
+.livejobmain__list img,
+.livejobmain__list iframe {display:block;width:100%;height:55.56vw}
+.livejobmain__list a,
+.livejobmain__list a>span {display:block}
+.livejobmain__list-type {padding:20px 20px 0;font-weight:bold;font-size:15px}
+.livejobmain__list-type::after {content:"";display:block;width:25px;height:3px;margin-top:9px;font-size:1px;line-height:1;background-color:#222}
+.livejobmain__list-title {overflow:hidden;max-height:68px;padding:10px 20px 0;font-weight:bold;font-size:24px;line-height:1.42;letter-spacing:-0.1em}
+.livejobmain__list-content {overflow:hidden;max-height:44px;padding:4px 20px 0;font-size:15px;line-height:1.47}
+.livejobmain__list-button {padding:10px 20px 0}
+.livejobmain__list-button>img {width:105px;height:45px}
+html.ios .livejobmain__list-title {letter-spacing:-0.05em}
+
+#LiveDetail #Section>.livedetail {padding:0}
+.livedetail__content {margin-bottom:20px;background-color:#fff}
+.livedetail__content iframe,
+.livedetail__content-top img {display:block;width:100%;height:55.56vw}
+.livedetail__content-body img {max-width:100%}
+.livedetail__list {margin-bottom:20px;background-color:#fff}
+.livedetail__list-h1 {padding:50px 20px 10px;border-bottom:2px solid #ffd200;font-weight:bold;font-size:18px}
+.livedetail__list-h2 {padding:22px 20px 0;font-weight:bold;font-size:20px}
+.livedetail__list-area {padding:0 20px 18px;font-size:15px;color:#666}
+.livedetail__list-area>span {display:block;padding-top:8px}
+.livedetail__list-delete {display:inline-block;width:20px;height:20px;margin:-1px 0 0 2px;font-size:0;vertical-align:top;color:transparent;background:url('//image.alba.kr/m/live/livedetail.png') no-repeat 0 0;background-size:60px 30px}
+html.ios .livedetail__list-delete {margin-top:-2px}
+.livedetail__list-list>li {border-top:1px solid #eee}
+.livedetail__list-list>li.noInfo {padding:30px 20px;text-align:center}
+.livedetail__list-list a {display:block;padding:20px 20px 15px}
+.livedetail__list-list a>span {display:block}
+.livedetail__list-list .workComnm {margin-bottom:5px;font-weight:bold;font-size:13px}
+.livedetail__list-list .title {font-size:16px;line-height:1.44}
+.livedetail__list-action {display:block;height:50px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;font-weight:bold;font-size:16px;line-height:50px;text-align:center}
+.livedetail__list-action::after {content:"";display:inline-block;width:8px;height:14px;margin:18px 0 0 6px;vertical-align:top;background:url('//image.alba.kr/m/live/livedetail.png') no-repeat -30px 0;background-size:60px 30px}
+.livedetail__banner>li {position:relative;display:table;width:100%;height:100px;border-bottom:1px solid #fff;background-position:center;background-size:cover}
+.livedetail__banner>li::after {content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:0.3}
+.livedetail__banner>li>a {z-index:1;position:relative;display:table-cell;height:100%;padding:0 20px;font-size:18px;line-height:1.44;word-break:keep-all;text-align:center;vertical-align:middle;color:#fff}
+
+#LiveJobList .headerWrap>h1 {padding-right:10px}
+.livejoblist__image>img {max-width:100%}
+.livejoblist .jobListHead>p {padding-top:15px}
+
+#LiveOrderMain #Section>.liveordermain {padding:0}
+.liveordermain__h1 {position:fixed;top:44px;right:0;bottom:0;left:0}
+.liveordermain__h1 img {width:100%;vertical-align:top}
+
+#LiveOrderSelect #Section {background-color:#fff}
+#LiveOrderSelect #Section>.liveorderselect {padding:30px 20px 20px}
+.liveorderselect h1 {margin-bottom:30px}
+.liveorderselect h1>img {height:25px}
+.liveorderselect h1::after {content:"";display:block;width:25px;height:3px;margin-top:20px;background-color:#333}
+.liveorderselect input {position:absolute}
+.liveorderselect__action>a {display:block}
+.liveorderselect__action img {max-width:100%}
+.liveorderselect__area-list {overflow:hidden;width:100%;padding-bottom:55px}
+.liveorderselect__area-list>li {float:left;width:31%;margin:0 0 15px 3.5%}
+.liveorderselect__area-list>li:nth-child(3n+1) {margin-left:0}
+.liveorderselect__area-list label {display:block;box-sizing:border-box;height:50px;border:1px solid #eee;border-radius:25px;font-size:18px;line-height:50px;text-align:center;background-color:#fff}
+.liveorderselect__area-list label::before {content:"";display:inline-block;width:14px;height:18px;margin:16px 5px 0 0;vertical-align:top;background:url('//image.alba.kr/m/live/LiveOrderSelect_icon.png') no-repeat 0 0;background-size:28px 18px}
+html.ios .liveorderselect__area-list label::before {margin-top:15px}
+.liveorderselect__area-list input:checked  + label {border-color:#e7f0ff;font-weight:bold;color:#2346e4;background-color:#e7f0ff}
+.liveorderselect__area-list input:checked  + label::before {background-position:-14px 0}
+.liveorderselect__type-list {overflow:hidden;margin:0 -10px;padding-bottom:35px}
+.liveorderselect__type-list>li {display:table;float:left;width:33.33%;margin:0 0 15px 0}
+.liveorderselect__type-list>li:nth-child(3n+1) {margin-left:0}
+.liveorderselect__type-list label {display:table-cell;box-sizing:border-box;width:100%;height:32vw;border-radius:50%;text-align:center;vertical-align:middle;background-color:#fff}
+.liveorderselect__type-list label::before {content:"";display:block;width:50px;height:50px;margin:0 auto 4px;background:url('//image.alba.kr/m/live/LiveOrderSelect_type1.png') no-repeat 0 0;background-size:150px 150px}
+.liveorderselect__type-list--A label::before {background-position:0 0}
+.liveorderselect__type-list--B label::before {background-position:-50px 0}
+.liveorderselect__type-list--C label::before {background-position:-100px 0}
+.liveorderselect__type-list--D label::before {background-position:0 -50px}
+.liveorderselect__type-list--E label::before {background-position:-50px -50px}
+.liveorderselect__type-list--F label::before {background-position:-100px -50px}
+.liveorderselect__type-list--G label::before {background-position:0 -100px}
+.liveorderselect__type-list--H label::before {background-position:-50px -100px}
+.liveorderselect__type-list--I label::before {background-position:-100px -100px}
+.liveorderselect__type-list input:checked  + label {font-weight:bold;color:#2346e4;background-color:#e7f0ff}
+
+#LiveOrderEvent #Section {background-color:#fff}
+#LiveOrderEvent #Section>.liveorderevent {padding:0}
+.liveorderevent img  {max-width:100%;vertical-align:top}
+.liveorderevent__guide {text-align:center;background-color:#ffd200}
+.liveorderevent__push {position:relative;text-align:center;background-color:#fff}
+.liveorderevent__push>img {margin-top:-1px}
+.liveorderevent__push-setup {position:absolute;top:0;left:0;width:100%;height:100%;font-size:0;color:transparent}
+.liveorderevent__push-check {overflow:hidden;position:absolute;top:68.8%;right:11%;width:44px;height:24px}
+.liveorderevent__push--yes .liveorderevent__push-check {top:63.3%}
+.liveorderevent__push-check>input {position:absolute;top:-24px}
+.liveorderevent__push-check>label {display:block;width:44px;height:24px;border-radius:15px;font-size:0;color:transparent;background-color:#ddd}
+.liveorderevent__push-check>label::after {content:"";position:absolute;top:2px;left:1.5px;box-shadow:1px 1px 1px 0 rgb(0, 0, 0, 0.2);width:20px;height:20px;border-radius:50%;background-color:#fff;-webkit-transition:left .2s ease-out;transition:left .2s ease-out}
+.liveorderevent__push-check>input:checked + label {background-color:#ffd200}
+.liveorderevent__push-check>input:checked + label::after {left:22px}
+.liveorderevent__goods {margin-bottom:35px;padding:50px 20px 0}
+.liveorderevent__goods-h1 {margin-bottom:30px}
+.liveorderevent__goods-h1>img {height:25px}
+.liveorderevent__goods-h1::after {content:"";display:block;width:25px;height:3px;margin-top:20px;background-color:#333}
+.liveorderevent__goods-list {overflow:hidden;width:100%;padding-bottom:20px;border-bottom:1px solid #eee}
+.liveorderevent__goods-list>li {float:left;width:31%;margin:0 0 30px 3.5%}
+.liveorderevent__goods-list>li:nth-child(3n+1) {margin-left:0}
+.liveorderevent__goods-list label {display:block;box-sizing:border-box;width:100%;line-height:1.43;word-spacing:-0.1em;text-align:center;background-color:#fff}
+.liveorderevent__goods-list label::before {content:"";display:block;width:96px;height:96px;margin:0 auto 10px;background:url('//image.alba.kr/m/live/LiveOrderEvent_goods.png') no-repeat 0 0;background-size:300px 300px}
+.liveorderevent__goods-list--1 label::before {background-position:0 0}
+.liveorderevent__goods-list--2 label::before {background-position:-100px 0}
+.liveorderevent__goods-list--3 label::before {background-position:-200px 0}
+.liveorderevent__goods-list--4 label::before {background-position:0 -100px}
+.liveorderevent__goods-list--5 label::before {background-position:-100px -100px}
+.liveorderevent__goods-list--6 label::before {background-position:-200px -100px}
+.liveorderevent__goods-list--7 label::before {background-position:0 -200px}
+.liveorderevent__goods-list--8 label::before {background-position:-100px -200px}
+.liveorderevent__goods-list--9 label::before {background-position:-200px -200px}
+.liveorderevent__goods-list label::after {content:"";display:block;width:26px;height:26px;margin:10px auto 0;background:url('//image.alba.kr/m/live/LiveOrderEvent_input.png') no-repeat 0 0;background-size:30px 60px}
+.liveorderevent__goods-list input:checked  + label::after {background-position:0 -30px}
+.liveorderevent__agree {margin-bottom:40px;padding:0 20px}
+.liveorderevent__agree-input {overflow:hidden}
+.liveorderevent__agree-input input {position:absolute;left:-30px}
+.liveorderevent__agree-input label::before {content:"";display:inline-block;width:26px;height:26px;margin:-5px 5px 0 0;vertical-align:top;background:url('//image.alba.kr/m/live/LiveOrderEvent_input.png') no-repeat 0 0;background-size:30px 60px}
+.liveorderevent__agree-input input:checked  + label::before {background-position:0 -30px}
+
+.liveorderevent__agree-view {position:absolute;right:20px;font-size:13px;text-decoration:none;border-bottom:1px solid #333}
+.liveorderevent__agree-detail {display:none;margin-top:10px;padding:20px;border:1px solid #eee;background-color:#f6f6f6}
+.liveorderevent__agree-detail>dt {margin-bottom:10px;font-weight:bold;font-size:12px;color:#666}
+.liveorderevent__agree-detail>dd {padding-left:14px;font-size:12px;line-height:1.5;color:#888}
+.liveorderevent__agree-detail>dd>span {position:absolute;margin-left:-14px}
+.liveorderevent__action {margin-bottom:40px;padding:0 20px;text-align:center}
+.liveorderevent__action>a {display:block}
+.liveorderevent__action>a>img {max-width:100%}
+.liveorderevent__caution {padding:30px 20px;background-color:#333}
+.liveorderevent__caution-h1 {margin-bottom:12px;font-weight:bold;font-size:16px;color:#fff}
+.liveorderevent__caution-list>li {padding-left:8px;font-size:12px;line-height:1.75;word-break:keep-all;color:#ccc}
+.liveorderevent__caution-list>li::before {content:"·";position:absolute;left:20px}
+.liveorderevent__modal-wrap {z-index:99999;position:fixed;top:50%;left:20px;right:20px;margin-top:-225px}
+.liveorderevent__modal-wrap>img {max-width:100%}
+.liveorderevent__modal-action {position:absolute;bottom:0;left:0;width:100%;height:14%;font-size:0;color:transparent}
+.liveorderevent__modal-close {position:absolute;top:0;right:0;width:17%;height:12%;font-size:0;color:transparent}
+
+/* 오천만알바 */
+body.unique #Section {background-color:#fff}
+
+.uniquealba__title>img {width:100%}
+.uniquealba__section {padding:15px;background-color:#fff}
+
+#UniqueAlbaNow {padding-bottom:0}
+.uniquealba-now__list-item{margin-top:15px}
+.uniquealba-now__list-item:first-child{margin-top:0}
+.uniquealba-now__image>img {width:100%}
+.uniquealba-now__title {padding:15px;border-right:1px solid #e5e5e5;border-left:1px solid #e5e5e5;font-size:15px}
+.uniquealba-now__title>strong {display:block;margin-bottom:5px;font-size:17px}
+.uniquealba-now__information {padding:0 15px 15px;border-right:1px solid #e5e5e5;border-left:1px solid #e5e5e5}
+.uniquealba-now__information-title {position:absolute;width:66px;margin-bottom:3px;font-size:13px;line-height:1.38;color:#999}
+.uniquealba-now__information-content {margin-bottom:3px;padding-left:66px;font-size:13px;line-height:1.38}
+.uniquealba-now__action {text-align:center;background-color:#ffe000}
+.uniquealba-now__action-link {display:block;text-align:center}
+.uniquealba-now__action-link>img {height:45px}
+
+.uniquealba-last__list-item {position:relative;margin-bottom:15px;padding:15px 15px 0;border:1px solid #e5e5e5}
+.uniquealba-last__image {position:absolute}
+.uniquealba-last__image>img {width:110px;height:73px}
+.uniquealba-last__title {box-sizing:border-box;min-height:73px;padding:5px 0 0 120px;font-size:15px;line-height:1.33;letter-spacing:-0.1em}
+.uniquealba-last__title>strong {display:block;margin-bottom:3px}
+.uniquealba-last__information {margin-top:15px;padding:15px 0;border-top:1px solid #eee}
+.uniquealba-last__information-title {position:absolute;width:66px;margin-bottom:3px;font-size:13px;line-height:1.38;color:#999}
+.uniquealba-last__information-content {margin-bottom:3px;padding-left:66px;font-size:13px;line-height:1.38}
+.uniquealba-last__action {margin:0 -15px;border-top:1px solid #e5e5e5;text-align:center;background-color:#fff}
+.uniquealba-last__action-link {display:block;text-align:center}
+.uniquealba-last__action-link>img {height:40px}
+
+.uniquealba-detail__title>img {width:100%}
+.uniquealba-detail__subtitle {padding:15px 10px 10px;border-bottom:1px solid #222;font-weight:bold;font-size:20px;letter-spacing:-0.1em}
+.uniquealba-detail__list {padding:10px}
+.uniquealba-detail__list-item {margin-bottom:10px}
+.uniquealba-detail__list-video {display:block;width:100%;height:53vw}
+.uniquealba-detail__list-content {padding:15px;border:1px solid #eee;background-color:#fff}
+.uniquealba-detail__list-title {font-size:15px;line-height:1.5}
+.uniquealba-detail__list-detail {margin-top:7px;font-size:13px;line-height:1.62;color:#666}
+
+.layer-phishing {z-index:99999;position:fixed;top:0;right:0;bottom:0;left:0}
+.layer-phishing__wrap {z-index:99999;position:fixed;top:50%;right:30px;left:30px;margin-top:-195px;border-radius:10px;background-color:#fff}
+.layer-phishing__title {padding:18px 20px 15px;border-radius:10px 10px 0 0;font-weight:normal;font-size:17px;letter-spacing:-0.1em;word-spacing:-0.1em;background:#ffe000 url('//image.alba.kr/m/icon_phishing.png') no-repeat 95% 23px;background-size:48px 43px}
+.layer-phishing__title>span {display:block;margin-bottom:5px;font-size:16px}
+.layer-phishing__title>strong {font-size:18px}
+.layer-phishing__list {padding:20px 20px 0 31px}
+.layer-phishing__list>li {position:relative;margin-bottom:10px;font-size:13px;line-height:1.4;word-break:keep-all}
+.layer-phishing__list>li::before {content:"";position:absolute;top:8px;left:-10px;width:3px;height:3px;border-radius:50%;background-color:#999}
+.layer-phishing__guide {padding:0 31px;font-size:12px;line-height:1.4;word-break:keep-all;color:#666}
+.layer-phishing__guide>strong {font-weight:normal;color:#ff4751}
+.layer-phishing__view {padding:13px 0 20px}
+.layer-phishing__view>a {display:block;width:200px;height:40px;margin:0 auto;border-radius:20px;font-weight:bold;font-size:16px;line-height:40px;text-align:center;background-color:#ffe000}
+.layer-phishing__action {height:45px;padding:0 15px 0 20px;border-radius:0 0 5px 5px;line-height:45px;background-color:#f5f5f5}
+.layer-phishing__action label {color:#999 !important}
+.layer-phishing__action-close {float:right;height:45px;padding:0 10px;font-size:13px;line-height:45px}

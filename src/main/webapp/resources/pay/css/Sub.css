@@ -1,0 +1,2316 @@
+@charset "utf-8";
+
+/* base */
+html,body {margin:0;padding:0}
+body {min-width:320px;font-size:14px;font-family:'Noto sans','Droid sans','Apple SD Gothic Neo','AppleGothicNeoSD','Microsoft NeoGothic','Malgun Gothic',Sans-serif;line-height:1.2;letter-spacing:-0.05em;color:#222;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,.1)}
+html.ios body {letter-spacing:-0.02em}
+html.fixed,
+body.fixed {overflow:hidden}
+body.search {padding-top:44px}
+body.sub {padding-top:0}
+html.hybrid body {padding:0 !important}
+html.layerOpen,
+body.layerOpen {position:relative;overflow:hidden;touch-action:none;-webkit-touch-action:none}
+div,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,fieldset,legend,iframe,table,th,td,a {margin:0;padding:0;font-size:1em;color:#222}
+header, footer, section, article, aside, nav, address, hgroup, details, menu, figure, figcaption {display:block}
+table {font-size:12px}
+ul,ol,li {list-style:none}
+form {margin:0}
+input,select,textarea {letter-spacing:-0.05em;vertical-align:middle;font-size:12px;color:#222;-webkit-appearance:none;outline:none}
+input[type="search"] {-webkit-appearance:textfield;box-sizing:content-box}
+input[type="radio"],
+input[type="checkbox"] {opacity:0;opacity:1\9}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {height:32px;margin:0;padding:0 7px;background:#fff;border:1px solid #ddd;resize:none;box-sizing:border-box;border-radius:0}
+textarea {margin:0;padding:7px;background:#fff;border:1px solid #ddd;resize:none;box-sizing:border-box}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus {border-color:#5b79fe}
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="tel"]:disabled,
+input[type="number"]:disabled,
+textarea:disabled {background-color:#f8f8f9}
+select {height:20px;padding:0;color:#757575;background:url('//image.alba.kr/m/select7.png') no-repeat 100% 50%;background:none\0;*background:none;background-size:30px 10px;border:0 none;border-radius:0;-webkit-appearance:none}
+select:focus {border-color:#5b79fe}
+@-moz-document url-prefix() {
+  select {-moz-appearance:none;text-indent:0.01px;text-overflow:""}
+}
+img, fieldset, button {border:0 none}
+img {vertical-align:top}
+hr {display:none}
+em,address,i {font-style:normal}
+caption, legend, .hide {overflow:hidden;visibility:hidden;position:absolute;top:-999em;left:-999em;width:0;height:0;font-size:0;padding:0}
+.displayNone {display:none}
+.filter {overflow:hidden;z-index:99998;position:fixed;left:0;top:0;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.filterHeader {overflow:hidden;z-index:99998;position:fixed;left:0;top:44px;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.cursorDefault {cursor:default}
+
+::-webkit-input-placeholder {color:#bbb}
+:-ms-input-placeholder {color:#bbb}
+::placeholder {color:#bbb}
+
+/* link */
+a,a:visited,a:hover,a:active {text-decoration:none}
+
+/* action btn (close) */
+.cssIcon-close {position:relative;display:inline-block;}
+.cssIcon-close::before {content:"";position:absolute;left:0;top:50%;width:100%;transform:rotate(45deg);-webkit-transform:rotate(45deg)}
+.cssIcon-close::after {content:"";position:absolute;left:0;top:50%;width:100%;transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}
+/* action btn (arrow) */
+.cssIcon-arrow {position:relative;display:inline-block;width:10px;height:10px;line-height:0;font-size:0;font-family:Dotum;color:transparent}
+.cssIcon-arrow::after {content:"";position:absolute;left:0;width:8px;height:8px;border:2px solid #666;border-right-width:0 !important;border-bottom-width:0 !important}
+.cssIcon-arrow.top::after {transform:rotate(45deg);-webkit-transform:rotate(45deg)}
+.cssIcon-arrow.right::after {left:-4px;transform:rotate(135deg);-webkit-transform:rotate(135deg)}
+.cssIcon-arrow.bottom::after {transform:rotate(225deg);-webkit-transform:rotate(225deg)}
+.cssIcon-arrow.left::after {left:2px;transform:rotate(315deg);-webkit-transform:rotate(315deg)}
+/* action btn (switch[toggle]) */
+.cssIcon-switch {box-sizing:border-box;position:relative;display:inline-block;width:44px;height:18px;padding-right:7px;font-size:12px;font-weight:bold;line-height:16px;text-align:right;vertical-align:middle;border:1px solid #a6abad;border-radius:8px;background:#a6abad;color:#fff !important}
+.cssIcon-switch::after {content:"";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:#fff}
+.cssIcon-switch.on {padding-left:7px;text-align:left;border:1px solid #ffcf1c;border-radius:8px;background:#ffd43d;color:#fff !important}
+.cssIcon-switch.on::after {left:26px;top:0}
+/* action btn (hamburgerbtn) */
+.cssIcon-hamburger {position:relative;display:block;width:22px;height:15px;line-height:0;font-size:0;font-family:Dotum;color:transparent}
+.cssIcon-hamburger::before {content:"";display:block;position:absolute;left:0;top:0;width:22px;height:2px;border-radius:4px;box-shadow:0 6px #222,0 12px #222;-webkit-box-shadow:0 6px #222,0 12px #222;background:#222;}
+/* action btn (check) */
+.cssIcon-check {position:relative;display:inline-block;width:15px;height:15px}
+.cssIcon-check::before {content:'';position:absolute;top:8px;left:4px;width:2px;height:8px;background-color:#ffca00;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
+.cssIcon-check::after {content:'';position:absolute;top:5px;left:10px;width:2px;height:12px;background-color:#ffca00;border-radius:2px;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+
+/* Dropdown control */
+.selectBox-dropdown {overflow:hidden;position:relative;display:inline-block;min-width:50px;height:17px;font-size:12px;text-align:left;vertical-align:top;cursor:default;color:#757575;border-bottom:1px solid #959595;box-sizing:border-box}
+.selectBox-dropdown:focus,
+.selectBox-dropdown:focus .selectBox-arrow {border-color:#666}
+.selectBox-dropdown .selectBox-label {overflow:hidden;display:block;width:auto !important;padding:0 0 0 1px;white-space:nowrap;box-sizing:border-box}
+.selectBox-dropdown .selectBox-arrow {position:absolute;top:0;right:0;width:9px;height:100%;background:url('//image.alba.kr/m/select.png') no-repeat 100% 100%;background-size:9px 9px}
+.selectBox-dropdown-menu {z-index:99999;overflow:auto;-webkit-overflow-scrolling:touch;position:absolute;max-height:200px;min-height:1em;margin:5px 0;background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.4)}
+.selectBox-inline {overflow:auto;display:inline-block;background:#fff}
+.selectBox-inline:focus {border-color:#666}
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a {display:block;margin:0;padding:0;cursor:default}
+.selectBox-options {z-index:999999}
+.selectBox-options.selectBox-options-top {margin-top:-3px}
+.selectBox-options.selectBox-options-bottom {margin-top:6px}
+.selectBox-options li a {overflow:hidden;padding:10px 5px;font-size:12px;white-space:normal}
+.selectBox-options li.selectBox-hover a {background-color:#eee}
+.selectBox-options li.selectBox-disabled a {color:#999}
+.selectBox-options li.selectBox-selected a {background-color:#e0e4eb}
+.selectBox-options .selectBox-optgroup {padding:10px 7px;font-weight:bold;white-space:normal;color:#666;background:#eee}
+.selectBox.selectBox-disabled {color:#999 !important}
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow {border-color:#666;opacity:0.4;filter:alpha(opacity=40)}
+.selectBox-inline.selectBox-disabled {color:#999 !important}
+.selectBox-inline.selectBox-disabled .selectBox-options a {background-color:transparent !important}
+.orderby .selectBox-dropdown {width:auto !important;height:32px;padding:0 21px 0 10px;font-size:12px;line-height:32px;color:#666;background-color:#fff;border:1px solid #e1e1e1;border-radius:25px}
+.orderby .selectBox-dropdown .selectBox-arrow {overflow:hidden;position:absolute;top:13px;right:8px;width:8px;height:4px;background:url('//image.alba.kr/m/select1.png') no-repeat 0 0;background-size:8px 4px}
+#CustomJobList .selectBox-options.selectBox-options-bottom {min-width:92px;overflow:hidden;margin-left:-5px}
+
+/* skipNav */
+.skipNav {z-index:1;position:absolute}
+.skipNav li a {position:absolute;top:-999em;left:10px;width:120px;height:28px;padding:0 5px;line-height:28px;text-align:center;background-color:#fee49b;border:1px solid #222}
+.skipNav li a:focus,
+.skipNav li a:active {top:14px}
+
+/* Header */
+body.sub #Header {display:none}
+body.scroll-main .navPrimary,
+body.scroll-sub .header-sub {z-index:99999;position:fixed;top:0;left:0;width:100%;box-sizing:border-box}
+
+.header-main {position:relative;padding-top:4px;background-color:#fff}
+.header-main__top-title {width:85px;margin:auto}
+.header-main__top-title>a {display:block;padding:9px 0}
+.header-main__top-title img {width:85px;height:22px}
+.header-main__top>span {position:absolute;top:0}
+.header-main__top>span>a {display:block;width:24px;height:24px;padding:12px 10px 8px;font-size:0;color:transparent}
+.header-main__top>span>a::before {content:"";display:block;width:24px;height:24px;background-image:url('//image.alba.kr/m/header_202008.png');background-size:144px auto;background-repeat:no-repeat}
+.header-main__top-directory {left:4px}
+.header-main__top-directory>a::before {background-position:-24px 0}
+.header-main__top-directory>a:active::before {background-position:-24px -24px}
+.header-main__top-service {right:3px}
+.header-main__top-service>a::before {background-position:0 0}
+.header-main__top-service>a:active::before {background-position:0 -24px}
+.header-main__search {padding:4px 15px 6px}
+.header-main__search-wquery {position:relative;display:block;height:34px}
+.header-main__search-wquery::after {content:"";position:absolute;top:5px;right:5px;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat -120px -48px;background-size:144px auto}
+.header-main__search-wquery>input {display:block;box-sizing:border-box;width:100%;height:34px;padding-right:34px;padding-left:10px;line-height:38px;border:0 none;border-radius:2px;letter-spacing:-0.05em;background-color:#f5f5f5}
+html.ios .header-main__search-wquery>input {line-height:36px;}
+
+.header-sub {width:100%;background-color:#fff;border-bottom:1px solid #ebebeb}
+.header-sub--arrowcase .header-sub__title {padding:0 100px 0 39px !important} /*back버튼일 경우(햄버거x)*/
+.header-sub__title {box-sizing:border-box;height:44px;padding:0 100px 0 50px;font-weight:normal;font-size:17px;line-height:44px;color:#000}
+html.ios .header-sub__title {line-height:46px}
+.header-sub__action:after {content:'';clear:both;display:block}
+.header-sub__action a {display:block;width:24px;height:24px;padding:10px 6px;font-size:0;color:transparent}
+.header-sub__action-directory {position:absolute;top:0;left:8px}
+.header-sub__action-directory a::before {content:"";display:block;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat -24px 0;background-size:144px auto}
+.header-sub__action-directory a:active::before {background-position:-24px -24px}
+.header-sub__action-search {position:absolute;top:0;right:42px}
+.header-sub__action-search a::before {content:"";display:block;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat -120px 0;background-size:144px auto}
+.header-sub__action-search a:active::before {background-position:-120px -24px}
+.header-sub__action-service {position:absolute;top:0;right:8px}
+.header-sub__action-service a::before {content:"";display:block;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat 0 0;background-size:144px auto}
+.header-sub__action-service a:active::before {background-position:0 -24px}
+.header-sub__action-prev {position:absolute;top:0;left:5px}
+.header-sub__action-prev a {display:block;width:16px;height:24px;padding:10px;font-size:0;color:transparent}
+.header-sub__action-prev a::before {content:"";display:block;width:16px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat -76px -48px;background-size:144px auto}
+.header-sub__action-prev a:active::before {background-position:-76px -72px}
+html.app body.person .header-sub,
+html.app body.story .header-sub,
+html.app body.contract .header-sub,
+html.app body#AreaKindList .header-sub,
+html.app body#PersonVivList .header-sub {border-bottom:0 none}
+html.app .header-sub__title,
+html.app .header-sub__action {display:none}
+html.app.ios body.biz .header-sub__title,
+html.app.ios body.biz .header-sub__action,
+html.mbiz body.biz .header-sub__title,
+html.mbiz body.biz .header-sub__action {display:block}
+
+.headerWrap {z-index:200;overflow:hidden;position:fixed;left:0;top:0;right:0;width:100%;border-bottom:1px solid #ebebeb;background-color:#fff}
+.headerWrap h1 {overflow:hidden;box-sizing:border-box;height:44px;padding:0 100px 0 40px;font-weight:normal;font-size:17px;line-height:44px;color:#000}
+.headerWrap.pageEnd h1 {padding-left:15px !important}
+.headerWrap .backBtn {position:absolute;top:0;left:5px;width:16px;height:24px;padding:10px;font-size:0;color:transparent}
+.headerWrap .backBtn::before {content:"";display:block;width:16px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat -76px -48px;background-size:144px auto}
+.headerWrap .backBtn:active::before {background-position:-76px -72px}
+.headerWrap .closeBtn {position:absolute;top:0;right:4px;padding:10px;width:24px;height:24px;font-size:0;color:transparent}
+.headerWrap .closeBtn::before {content:'';display:block;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png')-24px -48px no-repeat;background-size:144px auto}
+/* .headerWrap.pageEnd .closeBtn::before {background-position:-24px -96px} */
+
+body#Search .headerWrap, body#BrandSiteJobList .headerWrap {border-bottom:0}
+html.ios .headerWrap h1 {line-height:46px}
+
+.headerWrap .detailAction {position:absolute;top:0;right:8px;height:44px}
+.headerWrap .detailAction>a {float:left;width:24px;height:24px;padding:10px 6px;font-size:0;color:transparent}
+.headerWrap .detailAction>a::before {content:"";display:block;width:24px;height:24px;background:url('//image.alba.kr/m/header_202008.png') no-repeat;background-size:144px auto}
+.headerWrap .detailAction>a.scrapBtn::before {background-position:-96px -48px}
+.headerWrap .detailAction>a:active.scrapBtn::before {background-position:-96px -72px}
+.headerWrap .detailAction>a.on.scrapBtn::before {background-position:-96px -96px}
+.headerWrap .detailAction>a.shareBtn::before {background-position:-72px 0}
+.headerWrap .detailAction>a:active.shareBtn::before {background-position:-72px -24px}
+.headerWrap .detailAction>a.otherBtn::before {background-position:-96px 0}
+.headerWrap .detailAction>a:active.otherBtn::before {background-position:-96px -24px}
+
+.headerWrap .submitAction {position:absolute;top:0;right:0}
+.headerWrap .submitAction>a {display:block;height:44px;padding:0 15px;line-height:44px;color:#000}
+html.ios .headerWrap .submitAction>a {line-height:46px}
+
+body.sub .subTab {overflow:hidden;height:36px;background-color:#fff}
+body.sub .subTab li {float:left}
+body.sub .subTab li a {display:block;height:24px;padding-top:10px;text-align:center;color:#222}
+body.sub .subTab li.on a {border-bottom:2px solid #ffd100}
+
+/*
+* ios 헤더 픽스 래퍼 사용 페이지
+* C:\SVN\m.alba.co.kr\job\JobDetail.asp
+* C:\SVN\m.alba.co.kr\story\AlbaDicDetail.asp
+*/
+
+html.ios .header-fixed-wrapper {z-index:999;position:fixed;left:0;top:0;right:0;width:100%}
+html.ios .header-fixed-wrapper .headerWrap {position:relative}
+html.ios .header-fixed-wrapper .summary-wrap {position:relative;top:0}
+
+/* navPrimary */
+.navPrimary {overflow:hidden;position:relative;background-color:#fff}
+.navPrimary-menu {overflow-x:auto;height:44px}
+.navPrimary-menu::-webkit-scrollbar {display:none}
+.navPrimary-menu-list {z-index:1;overflow:hidden;height:44px;padding:0 9px 0 2px}
+.navPrimary-menu-list>li {float:left;margin-left:9px;text-align:center}
+.navPrimary-menu-list>li>a {position:relative;display:block;height:44px;padding:0 6px;box-sizing:border-box;font-size:16px;line-height:44px;white-space:nowrap;color:#000}
+.navPrimary-menu-list>li.on>a::before {content:"";position:absolute;right:3px;bottom:0;left:3px;height:1px;border-radius:1px;background-color:#222}
+body.biz .navPrimary-menu-list>li.on>a::before {display:none}
+
+.submenu-wrapper {display:none;position:absolute;left:0;bottom:0;right:0;overflow-x:auto;overflow-y:hidden;height:40px;padding:0 11px;text-align:left;background-color:#fff}
+.submenu-wrapper::-webkit-scrollbar {display:none}
+.submenu-wrapper:after {content:'';z-index:1;position:absolute;left:0;bottom:0;right:0;width:100%;height:1px;background-color:#f2f2f2}
+.navPrimary-menu-list .on .submenu-wrapper {display:block}
+.submenu__list {z-index:2;position:relative;white-space:nowrap}
+.submenu__list>li {display:inline-block;}
+.submenu__list>li>a {display:block;box-sizing:border-box;height:40px;line-height:40px;padding:0 5px;color:#999}
+.submenu__list>li.on>a {font-weight:bold;border-bottom:2px solid #222;color:#222}
+
+/* navPrimarySub - 커뮤니티/알바매니저 */
+.navPrimarySub {border-top:1px solid #ebebeb;background-color:#fff}
+html.app .navPrimarySub {margin-top:-1px}
+.navPrimarySub .navPrimary-menu {height:40px;padding:0 11px}
+.navPrimarySub .navPrimary-menu-list {overflow:visible;height:40px;padding:0;white-space:nowrap}
+.navPrimarySub .navPrimary-menu-list>li {float:none;display:inline-block;margin:0}
+.navPrimarySub .navPrimary-menu-list>li>a {height:40px;font-size:14px;line-height:40px;color:#999}
+.navPrimarySub .navPrimary-menu-list>li.on>a {color:#222}
+html.app .contract .navPrimarySub .navPrimary-menu,
+html.app .story .navPrimarySub .navPrimary-menu {border-bottom:1px solid #eee}
+
+/* Footer */
+#Footer {width:100%;margin:0;padding:20px 0 13px;text-align:center;background-color:#f5f5f5;border-top:1px solid #eee}
+#Footer .action {overflow:hidden;position:relative;display:inline-block;height:26px;padding:0 1px;text-align:center}
+#Footer .action li {float:left;margin-left:-1px;font-size:12px}
+#Footer .action li a {display:inline-block;width:68px;height:24px;line-height:24px;color:#666;background-color:#fff;border:1px solid #ebebeb}
+html.ios #Footer .action li a {line-height:26px}
+#Footer .agree {display:block;padding:15px 0 10px;border-bottom:1px solid #ebebeb;font-size:0;text-align:center}
+#Footer .agree a {position:relative;margin-left:10px;padding-left:11px;font-size:12px;line-height:1.7;color:#666}
+#Footer .agree a.privacy {color:#000}
+#Footer .agree a::before {display:block;content:"";position:absolute;left:0;top:50%;margin-top:-5px;width:1px;height:10px;background:#c4c4c4}
+html.ios #Footer .agree a::before {margin-top:-6px}
+#Footer .agree a.first {margin-left:0;padding-left:0;border-left:0 none}
+#Footer .agree a.first::before {display:none}
+#Footer .copyRight {display:inline-block;padding:14px 0 1px;width:100%;height:15px;font-size:12px;font-family:'Arial', Sans-serif;font-weight:bold;text-align:center;color:#999}
+#Footer .copyRight>span {display:inline-block;margin-top:1px;font-size:13px;vertical-align:top}
+#Footer .copyRight .cssIcon-arrow {margin-top:2px;margin-left:8px}
+html.ios #Footer .copyRight>span {margin-top:0}
+html.ios #Footer .copyRight .cssIcon-arrow {margin-top:2px}
+#Footer .copyRight .cssIcon-arrow::after {width:5px;height:5px;border:1px solid #666}
+#Footer .copyRight .cssIcon-arrow.top::after {top:4px}
+#Footer address {display:none;margin:0 auto;padding-top:13px;max-width:320px;font-size:11px;line-height:1.27;color:#999}
+#Footer address a {color:#999}
+#Footer address .line {margin-left:4px;padding-left:3px;border-left:1px solid #c4c4c4}
+
+/* Section */
+#Section {position:relative}
+#Section::after {content:'';clear:both;display:block}
+body.sub #Section {padding-top:45px !important}
+#CustomJobList.scroll-main .customjob-menu-wrap {padding-top:54px !important}
+#CustomJobList #Section {padding-top:0 !important;padding-bottom:80px}
+
+/* class - radio/checkbox */
+span.input {position:relative;display:inline-block}
+span.input input {position:absolute;left:0}
+span.input label {display:inline-block;height:20px;padding:0 0 0 25px;font-size:13px;line-height:20px;vertical-align:middle;color:#222}
+span.input.alone label {padding-left:16px}
+span.input input[type="checkbox"] + label {background:url('//image.alba.kr/m/checkbox_button.png') no-repeat 0 0;background-size:20px 80px}
+span.input input[type="checkbox"]:checked + label {background-position:0 -60px}
+span.input input[type="radio"] + label {background:url('//image.alba.kr/m/radio_button.png') no-repeat 0 0;background-size:20px 80px}
+span.input input[type="radio"]:checked + label {background-position:0 -60px}
+span.input.after label {padding-left:0;padding-right:19px}
+span.input.after input[type="checkbox"] + label {background-position:100% 0}
+span.input.after input[type="checkbox"]:checked  + label {background-position:100% -60px}
+span.input.after input[type="radio"] + label {background-position:100% 0}
+span.input.after input[type="radio"]:checked  + label {background-position:100% -60px}
+span.input.disabled label {color:#999}
+
+/* class - swiper */
+.swiper-container {overflow:hidden;position:relative;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.swiper-container h1 {padding-left:6px;padding-right:6px}
+.swiper-wrapper {position:relative;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.swiper-container-multirow .swiper-wrapper {-webkit-box-lines:multiple;-moz-box-lines:multiple;-ms-flex-wrap:wrap;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.swiper-slide {position:relative;float:left;width:100%;-webkit-flex-shrink:0;-ms-flex:0 0 auto;flex-shrink:0}
+.swiper-pagination-bullets {position:absolute;right:0;top:48%;left:0;text-align:center}
+.swiper-pagination-bullet {overflow:hidden;display:inline-block;width:5px;height:5px;margin:0 2px;border-radius:50%;cursor:pointer;background-color:#fff;opacity:0.1}
+.swiper-pagination-bullet-active {opacity:0.4}
+.swiper-pagination-current {color:#222}
+.swiper-scrollbar {position:absolute;bottom:0;left:15px;right:15px;height:2px;background-color:#eee}
+.swiper-scrollbar-drag {height:100%;background-color:#444}
+.albaPick .swiper-pagination-fraction {position:absolute;top:23px;right:15px;font-size:11px;color:#999}
+body.dic .swiper-pagination-bullets {position:static}
+body.dic .swiper-pagination-bullet {opacity:1}
+
+.pageBtnGroup {padding:10px;text-align:center}
+.pageBtnGroup .swiper-pagination {display:inline-block;margin:0 12px;width:49px;height:22px;font-size:14px;line-height:20px;letter-spacing:0;text-align:center;vertical-align:top;color:#ddd}
+.pageBtnGroup .swiper-pagination .swiper-pagination-current {font-weight:bold;color:#222}
+.pageBtnGroup .swiper-pagination .swiper-pagination-total {color:#999}
+.pageBtnGroup .swiper-button {display:inline-block;padding:4px;font-size:0;vertical-align:top;color:transparent}
+.pageBtnGroup .swiper-button::before {content:'';display:block;width:10px;height:14px;background:url('//image.alba.kr/m/swiper_arrow.png') no-repeat 0 -36px;background-size:36px 72px}
+.pageBtnGroup .swiper-button-prev::before {-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+
+.swiper-action {position:absolute;top:50%;box-sizing:border-box;width:39px;height:42px;margin-top:-26px;box-shadow:0 0 6px 0 rgba(0,0,0,0.2);font-size:0;color:transparent;background-color:rgba(255,255,255,0.8)}
+.swiper-action::before {content:"";display:block;width:12px;height:18px;margin:12px 0 0 17px;background:url('//image.alba.kr/m/main3.png') no-repeat 0 -40px;background-size:120px 120px}
+.swiper-action-prev {left:0;border-radius:0 21px 21px 0}
+.swiper-action-prev::before {margin-left:11px;-webkit-transform:rotate(-180deg);transform:rotate(-180deg)}
+.swiper-action-next {right:0;border-radius:21px 0 0 21px}
+
+/* class - input File */
+.formInputFile {overflow:hidden;position:relative}
+.formInputFile .inputFile {overflow:hidden;display:inline-block;width:100px;height:36px;box-sizing:border-box}
+.formInputFile input[type="file"] {position:absolute;left:0;top:0;opacity:0}
+.formInputFile label {position:relative;display:block;cursor:pointer}
+.formInputFile.addTxt {padding-left:100px}
+.formInputFile.addTxt .inputFile {position:absolute;left:0;top:0;width:96px}
+.formInputFile.addTxt .fileTxt {width:100%}
+.formInputFile.addTxt.after {padding-left:0;padding-right:100px}
+.formInputFile.addTxt.after .inputFile {left:auto;right:0}
+
+/* class - formInputText */
+.formInputText {position:relative;display:inline-block;font-size:12px;line-height:12px}
+.formInputText input {width:100%;height:26px;background:none;border:0 none}
+.formInputText label {position:absolute;left:5px;top:50%;margin-top:-6px;color:#afafaf;white-space:nowrap;cursor:pointer}
+
+/* class - listCnt */
+.listCnt {margin:0 0 10px}
+.listCnt ul {background:#fff;border:1px solid #e8e8e8}
+.listCnt ul:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.listCnt ul li {float:left;width:33.33%;height:50px}
+.listCnt ul li a {display:block;height:43px;padding-top:7px;border-left:1px solid #f1f2f3}
+.listCnt ul li:first-child a {border-left:0 none}
+.listCnt ul li .title {display:block;margin-top:7px;margin-bottom:4px;text-align:center;font-size:12px;color:#535353}
+.listCnt ul li a .title {margin-top:0}
+.listCnt ul li .cntNum {display:block;text-align:center;font-weight:bold;font-size:14px;color:#2346e4}
+#RecruitListCnt.listCnt ul li,
+#ResumeListCnt.listCnt ul li {width:50%}
+
+/*포토스튜디오 default form*/
+#DivResumePhotoEdit .filter {opacity:0.85}
+.formLayer .layerAction.default {position:fixed;padding:0;top:0;left:0;right:0;width:100%;background:transparent}
+.formLayer .layerAction.default li {float:left;position:relative;width:50%;height:51px}
+.formLayer .layerAction.default a.cancelSelect {position:absolute;top:0;left:0;width:15px;height:15px;padding:18px 13px;font-size:0;line-height:0;color:transparent}
+.formLayer .layerAction.default a.cancelSelect:before {display:block;content:"";width:15px;height:15px;background:url("//image.alba.kr/m/StudioIcon_bg.png") no-repeat 0 -180px;background-size:36px 360px}
+.formLayer .layerAction.default a.submitSelect {position:absolute;top:11px;right:15px;padding:0 18px;height:27px;font-weight:bold;font-size:14px;line-height:27px;text-align:center;color:#222;background-color:#ffd100;border-radius:15px}
+.formLayer .cropper-view-box {outline:1px solid #fff;outline-color:#fff}
+.formLayer .cropper-point {background-color:#fff}
+.formLayer .cropper-line {background-color:#fff}
+.formLayer .cropper-point.point-sw, .formLayer .cropper-point.point-se, .formLayer .cropper-point.point-nw, .formLayer .cropper-point.point-ne {width:20px;height:20px;opacity:1}
+.formLayer .cropper-face {border:1px solid #fff}
+
+/* class - formLayer */
+body.layerOpen .selectBox-dropdown-menu,
+body.layerOpenOld .selectBox-dropdown-menu {z-index:99999}
+.formLayer {z-index:99999;display:none;position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%}
+.formLayer.on {display:block !important}
+.formLayer .layerWrap {z-index:99999;position:fixed;left:50%;top:50%;width:320px;margin-left:-160px;background:#fff;border-radius:5px;box-shadow:0px 7px 14px rgba(0,0,0,.5)}
+.formLayer .layerTitle {display:block;overflow:hidden;padding:17px 50px 15px 16px;font-weight:bold;white-space:nowrap;text-overflow:ellipsis}
+.formLayer .layerContents {overflow-y:auto;overflow-x:hidden}
+.formLayer .layerAction {overflow:hidden;position:relative;padding:0 15px;text-align:right;background:#fff;border-top:1px solid #eff2f7;box-sizing:border-box}
+.formLayer .layerAction li {display:inline-block}
+.formLayer .layerAction a {display:block;height:59px;padding:0 25px;line-height:59px;font-weight:bold;font-size:16px;text-decoration:none;text-align:center}
+.formLayer .closeBtn {position:absolute;right:17px;top:17px;width:16px;height:16px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -540px -72px}
+#PersonMain .formLayer .layerAction {padding:0;text-align:center}
+#PersonMain .formLayer .layerAction li {float:left;width:50%}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.formLayer .closeBtn {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* class - formLayer1 */
+.formLayer1 {z-index:99999;display:none;position:fixed;left:0;top:0;width:100%;height:100%}
+.formLayer1 .layerWrap {z-index:99999;overflow:hidden;position:fixed;left:50%;top:50%;margin-left:-152px;background:#fff;border:2px solid #555}
+.formLayer1 .layerWrap .layerHead {padding:20px 20px 0;font-weight:bold;font-size:19px}
+.formLayer1 .layerWrap .layerContents {padding:20px}
+.formLayer1 .layerWrap .closeBtn {position:absolute;right:20px;top:20px;width:16px;height:16px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -533px 7px}
+.formLayer1 .layerWrap.over {overflow:visible}
+.formLayer1 .layerWrap.over .closeBtn {top:-28px;right:-2px;padding:5px;background-color:#fff;background-position:-533px 7px;border:2px solid #555;border-bottom:0 none}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.formLayer1 .layerWrap .closeBtn {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* class - 지원하기 */
+.applyLayer {z-index:99999;display:none;position:fixed;top:0;right:0;bottom:0;left:0}
+.applyLayer__wrap {z-index:99999;position:fixed;right:0;bottom:0;left:0}
+.applyLayer__title {height:48px;border-radius:10px 10px 0 0;font-size:16px;line-height:48px;text-align:center;background-color:#ffe000}
+.applyLayer__list {overflow:hidden;padding:6px 0;background-color:#fff}
+.applyLayer__list--1,
+.applyLayer__list--2 {padding:35px 0}
+.applyLayer__item {float:left;display:table;width:50%;text-align:center}
+.applyLayer__list--1 .applyLayer__item {width:100%}
+.applyLayer__link {display:inline-block;width:115px;height:58px;font-size:12px;line-height:58px;text-align:left}
+.shopmanet .applyLayer__link {width:auto}
+.applyLayer__link::before {content:"";display:inline-block;width:32px;height:32px;margin-right:10px;vertical-align:middle;background:url("//image.alba.kr/m/applyLayer1.png") no-repeat;background-size:144px 108px}
+.applyLayer__link--tel::before {background-position:0 0}
+.applyLayer__link--online::before {background-position:-36px 0}
+.applyLayer__link--simple::before {background-position:-72px 0}
+.applyLayer__link--smsFree::before {background-position:-108px 0}
+.applyLayer__link--sms::before {background-position:0 -36px}
+.applyLayer__link--email::before {background-position:-36px -36px}
+.applyLayer__link--homepage::before {background-position:-72px -36px}
+.applyLayer__link--market::before {background-position:0 -72px}
+.applyLayer__close {position:absolute;top:0;right:0;width:45px;height:48px;font-size:0;text-align:center;color:transparent}
+.applyLayer__close::after {content:"";position:absolute;top:20px;left:15px;width:15px;height:8px;background:url("//image.alba.kr/m/applyLayer1.png") no-repeat -36px -72px;background-size:144px 108px}
+.applyLayer__floating {height:46px;margin:0 8px 8px;line-height:46px;font-size:14px;text-align:center;border-radius:6px;color:#f5f5f5;background-color:#343638}
+
+/* class - 기존 지원하기 폼(알바매니저 사용) */
+.applyLayer--staff .layerTitle {height:60px;padding:0 56px 0 24px;font-size:16px;line-height:64px}
+.applyLayer--staff .selectList li {position:relative;border-top:1px solid #eff2f7}
+.applyLayer--staff .selectList li:first-child {border-top:2px solid #ffd100}
+.applyLayer--staff .selectList li a {display:block;height:66px;padding:0 20px 0 79px;font-weight:600;font-size:17px;line-height:66px;color:#222}
+.applyLayer--staff .selectList li a span {position:absolute;top:14px;left:24px;width:38px;height:38px;margin:0;line-height:66px;vertical-align:middle;background:url('//image.alba.kr/m/icon_v4_300.png') no-repeat;background-size:360px 144px}
+.applyLayer--staff .selectList li a.online span {background-position:0 0}
+.applyLayer--staff .selectList li a.email span {background-position:-72px 0}
+.applyLayer--staff .selectList li a.sms span {background-position:-144px 0}
+.applyLayer--staff .selectList li a.homepage span {background-position:-216px 0}
+.applyLayer--staff .selectList li a.tel span {background-position:-288px 0}
+.applyLayer--staff .selectList li a.market span {background-position:-72px -60px}
+.applyLayer--staff .selectList li a.scrap span {top:22px;left:32px;width:22px;height:22px;background-position:0 -72px}
+.applyLayer--staff .selectList li a.scrap.on span {background-position:-36px -72px}
+.applyLayer--staff .closeBtn {top:22px}
+
+/* class - 설정필터 */
+.select-condition {border-bottom:1px solid #ddd}
+.condition-link {z-index:1;position:relative;padding:0 12px;background-color:#f5f5f5}
+.condition-link__list {position:relative;height:43px;padding:0 80px 0 55px;line-height:43px}
+.condition-link__area-action {position:absolute;top:0;left:0;box-sizing:border-box;width:55px;height:43px;line-height:43px;font-size:13px}
+.condition-link__area-action::before {content:"";display:inline-block;width:15px;height:15px;margin:14px 4px 0 0;vertical-align:top;background:url('//image.alba.kr/m/setting_202008.png') no-repeat 0 0;background-size:33px auto}
+.condition-link__area-action::after {content:"";position:absolute;top:14px;right:0;width:1px;height:14px;background-color:#ddd}
+.condition-link__area-content {overflow-x:auto;overflow-y:hidden;display:block;padding-left:10px;white-space:nowrap;-webkit-overflow-scrolling:auto}
+.condition-link__area-content::-webkit-scrollbar {display:none}
+.condition-link__area-link {display:block;font-size:13px;color:#999}
+.condition-detail__view--link {display:inline-block;height:22px;margin-right:4px;padding:0 10px;box-sizing:border-box;box-shadow:0 1px 1px 0 rgba(0,0,0,0.03);font-size:11px;border:1px solid #ddd;border-radius:15px;line-height:20px;color:#666;background-color:#fff}
+.condition-detail__view--link.on {border-color:#5b79fe;color:#2346e4}
+.condition-link__etc {position:absolute;top:0;right:0;padding:0}
+.condition-link__etc::before {content:"";position:absolute;top:15px;left:0;width:1px;height:14px;background-color:#ddd}
+.condition-link__etc-action {position:relative;display:block;width:80px;height:43px;font-size:13px;line-height:43px;text-align:right}
+.condition-link__etc-action::before {content:"";display:inline-block;width:15px;height:15px;margin:14px 4px 0 0;vertical-align:top;background:url('//image.alba.kr/m/setting_202008.png') no-repeat -17px 0;background-size:33px auto}
+.condition-link__etc-action.on::after {content:"";position:absolute;top:13px;right:-7px;width:5px;height:5px;border-radius:50%;background-color:#5b79fe}
+
+.condition-link__etc-content-wrap {display:none;position:absolute;top:34px;right:2%;max-width:96%;height:27px;padding:0 10px;box-sizing:border-box;border-radius:3px;background-color:rgba(0,0,0,0.7)}
+.condition-link__etc-content-wrap::before {content:"";position:absolute;top:-4px;right:10px;width:0;height:0;border:4px solid transparent;border-top-width:0;border-bottom-color:rgba(0,0,0,0.7)}
+.condition-link__etc-content {overflow:hidden;width:100%;text-overflow:ellipsis;white-space:nowrap;line-height:25px;color:#fff}
+.condition-link__etc-content>span {display:inline;font-size:11px}
+.condition-link__etc-content>span em.in {color:#b2bfff}
+.condition-link__etc-content>span em.ex {color:#ff7a7a}
+.condition-link__etc-content>span::before {content:"·";margin:0 4px}
+.condition-link__etc-content>span:first-child::before {content:none}
+html.ios .condition-link__area-action::before,
+html.ios .condition-link__etc-action::before {margin-top:13px}
+html.ios .condition-link__etc-action {line-height:44px}
+html.ios.app .condition-link__etc-action {line-height:42px}
+html.ios .condition-detail__view--link {line-height:22px}
+html.ios .condition-link__etc-content {line-height:27px}
+
+body.BRAND .condition-link,
+body.SHORT .condition-link,
+body.SHORTTIME .condition-link,
+body.HONEY .condition-link,
+body.PAY .condition-link,
+body.YOUTH .condition-link, body.UNIVST .condition-link, body.SENIOR .condition-link, body.IMPAIRMENT .condition-link, body.BEGINNER .condition-link, /*우대별*/
+body.search .condition-link,
+body#LocalResumeList .condition-link,
+body.CALLCENTER .condition-link {border-bottom:1px solid #ddd}
+body.CALLCENTER .select-condition {border-bottom:0}
+
+.condition-link__etc-floating {display:none;position:absolute;top:38px;right:-12px;width:181px}
+.condition-link__etc-floating>img {width:181px}
+.condition-link__etc-floating>a {position:absolute;top:0;right:0;width:40px;height:40px;font-size:0;color:transparent}
+
+/* class - formLayer(modalLayer) */
+.modalLayer .layerTitle {height:50px;padding:0;border-bottom:2px solid #ffd100;font-weight:bold;font-size:17px;line-height:52px;text-align:center}
+.modalLayer .selectWrap {padding:0 20px;border-bottom:1px solid #ddd}
+.modalLayer .selectWrap li {position:relative;border-top:1px solid #f4f4f4}
+.modalLayer .selectWrap li:first-child {border-top:0 none}
+.modalLayer .selectWrap li a {display:block;height:50px;padding:0 0 0 45px;font-size:14px;line-height:50px}
+.modalLayer .selectWrap li a::before {content:"";position:absolute;top:10px;left:0;width:30px;height:30px;line-height:50px;background:url('//image.alba.kr/m/icon_sns.png') no-repeat;background-size:108px 108px}
+.modalLayer .selectWrap li.twitter a::before {background-position:-36px 0}
+.modalLayer .selectWrap li.facebook a::before {background-position:0 0}
+.modalLayer .selectWrap li.kakaotalk a::before {background-position:0 -36px}
+.modalLayer .closeBtn {position:static;float:right;width:90px;height:45px;font-size:13px;line-height:45px;text-align:center;color:#999;background:none}
+html.ios .modalLayer .layerTitle {line-height:56px}
+html.ios .modalLayer .selectWrap li a {line-height:52px}
+
+/* class - quickSearch */
+.quickSearch {display:none;position:relative;padding:12px}
+.quickSearch .icon {position:absolute;right:20px;top:50%;width:15px;height:16px;margin-top:-8px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -144px -72px}
+.quickSearch .formInputText {display:block}
+.quickSearch .formInputText input {padding:0 40px 0 5px;border-left:1px solid #2346e4}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.quickSearch .icon {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* class - selectLayer (지역, 직종, 역세권 선택) */
+.selectLayer .selectView {display:none;overflow-y:auto;max-height:30px;padding:10px;background:#ebedf2;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+.selectLayer .selectView li {font-size:12px;line-height:20px;vertical-align:middle;color:#222}
+.selectLayer .selectView li .viewDelBtn {display:inline-block;width:17px;height:17px;margin:0 5px 0 0;line-height:0;font-size:0;font-family:Dotum;vertical-align:text-top;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -684px -36px}
+.selectLayer .layerContents,
+.selectLayer .layerContentsWrap {position:relative}
+.selectLayer .layerContentsWrap .layerContents {margin-top:-1px;height:230px}
+.selectLayer .layerContentsWrap .selectListWrap.on {padding-top:36px}
+.selectLayer .layerContents {border-top:1px solid #eff2f7}
+.selectLayer .selectListWrap .layerContents,
+.selectLayer .selectListWrap .selectList {display:none}
+.selectLayer .selectListWrap.on .layerContents,
+.selectLayer .selectListWrap.on .selectList,
+.selectLayer .selectListWrap.on .quickSearch {display:block}
+.selectLayer .selectListWrap .title {z-index:1;position:absolute;top:0;height:36px}
+.selectLayer .selectListWrap .title a {overflow:hidden;position:relative;display:block;height:34px;padding:0 10px;line-height:34px;text-align:center;color:#222;white-space:nowrap;text-overflow:ellipsis;background:#f3f3f3;border-top:1px solid #e0e4eb;border-bottom:1px solid #e0e4eb}
+.selectLayer .selectListWrap.on .title a {background:#ffca00;border-top:1px solid #eeae00;border-bottom:1px solid #eeae00}
+.selectLayer .selectListWrap .title span {z-index:1;display:none;position:absolute;top:0;width:10px;height:36px;background:url('//image.alba.kr/m/step_bg_type00.png') no-repeat;background-size:10px 77px}
+.selectLayer .selectListWrap.on .title span.front {display:block;left:0;background-position:0 0}
+.selectLayer .selectListWrap.next .title span.front {display:block;left:0;background-position:0 -41px}
+
+.selectLayer .selectList {border-top:1px solid #eff2f7}
+.selectLayer .layerContents .selectList {border-top:0 none}
+.selectLayer .selectList:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.selectLayer .selectList li {position:relative;float:left;width:33%;height:52px}
+.selectLayer .selectList li.mareaName {width:100% !important;line-height:52px;text-align:center;background:#ffd100;color:#222}
+.selectLayer .selectList li:nth-child(3n) {width:34%}
+.selectLayer .selectList li input {position:absolute;top:0;left:0}
+.selectLayer .selectList li label {display:block;padding:0 7px;text-align:center;background:#fff;box-sizing:border-box}
+.selectLayer .selectList li label em {color:#018acf}
+.selectLayer .selectList li label span {display:inline-block;vertical-align:middle}
+.selectLayer.selectMoney .selectList li label span {text-align:left}
+.selectLayer .selectList li label span.lhmiddle {height:52px;line-height:52px}
+.selectLayer .selectList li input:checked + label {border:2px solid #ffd100}
+.selectLayer .selectList li input:checked + label span.lhmiddle {height:48px;line-height:48px}
+.selectLayer .selectList li label strong {font-weight:normal}
+.selectLayer .selectWrap {margin-top:-1px;padding:0}
+.selectLayer .selectWrap li {position:relative;padding:20px 22px;border-top:1px solid #eff2f7}
+.selectLayer .selectWrap li .input {display:block}
+.selectLayer .selectWrap li .input label {width:100%;box-sizing:border-box}
+
+.selectLayer .selectWrap li .subSelect {overflow:hidden;display:none;width:100%;padding-top:10px}
+.selectLayer .selectWrap li .subSelect.on {display:block}
+.selectLayer .selectWrap li .subSelect .input {float:left;width:33.33%;margin-top:10px}
+.selectLayer .selectWrap li .subSelect .input label {width:auto;box-sizing:border-box}
+
+.selectLayer .layerContentsWrap.two .selectListWrap .title {left:0;width:50%}
+.selectLayer .layerContentsWrap.two .selectListWrap:last-child .title {left:50%}
+.selectLayer .layerContentsWrap.three .selectListWrap .title {left:33%;width:33%}
+.selectLayer .layerContentsWrap.three .selectListWrap:first-child  .title {left:0;width:33%}
+.selectLayer .layerContentsWrap.three .selectListWrap:last-child .title {left:66%;width:34%}
+.selectLayer.selectJobkind .selectList li,
+.selectLayer.selectJobkindSub .selectList li {width:50%}
+.selectLayer.selectJobkind .selectList li:nth-child(3n),
+.selectLayer.selectJobkindSub .selectList li:nth-child(3n) {width:50%}
+.selectLayer.selectSubway .subwaySearch {position:relative;padding:10px 35px 10px 15px}
+.selectLayer.selectSubway .subwaySearch .formInputText {display:block}
+.selectLayer.selectSubway .subwaySearch .btn {position:absolute;right:15px;top:50%;width:15px;height:16px;margin-top:-8px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -144px -72px}
+.selectLayer.selectDate .layerContentsWrap .layerContents {height:320px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.selectLayer .selectView li .viewDelBtn,
+	.selectLayer.selectSubway .subwaySearch .btn {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+/*알바맵,브랜드알바 직종선택 구 레이어*/
+html.layerOpen #LocationBasedJobList .selectLayer .selectView li,
+html.layerOpen #BrandSiteJobList .selectLayer .selectView li {line-height:30px;border:1px solid #ccc}
+html.layerOpen #LocationBasedJobList .selectLayer .selectView li .viewDelBtn,
+html.layerOpen #BrandSiteJobList .selectLayer .selectView li .viewDelBtn {width:24px;height:30px;margin-right:0;background:initial}
+html.layerOpen #LocationBasedJobList .selectLayer .selectListWrap.on .title a,
+html.layerOpen #BrandSiteJobList .selectLayer .selectListWrap.on .title a {background:#ffca00;border-top:1px solid #f4b800;border-bottom:1px solid #f4b800}
+
+/* class - autocomplete (이력서등록) */
+.ui-widget-content {z-index:99999;color:#222;background-color:#fff;box-shadow:1px 1px 5px rgba(0,0,0,.5)}
+.ui-widget-content a {color:#222}
+.ui-menu .ui-menu-item {position:relative;min-height:0;margin:0;padding:12px 10px;color:#222;cursor:pointer}
+.ui-menu .ui-menu-item a.imgType {position:relative;display:block;padding:5px 0 5px 84px}
+.ui-menu .ui-menu-item img.comLogo {position:absolute;left:0;top:50%;margin-top:-17px}
+.ui-menu .ui-menu-item:last-child {padding:20px 10px;background-color:#f9f9f9;border-top:2px solid #bababa}
+.ui-menu .ui-menu-item:last-child a.imgType {padding-left:0}
+.ui-menu .ui-menu-item:last-child span {color:#2346e4}
+.ui-state-hover,
+.ui-state-focus {background-color:#e0e4eb !important}
+.ui-helper-hidden {display:none}
+.ui-helper-hidden-accessible {overflow:hidden;position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0)}
+
+/* class - pagination/paging */
+.pagination {width:100%;margin:0 auto;padding:6px 0;text-align:center;background-color:#fff}
+.pagination a {overflow:hidden;position:relative;display:inline-block;width:38px;height:40px;padding:0;font-size:14px;line-height:40px;vertical-align:top;color:#999}
+.pagination a.prev span,
+.pagination a.next span {position:absolute;left:50%;top:50%;width:10px;height:14px;margin:-7px 0 0 -5px;line-height:0;font-size:0;font-family:Dotum;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/pagination_arrow.png') no-repeat 0 -36px;background-size:36px 72px}
+.pagination a.next span {-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.pagination a.prev.off span,
+.pagination a.next.off span {background-position:0 0}
+.pagination a.pageNum.on {font-weight:bold;color:#222}
+#CertApplicationList .pagination,
+#CertificationList .pagination {margin:0;padding-bottom:10px}
+.paging {width:100%;margin:10px 0;text-align:center}
+.paging a.page {overflow:hidden;display:inline-block;width:6px;height:6px;margin:0 2px;cursor:pointer;background:#bebebe;border-radius:50%;-webkit-transition-property:all;-webkit-transition-duration:300ms}
+.paging a.page.on {background:#ffd100}
+
+
+/* class - 공통 버튼 폼 */
+.btn {display:inline-block;text-align:center;vertical-align:middle}
+.btn.btnType1 {color:#222;background-color:#fff;border:1px solid #ccc}
+.btn.btnType2 {color:#666;background-color:#f8f8f9;border:1px solid #e2e4e7}
+.btn.btnType3 {color:#2346e4}
+.btn.btnType4 {font-weight:bold;color:#222;background-color:#ffd100;border:1px solid #ffe100}
+.btn.btnType5 {color:#999}
+.btn.btnType6 {color:#fff;background-color:#a7a7a7}
+.btn.btnType7 {color:#b64e4d;background-color:#fff;border:1px solid #b64e4d}
+.btn.btnType8 {color:#756b62;background-color:#fff;border:1px solid #756b62}
+.btn.btnType9 {padding:10px 30px;color:#222;background-color:#ffe000;border:1px solid #ffe000}
+
+/* class - snsLink */
+.snsLink {padding:10px;border-bottom:1px solid #dfdfdf}
+.snsLink ul {overflow:hidden;width:100%;border-radius:2px;box-shadow:inset 0 -1px 2px #eaeaea,inset 0 0 0 1px #d6d6d6}
+.snsLink ul li {float:left;width:33.33%;box-shadow:inset -1px 0 0 #eaeaea}
+.snsLink ul li a {display:block;width:44px;height:24px;margin:0 auto;padding:6px 0;text-align:center;text-indent:-999em}
+.snsLink ul li a span {display:block;width:24px;height:24px;margin:0 auto;background:url('//image.alba.kr/sns/sns.png') no-repeat}
+.snsLink ul li.facebook a span {background-position:-4px -68px}
+.snsLink ul li.twitter a span {background-position:-36px -68px}
+.snsLink ul li.me2day a span {background-position:-68px -68px}
+.snsLink ul li.cLog a span {background-position:-100px -68px}
+.snsLink ul li.kakaotalk a span {background-position:-132px -68px}
+body#JobDetail .snsLink {padding-top:0;border-bottom:0 none}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.snsLink ul li a span {background-image:url('//image.alba.kr/sns/sns_200.png');background-size:192px 96px}
+}
+
+/* class - select 선택 */
+.searchSelect {position:relative;border-bottom:1px solid #d4d4d4}
+#BrandJobList .searchSelect {border-top:1px solid #eee}
+.searchSelect>.searchWrap:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.searchSelect>.searchWrap>li {position:relative;float:left;width:100%;box-sizing:border-box;background-color:#fff}
+.searchSelect>.searchWrap>li>a::after {content:"";position:absolute;top:50%;right:15px;width:8px;height:6px;margin-top:-3px;background:url('//image.alba.kr/m/job_filter.png') no-repeat 0 -40px;background-size:60px 60px;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out}
+.searchSelect>.searchWrap>li>a.on::after {-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.searchSelect>.searchWrap>li.half {width:50%}
+.searchSelect>.searchWrap>li.half:nth-child(2n+1),
+.searchSelect>.searchWrap>li.half:first-child {border-right:0 none}
+.searchSelect>.searchWrap select {width:100%;box-sizing:border-box;border:0 none}
+.searchSelect>.searchWrap select,
+.searchSelect>.searchWrap .selectOpen,
+.searchSelect>.searchWrap .searchOpen {overflow:hidden;display:block;height:37px;padding:0 30px 0 12px;line-height:37px;color:#222;white-space:nowrap;text-overflow:ellipsis}
+.searchSelect>.searchWrap .searchOpen.on {background-position:100% -21px}
+.searchSelect>.searchWrap .searchDetail::before {content:"";position:absolute;top:50%;left:0;width:1px;height:14px;margin-top:-7px;background-color:#eee}
+.ios .searchSelect>.searchWrap .searchDetail::before {margin-top:-8px}
+
+.searchSelect>.searchWrap .detailSearch {height:0;margin:0;visibility:hidden}
+.searchSelect>.searchWrap .detailSearch.on {height:auto;margin:2px 0 6px;visibility:visible}
+.searchSelect>.searchWrap .detailSearchWrap {background:#fff}
+#ReputeWriteLayer .searchSelect>.searchWrap {margin:0}
+
+#LocalResumeList .searchSelect>.searchWrap>li.searchJobkind,
+#PeriodJobList .searchSelect>.searchWrap>li.searchArea,
+#ThemeJobList .searchSelect>.searchWrap>li.searchArea,
+#SalaryJobList .searchSelect>.searchWrap>li.searchArea {border-right:0 none}
+body.albaStory .searchSelect>.searchWrap .selectOpen {height:40px;padding-left:12px;line-height:40px;color:#666;background-color:#f5f5f5}
+
+/* class - guideText */
+.guideText {padding:10px;font-size:12px;color:#2346e4;background-color:#fff}
+#SeasonJobList .guideText {padding-left:43px;background-position:12px -1126px}
+#SeasonJobList .guideText.lunar {padding-left:40px;background-position:12px -1091px}
+#SeasonJobList .seasonGuideTxt {padding:0 10px}
+#SeasonJobList .guideText.chusuck {padding-left:30px;background-position:0 -1162px;background-color:#fff;border-bottom:1px solid #e8e8e8}
+#SeasonJobList #Section #Contents .searchArea select {width:32.4% !important}
+#SeasonJobList #Section #Contents .searchSeason {position:relative;top:0;right:0;width:auto;padding:0 10px;background-color:#fff}
+.guideTextList {padding:10px 15px;font-size:11px;background-color:#fff}
+.guideTextList li {position:relative;padding-left:10px;line-height:1.54;letter-spacing:-0.5px;color:#999}
+.guideTextList li span.icon {position:absolute;left:0;top:0;width:6px;height:5px;font-weight:bold}
+.guideTextList li strong {font-weight:normal}
+#MyStoryList .guideTextList {margin-bottom:7px;padding:10px;border-bottom:1px solid #ddd}
+#MyStoryList .guideTextList li {padding-left:5px;font-size:11px;color:#999}
+#MyStoryList .guideTextList li>span {position:absolute;top:0;left:0}
+
+/* class - noticeText */
+.noticeText {position:relative;display:inline-block;margin:0 auto;padding-left:27px;font-size:12px;color:#2346e4}
+.noticeText .icon {position:absolute;left:0;top:50%;width:23px;height:18px;margin:-9px 0 0 0;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -504px -108px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.noticeText .icon  {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* class - btnAction */
+.btnAction {margin-top:12px;padding:0;font-size:16px;text-align:center}
+.btnAction:after {content:'';clear:both;display:block}
+.btnAction .btn {display:block;height:48px;border-radius:8px;box-shadow:0 1px 2px 0 rgba(0,0,0,0.2);line-height:48px;border:0 none}
+.btnAction ul:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.btnAction li {float:left;width:50%}
+.btnAction li .btn {margin:0 3px}
+.btnAction li:first-child .btn {margin-left:0}
+.btnAction li:last-child .btn {margin-right:0}
+
+html.app.android #CustomJobSetting.setJob .customSetting .btnAction {margin-bottom:0}
+html.app .customSetting {padding-bottom:75px;background:#fff}
+html.app .btnAction.app-style {z-index:9999;margin:0;padding:15px 0;width:100%;height:auto;position:fixed;top:auto;bottom:0;left:0;text-align:center;background:-webkit-linear-gradient(top, rgba(255,255,255,0), #fff 100%)}
+html.app .btnAction.app-style>.btn {display:inline-block;margin:0 auto;width:210px;height:45px;border-radius:22.5px;font-size:16px;line-height:45px;text-align:center;font-weight:bold;color:#222;background:#ffd200}
+
+.service__view {position:absolute;top:0;right:15px;font-size:12px}
+.service__view::after {content:"";display:inline-block;width:6px;height:11px;margin:14px 0 0 4px;vertical-align:top;background:url('//image.alba.kr/m/draw_service_join.png') no-repeat 0 -36px;background-size:72px 72px}
+
+/* class - 입력폼 */
+.infoBase {position:relative;padding-bottom:10px}
+.infoBase legend {height:23px;padding:10px 0 0 3px;font-weight:bold;line-height:23px;color:#7b7b7b}
+.infoBase legend.hide {display:none}
+.infoBase legend .guide {font-weight:normal;font-size:12px}
+.infoBase .subLink {position:absolute;right:0;top:0}
+.infoBase .subLink .btn {font-size:12px;color:#222}
+.infoBase .titleHead {display:block;margin-bottom:8px;font-size:16px;font-weight:bold}
+.infoBase .titleHead em {padding-right:5px;color:#ff0000}
+.infoBase .titleHead span {font-size:12px;color:#999}
+.infoBase .memo {display:block;margin:5px 0 0 0;color:#88a9d2;font-size:11px;line-height:1.6}
+.infoBase .comment {display:block;margin:18px -70px 0 -70px;color:#88a9d2;font-size:11px;line-height:1.6}
+.infoBase .option {display:block;margin:12px 0 0 0}
+.infoBase select {width:100%;height:30px;line-height:28px;color:#222;border:1px solid #ccc}
+.infoBase .selectBox-dropdown {overflow:hidden;display:block;height:30px;line-height:28px;color:#222;background-color:#fff;border:1px solid #ccc}
+.infoBase .selectBox-dropdown .selectBox-label {line-height:28px;padding:0 10px 0 6px}
+.infoBase .label {position:relative}
+.infoBase .label input {position:absolute;left:0;top:0}
+.infoBase .label label {position:relative;overflow:hidden;display:block;height:40px;line-height:40px;text-align:center;color:#666;background:#fff;box-sizing:border-box}
+.infoBase .label input:checked + label {z-index:1;height:42px;margin:-1px 0 -1px -1px;padding:1px 0 0 1px;line-height:36px;border:2px solid #ffd100}
+.infoBase .label label.multi {padding:5px 0 0 0;line-height:1.2}
+.infoBase .label label.multi span {position:relative;display:block;margin:3px 0 0;font-size:11px;color:#999}
+.infoBase .label input:checked + label.multi {padding:4px 0 0 1px;line-height:1.2;border:2px solid #ffd100}
+.infoBase .fieldsetWrap {position:relative}
+.infoBase .fieldsetWrap>li {position:relative;margin:6px 0 0;padding:12px;background:#fff}
+.infoBase .fieldsetWrap .inputSelect {padding-left:100px}
+.infoBase .fieldsetWrap .inputSelect .titleHead {position:absolute;left:12px;top:17px}
+.infoBase .selectContents {position:relative;min-height:40px}
+.infoBase .selectContents:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.infoBase .selectContents .col {float:left;width:100%;padding:0;border-left:1px solid #e0e4eb;box-sizing:border-box}
+.infoBase .selectContents.wide .col:first-child {border-left:0 none}
+.infoBase .selectContents .col.line {border-top:1px solid #e0e4eb}
+.infoBase .selectContents .col.txt {padding:11px 10px}
+.infoBase .selectContents.two .col {width:50%}
+.infoBase .selectContents.twoOne .col {width:66.66%}
+.infoBase .selectContents.twoOne .col.label {width:33.33%}
+.infoBase .selectContents.three .col {width:33.33%}
+.infoBase .selectContents.four .col {width:25%}
+.infoBase .selectContents.five .col {width:20%}
+.infoBase .selectContents .col .btn {display:block;height:40px;line-height:40px}
+.infoBase .selectContents .col input[type="text"],
+.infoBase .selectContents .col input[type="number"],
+.infoBase .selectContents .col input[type="tel"],
+.infoBase .selectContents .col input[type="email"] {width:100%;height:40px;line-height:40px;border:0 none}
+.infoBase .selectContents .col textarea {width:100%;border:0 none}
+.infoBase .selectContents .col select,
+.infoBase .selectContents .col .selectBox-dropdown,
+.infoBase .selectContents .col .selectBox-dropdown .selectBox-label {padding:0 10px;height:40px;line-height:40px;border:0 none}
+.infoBase .selectContents .col.search {position:relative;padding:0 30px 0 0}
+.infoBase .selectContents .col.search .icon {position:absolute;right:14px;top:50%;width:15px;height:16px;margin-top:-7px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -144px -72px}
+.infoBase .selectContents .col.memo {margin:0;padding:10px}
+.infoBase .selectContents .bar {float:left;width:10%;line-height:40px;text-align:center;box-sizing:border-box}
+.infoBase .selectContents .etc {float:left;width:10%;padding-left:5px;line-height:40px;box-sizing:border-box}
+.infoBase .selectContents .certicon {position:absolute;right:10px;top:50%;display:block;padding:0 10px;height:18px;font-size:12px;line-height:18px;margin-top:-9px;background:#34a6fe;color:#fff}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.infoBase .selectContents .col.search .icon {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+#addrResult {display:none;-webkit-overflow-scrolling:touch} /* 주소검색 */
+#addrResult .guide {padding:5px 0 5px 95px;line-height:20px;word-break:break-all;background-color:#f8f8f8;border-top:1px solid #dbdbdb;border-bottom:1px solid #dbdbdb}
+#addrResult.selected .guide {margin-left:95px;margin-right:10px;padding:0;background-color:#fff;border:0 none}
+#addrResult .addr {padding:3px 0 0 95px}
+#addrResult .msg {display:block;margin-top:5px}
+#addrResult ul {padding:5px 10px}
+#addrResult ul li {position:relative;padding:4px 0 4px 85px;border-bottom:0 none}
+#addrResult ul li span {position:absolute;left:5px;top:4px;width:60px;color:#767676}
+
+/* 휴대폰 인증하기 */
+#MobileCertNumInput {overflow:hidden;position:relative;display:none;width:235px;height:32px;padding-right:65px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+#MobileCertNumInput input {width:100%;border:0 none}
+#MobileCertNumInput .btn {position:absolute;right:0;top:0;width:65px;height:32px;line-height:32px;border:0 none}
+
+/* 전체보기 */
+.navAllList {display:none;position:relative;background-color:#fff;border-bottom:1px solid #d7d7d7}
+.navAllList h1 {padding:15px 12px;text-align:left}
+.navAllList ul li {position:relative}
+.navAllList ul li ul {overflow:hidden;width:100%;margin-top:-1px;padding:0}
+.navAllList ul li ul li {float:left;width:33.33%;margin:0;border-left:1px solid #eff0f3;border-top:1px solid #eff0f3;box-sizing:border-box}
+.navAllList ul li ul li:nth-child(3n+1) {border-left:0 none}
+.navAllList ul li ul li a {display:block;height:48px;font-size:12px;line-height:48px;color:#666}
+.navAllList ul li ul li.blank {height:48px}
+.navAllList .sectionMenu {z-index:1;position:relative;display:block;padding:10px 12px;font-size:12px;text-align:left;color:#222;background:#ebedee;border-top:1px solid #d4d6d7;border-bottom:1px solid #dcdde0}
+#FooterNavAll {position:relative;top:-14px}
+
+/* class - 시즌 배너 - season */
+.season {margin:10px 0 0}
+.season p {width:100%}
+.season p a {display:block;width:300px;height:33px;margin:0 auto}
+.season p a img {width:300px;height:33px}
+
+/* class - 프로모션 배너 - promotion */
+.promotion a {display:block;margin:0 0 8px;text-align:center;background-color:#fff}
+.promotion a img {display:block;width:306px;height:45px;margin:0 auto}
+
+/* class - 프로모션 배너 - prGuide */
+.prGuide {z-index:9;overflow:hidden;position:relative;background:#fff}
+.prGuide .banImg {position:relative;display:block;height:81px;margin-right:34px}
+.prGuide .banImg img {width:338px;height:81px}
+.prGuide .closeBtn {position:absolute;right:13px;top:13px;width:16px;height:16px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -540px -72px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.prGuide .closeBtn {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+#PR_GoodsGuide {margin:10px 0}
+
+/* class - navSub */
+.navSub {overflow:hidden;width:100%;margin-bottom:6px;background:#fff}
+.navSub:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.navSub>li {position:relative;float:left;width:50%}
+.navSub>li input {position:absolute}
+.navSub>li> a,
+.navSub>li>label {display:block;width:100%;height:38px;padding:0;font-weight:bold;text-align:center;line-height:38px;color:#222;background-color:#fff}
+.navSub>li.on>a,
+.navSub>li>input:checked+label {background:#ffd100}
+.navSub.four>li {width:25%}
+.navSub.three>li {width:33.33%}
+
+/* class - tabType */
+.tabType1 {overflow:hidden;height:40px}
+.tabType1 li {float:left;width:50%;height:40px}
+.tabType1 li a {display:block;width:100%;height:40px;padding:0;text-align:center;font-size:1.143em;line-height:40px;color:#fff;background-color:#4f5053}
+.tabType1 li.on a {font-weight:bold;color:#222;background-color:#fff}
+
+.tabType2 {overflow:hidden;height:50px}
+.tabType2 li {float:left;width:25%;height:50px}
+.tabType2 li a {display:block;height:38px;padding:7px 0 5px;text-align:center;font-size:1.143em;line-height:1.4;color:#999;background-color:#4f5053;border-left:1px solid #414141}
+.tabType2 li a span {display:block;font-size:0.768em}
+.tabType2 li:first-child a,
+.tabType2 li.on + li a {border-left:0 none}
+.tabType2 li.on a {font-weight:bold;color:#777;background-color:#fff;border-left:0 none}
+.tabType2 li.on a span {color:#222}
+.tabType2 li.on a em {color:#ffc35a}
+
+.tabType3 {overflow:hidden;width:100%;height:44px;margin:0 auto 8px;border:1px solid #e1e1e1;box-sizing:border-box}
+.tabType3 li {float:left;width:50%;height:44px;border-left:1px solid #e1e1e1;box-sizing:border-box}
+.tabType3 li:first-child {border-left:0 none}
+.tabType3 li a {display:block;width:100%;height:44px;padding:0;text-align:center;line-height:44px;color:#999;background-color:#fff}
+.tabType3 li.on a {font-weight:bold;color:#222;border-bottom:5px solid #ffd100;box-sizing:border-box}
+.tabType3 li a strong {color:#ff5166}
+
+.tabType4 {overflow:hidden;width:100%;height:42px;margin:0;background-color:#fff}
+.tabType4 li {float:left;width:25%;height:42px}
+.tabType4 li a {display:block;width:100%;height:44px;padding:0;text-align:center;font-size:16px;line-height:44px;color:#777;background-color:#fff;border-bottom:1px solid #cecfcf}
+.tabType4 li a span {display:inline-block;height:39px;border-bottom:2px solid #fff;font-size:13px;color:#999}
+.tabType4 li.on a span {font-weight:bold;border-bottom:2px solid #222;color:#222}
+
+/* 홈 - 지역설정 */
+.topAreaSet {overflow:hidden;margin-top:8px !important;background:#fff;border:1px solid #e8e8e8}
+.topAreaSet .setArea {position:relative;display:block;padding:11px 35px;color:#666}
+.topAreaSet .setArea span {position:absolute;top:50%;background:url('//image.alba.kr/m/icon_v2.png') no-repeat}
+.topAreaSet .setArea span.markIcon {left:16px;width:13px;height:16px;margin-top:-8px;background-position:0 0}
+.topAreaSet .setArea span.arrowIcon {right:15px;width:13px;height:7px;margin-top:-4px;background-position:-36px 0}
+.topAreaSet .setArea.on span.arrowIcon {background-position:-252px -288px}
+.topAreaSet .setAreaList {overflow:hidden;display:none;width:100%;height:131px;border-top:1px solid #dfe2e7}
+.topAreaSet .setAreaList li {float:left;width:20%}
+.topAreaSet .setAreaList li a {display:block;height:32px;font-size:12px;line-height:32px;text-align:center;color:#666;border-bottom:1px solid #eef1f4;border-right:1px solid #eef1f4}
+.topAreaSet .setAreaList li:nth-child(5n) a {border-right:0 none}
+.topAreaSet .setAreaList li.on a {background:#eef1f4}
+.topAreaSet .setAreaList li.blank {height:32px;border-top:1px solid #eef1f4}
+#GoodsJobList .topAreaSet {margin:0 0 10px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.topAreaSet .setArea span {background-image:url('//image.alba.kr/m/icon_v2_300.png');background-size:360px 360px}
+}
+
+/* 지하철노선 - subwayLine */
+span.subwayLine span.subway {overflow:hidden;display:inline-block;min-width:5px;height:13px;margin:0 1px;padding:0 4px;font-size:10px;line-height:14px;vertical-align:top;color:#fff;background-color:#ffb400;border-radius:6.5px}
+html.ios span.subwayLine span.subway {margin-top:-1px}
+#JobDetail span.subwayLine span.subway {margin-top:1px !important}
+span.subwayLine span.subway101 {background-color:#023399}	/* 1호선 */
+span.subwayLine span.subway102 {background-color:#37b32d}	/* 2호선 */
+span.subwayLine span.subway103 {background-color:#fb5f2c}	/* 3호선 */
+span.subwayLine span.subway104 {background-color:#4480d8}	/* 4호선 */
+span.subwayLine span.subway105 {background-color:#8b3eb6}	/* 5호선 */
+span.subwayLine span.subway106 {background-color:#994f10}	/* 6호선 */
+span.subwayLine span.subway107 {background-color:#606e00}	/* 7호선 */
+span.subwayLine span.subway108 {background-color:#e81f6f}	/* 8호선 */
+span.subwayLine span.subway113 {background-color:#bd9f1d}	/* 9호선 */
+span.subwayLine span.subway111 {background-color:#80c3a4}	/* 경의중앙선 */
+span.subwayLine span.subway110 {background-color:#edb217}	/* 분당선 */
+span.subwayLine span.subway116 {background-color:#a8032e}	/* 신분당선 */
+span.subwayLine span.subway109 {background-color:#6791cb}	/* 인천1호선 */
+span.subwayLine span.subway120 {background-color:#ffb850}	/* 인천2호선 */
+span.subwayLine span.subway112 {background-color:#71b8e4}	/* 공항선 */
+span.subwayLine span.subway115 {background-color:#26a97f}	/* 경춘선 */
+span.subwayLine span.subway118 {background-color:#fd8e00}	/* 의정부경전철 */
+span.subwayLine span.subway117 {background-color:#edb216}	/* 수인선 */
+span.subwayLine span.subway119 {background-color:#77c571}	/* 에버라인 */
+span.subwayLine span.subway121 {background-color:#2683f2}	/* 경강선 */
+span.subwayLine span.subway122 {background-color:#abc465}	/* 우이신설선 */
+span.subwayLine span.subway123 {background-color:#79b63b}	/* 서해선*/
+span.subwayLine span.subway000 {background-color:#77c371}	/* 자기부상 */
+span.subwayLine span.subway201 {background-color:#fa5f2c}	/* 1호선 - 부산 */
+span.subwayLine span.subway202 {background-color:#37b42d}	/* 2호선 - 부산 */
+span.subwayLine span.subway203 {background-color:#bf9f1e}	/* 3호선 - 부산 */
+span.subwayLine span.subway204 {background-color:#3171d3}	/* 4호선 - 부산 */
+span.subwayLine span.subway205 {background-color:#893cb6}	/* 부산 - 김해경전철 */
+span.subwayLine span.subway301 {background-color:#fa5f2c}	/* 1호선 - 대구 */
+span.subwayLine span.subway302 {background-color:#37b42d}	/* 2호선 - 대구 */
+span.subwayLine span.subway303 {background-color:#fab92f}	/* 3호선 - 대구 */
+span.subwayLine span.subway401 {background-color:#44b541}	/* 1호선 - 광주 */
+span.subwayLine span.subway501 {background-color:#44b541}	/* 1호선 - 대전 */
+
+/* 상단 서브 메뉴 */
+.searchMenu {background-color:#fff}
+.expansion-tab {overflow:hidden;padding:15px 12px 0;background-color:#fff}
+.searchMenu.etc .expansion-tab {border-top:0 none}
+.expansion-tab--except {padding-bottom:15px}
+.expansion-tab__item {float:left;box-sizing:border-box;width:50%;height:38px;border-bottom:1px solid #666;font-size:13px;line-height:38px;text-align:center;color:#666}
+.expansion-tab__item:last-child {border-right:1px solid #ddd}
+.expansion-tab__item.on {border-color:#666;border-bottom-color:#fff;color:#222}
+.expansion-tab.one .expansion-tab__item {width:100%}
+.expansion-tab.three .expansion-tab__item {width:33.33%}
+.expansion-tab.four .expansion-tab__item {width:25%}
+.expansion-tab.five .expansion-tab__item {width:20%}
+.expansion-tab__link {display:block;height:36px;border-top:1px solid #ddd;border-left:1px solid #ddd;font-size:13px;line-height:36px;color:#666}
+.expansion-tab__item.on .expansion-tab__link {border-top-color:#666;border-left-color:#666;color:#222}
+.expansion-tab__item.on + .expansion-tab__item .expansion-tab__link {border-left-color:#666}
+
+/* 정렬조건 */
+.sorting-item {overflow:hidden;height:40px;padding:0 12px;border-bottom:1px solid #eee;background-color:#fff;}
+body.BRAND .sorting-item,
+body.SHORT .sorting-item,
+body.SHORTTIME .sorting-item,
+body.HONEY .sorting-item,
+body.PAY .sorting-item,
+body.YOUTH .sorting-item,
+body.resume .sorting-item,
+body.CALLCENTER .sorting-item {border-top:7px solid #eee}
+.sorting-item>.orderby {float:right;padding-top:7px}
+.sorting-item #orderby,
+.func-head__right--item #orderby {height:27px;padding:0 20px 0 10px;border:1px solid #ddd;border-radius:2px;font-size:12px;line-height:normal;color:#222;background:#fff url('//image.alba.kr/m/select7.png') no-repeat 100% 50%;background-size:30px 10px}
+.func-head__right--item #orderby {margin:-3px 0 0}
+.sorting-item>p {float:left;height:40px;line-height:40px;font-size:13px;color:#666}
+.sorting-item em,
+.sorting-item #ListCnt {letter-spacing:0;color:#000}
+html.ios .sorting-item>p {line-height:42px}
+#customJobList .sorting-item {border-top:0 none}
+#LocationBasedJobList .sorting-item>.orderby {padding-top:0}
+#LocationBasedJobList.dualView .sorting-item,
+#LocationBasedJobList.mapView .sorting-item {border-top:0 none}
+#LocationBasedJobList #jobkindCd {width:120px;height:40px;padding-right:18px;font-size:12px;background:url('//image.alba.kr/m/select8.png') no-repeat 100% 50%;background-size:11px 6px}
+#LocationBasedJobList .orderby .bar {display:inline-block;width:1px;height:14px;margin:13px 0 0 10px;vertical-align:top;background-color:#eee}
+#LocationBasedJobList #orderby {width:82px;height:40px;padding:0 0 0 10px;font-size:12px;border:0;background:url('//image.alba.kr/m/select8.png') no-repeat 100% 50%;background-size:11px 6px}
+.HOTPLACEDTL .sorting-item {border-top:0 none}
+
+
+/* 전체보기 */
+.viewAll {height:35px;margin:0 -9px;background-color:#fff}
+.viewAll a {display:block;height:35px;margin:0 8px 0 7px;padding-right:15px;line-height:37px;font-size:12px;text-align:right;color:#999;background-color:#fff;border-left:1px solid #e8e8e8;border-right:1px solid #e8e8e8}
+.viewAll strong {color:#2346e4}
+.viewAll span {display:inline-block;width:5px;height:9px;margin-left:4px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -324px 0}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.viewAll span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 채용정보 - 리스트 */
+.jobListHead {position:relative;padding:0 10px}
+.jobListHead p {height:40px;padding:0 4px;line-height:40px;color:#222}
+.jobListHead p span {font-weight:normal}
+.jobListHead p #ListCnt {letter-spacing:0;color:#2346e4}
+.jobListHead .orderby {position:absolute;top:5px;right:14px}
+
+i.time {color:#4c93ac}
+i.day {color:#59ab4b}
+i.week {color:#5a74f1}
+i.month {color:#cb7c1b}
+i.year {color:#8c6ae7}
+i.case {color:#e47852}
+
+.jobList {position:relative;background-color:#fff}
+#ScrapJobList .jobList.curation .regDate,
+#JobDetailCompany .jobList.curation .regDate,
+#JobDetail .jobList.curation .regDate {right:14px !important}
+#CurationJuJobList.jobList {padding-top:15px}
+.jobList h1 {padding:12px 12px 7px;border-bottom:1px solid #eee;font-weight:normal;font-size:15px}
+.jobList h1 .emphasize {display:block;margin-top:3px;font-weight:normal;font-size:14px}
+.jobList>p {overflow:hidden;height:40px;padding:0 12px;border-bottom:1px solid #eee;font-size:13px;line-height:40px;color:#666}
+.jobList>p span {font-weight:normal}
+.jobList>p #ListCnt {letter-spacing:0;color:#000}
+.jobList>p .inflowtype-button {position:absolute;right:6px;top:12px;font-size:13px;font-weight:normal}
+.jobList>.orderby {position:absolute;top:5px;right:4px}
+#listtype {display:none}
+.jobList .viewMore {position:absolute;top:1px;right:10px;font-size:12px}
+.jobList .viewMore a {padding:0;font-weight:bold;color:#999}
+.jobList .viewMore span {display:inline-block;width:6px;height:9px;margin-left:4px;background:url('//image.alba.kr/m/icon_main2.png') no-repeat 0 -72px;background-size:180px 180px}
+.jobList .list {background-color:#eee}
+.jobList .list::after {content:'';clear:both;display:block}
+.jobList .list>li {position:relative;border-bottom:1px solid #d4d4d4;background-color:#fff}
+.jobList .list>li.listinfo {margin-bottom:7px}
+.jobList.curation .list>li,
+.jobList #mystoryList li,
+.jobList #InterestCorpList li {border-bottom-color:#eee}
+.jobList .list li.date {padding:12px 12px 7px;margin:0;border-bottom:1px solid #ebebeb;font-size:13px;color:#222}
+.jobList .list li a:visited.info span,
+.jobList .list li a.visited.info span {color:#999 !important}
+.jobList .list li a.info {display:block;position:relative;box-sizing:border-box;padding:13px 30px 8px 12px}
+.jobList .list li a.infoLogo {padding-top:14px}
+.jobList #mystoryList li a.info {padding:13px 12px 7px}
+.jobList #InterestCorpList li a.info {padding:12px 30px 12px 12px}
+.ios .jobList #InterestCorpList li a.info {padding:13px 30px 11px 12px}
+.jobList .list li a.info--photo {min-height:98px;padding-right:80px}
+.scrapJobList .curation .list li a.info,
+.jobList .list.governmentList li a.info {padding-bottom:10px}
+.jobList .list li a.info span.dateApply {display:block;margin-bottom:5px;font-size:11px;text-align:left;color:#666}
+.jobList .list li a.info span.dateApply>em {color:#222}
+.jobList .list li a.info span.logo {position:absolute;top:13px;left:12px;width:75px;height:30px;padding:14px 4px;border:1px solid #eee;text-align:center}
+.jobList .list li a.info span.logo--distance {top:36px}
+.jobList .list li a.info span.logo::after {content:"";display:inline-block;height:30px;vertical-align:middle}
+.jobList .list li a.info span.logo>.text {overflow:hidden;display:inline-block;max-height:30px;font-weight:bold;font-size:11px;line-height:1.2;vertical-align:middle;word-wrap:break-word;word-break:break-word;white-space:normal}
+.jobList .list li a.info span.logo>.text-5,
+.jobList .list li a.info span.logo>.text-4 {font-size:12px}
+.jobList .list li a.info span.logo>.text-3 {font-size:14px}
+.jobList .list li a.info span.logo>.text-2,
+.jobList .list li a.info span.logo>.text-1 {font-size:16px}
+.jobList .list li a.info span.logo img {width:75px;height:30px}
+.jobList #InterestCorpList li a.info span.logo {padding:10px 4px;border:0}
+.jobList #InterestCorpList li a.info span.logo>.text {color:#222 !important}
+
+.jobList .list li a.info .todayClose {background:url('//image.alba.kr/m/today_close.png') no-repeat}
+.jobList .list li a.info .tomorrowClose {background:url('//image.alba.kr/m/tomorrow_close.png') no-repeat}
+.jobList .list li a.info .todayClose,
+.jobList .list li a.info .tomorrowClose {display:inline-block;width:38px;height:15px;margin:1px 4px 0 0;text-indent:-999em;vertical-align:top;background-size:38px 15px}
+html.ios .jobList .list li a.info .todayClose, 
+html.ios .jobList .list li a.info .tomorrowClose {margin-top:0}
+.jobList .list li a.info span.category,
+.jobList .list li a.info span.workComnm {overflow:hidden;display:block;height:17px;font-weight:800;letter-spacing:0;text-overflow:ellipsis;white-space:nowrap;color:#333}
+.jobList .list li a.infoLogo span.workComnm {padding-left:97px}
+.jobList #MKeyword li a.infoLogo span.workComnm {padding-left:0}
+.jobList #InterestCorpList li a.infoLogo span.workComnm {padding-top:6px;color:#333 !important}
+.jobList .list li a.info span.title {display:block;overflow:hidden;min-height:19px;max-height:38px;margin:5px 0 4px;font-size:15px;line-height:1.33;letter-spacing:0;word-break:break-all;color:#222}
+.jobList #mystoryList li a.info span.title {margin-bottom:4px}
+.jobList .list li a.infoLogo span.title {height:38px;margin-bottom:7px;padding-left:97px;line-height:1.25}
+.jobList #MKeyword li a.infoLogo span.title {padding-left:0}
+.jobList .list li a.infoLogo span.regist-state {display:block;height:25px;padding-left:97px;margin-top:3px;font-size:13px;color:#999}
+.jobList .list li a.infoLogo span.regist-state em {color:#2346e4}
+html.ios .jobList .list li a.info span.title {margin:6px 0 2px;line-height:1.34}
+html.ios .jobList #mystoryList li a.info span.title {margin-bottom:2px}
+html.ios .jobList .list li a.infoLogo span.title {height:37px;margin-bottom:6px;line-height:1.26}
+.jobList .list li a.info span.title>strong {font-weight:normal}
+#Search .jobList .list li a.info span.title>strong {font-weight:bold}
+.jobList .list li a.info span.title>em {display:inline-block;margin:3px 0 0 3px;vertical-align:top;color:#ff6000}
+.jobList .list li a.info span.title>em.newIcon {width:13px;height:13px;margin-left:0;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/list_new.png') no-repeat;background-size:13px 13px}
+.jobList .list li a.info span.infoBox {overflow:hidden;display:block;height:20px;font-size:11px;color:#666}
+.jobList .list li a.info span.infoBox>.divide {display:block;margin-top:2px}
+.jobList .list li a.info span.infoBox>span {display:inline-block;box-sizing:border-box;height:20px;padding:0 4px;border:1px solid #eee;line-height:18px;vertical-align:top;background-color:#fff}
+html.ios .jobList .list li a.info span.infoBox>span {line-height:20px}
+.jobList .list li a.info span.infoBox>span.period {background-color:#f2f5ff;border-color:#f2f5ff}
+.jobList .list li a.info span.infoBox>span.time {letter-spacing:0}
+.jobList .list li a.info span.hotplace {display:block;margin-top:5px;font-size:11px;color:#999}
+.jobList .list li a.info span.infoBox--line {position:absolute;margin-top:11px}
+.jobList .list li a.info span.infoBoxBottom {position:absolute;bottom:-35px;letter-spacing:-0.02em}
+.jobList .list li a.info span.infoBoxBottom.biz {display:block;position:static;margin:8px -30px -8px -12px;padding:0 12px;border-top:1px solid #eee;background-color:#fbfbfb}
+.jobList .list li a.info--photo span.infoBoxBottom.biz {margin-right:-80px}
+.jobList .list li a.info span.infoBoxBottom.biz + .regDate {right:13px}
+.jobList .list li a.info span.pay {display:inline-block;height:34px;line-height:34px;color:#222 !important}
+html.ios .jobList .list li a.info span.pay {line-height:36px}
+.jobList .list li a.info span.pay:before {display:none !important}
+.jobList .list li a.info span.pay>b {font-weight:normal}
+html.ios .jobList .list li a.info span.pay>b {margin-right:1px}
+.jobList .list li a.info span.markRepute {display:inline-block;height:34px;line-height:34px;color:#666}
+html.ios .jobList .list li a.info span.markRepute {line-height:36px}
+.jobList .list li a.info span.markRepute::before {content:"·";padding:0 3px 0 0;vertical-align:middle;color:#666}
+html.android .jobList .list li a.info span.markRepute::before {position:relative;top:-1px}
+.jobList .list li a.info span.markRepute>em {color:#000}
+.jobList .list li a.info span.regDate {position:absolute;top:15px;right:40px;font-size:11px;letter-spacing:0;color:#444}
+html.ios .jobList .list li a.info span.regDate {top:16px}
+.jobList .list li a.info span.regDate>strong {font-weight:normal}
+.jobList .list li a.info span.recommend {position:absolute;top:0;right:32px;width:14px;height:18px;font-size:0;color:transparent;background:url("//image.alba.kr/m/JobApply_icon1.png") no-repeat -72px -108px;background-size:288px 144px}
+.jobList .list li a.info span.myAd {position:absolute;top:auto;bottom:9px;right:15px;width:39px;height:16px;border-radius:10px;font-size:10px;line-height:15px;text-align:center;color:#fff;background-color:#5b79fe}
+html.ios .jobList .list li a.info span.myAd {padding-top:1px;line-height:17px}
+.jobList .list li a.info span.readyn {position:absolute;top:15px;right:15px;font-size:11px;color:#ff2a2a}
+.jobList .list li a.info span.readyn.read {color:#2346e4}
+.jobList .list li a.info span.infoBoxBottom:after {content:'';clear:both;display:block}
+.jobList .list li a.info span.photoWork {overflow:hidden;position:absolute;top:39px;right:15px;width:52px;height:52px;border-radius:4px;background-color:#d8d8d8}
+.jobList .list li a.info span.photoWork>img {display:block;width:94px;height:52px;margin-left:-21px}
+.jobList .list li a.info span.workrow,
+.jobList .list li a.info span.etc {font-size:11px;letter-spacing:-0.02em;vertical-align:top;color:#666}
+.jobList .list li a.info span.etc>span {vertical-align:top}
+
+/** 공고리스트 노출방식 예외 케이스 **/
+/* 타이틀 1줄 노출 */
+.albaPick .list li a.info span.title,
+#ScrapJobList .list li a.info span.title,
+#TodayViewJobList .list li a.info span.title,
+#PersonContractMgrList .list li a.info span.title,
+#GeneralJobList .list li a.info span.title,
+#wSearchJobList .list li a.info span.title,
+.serviceTab-item__list li a.info span.title {white-space:nowrap;text-overflow:ellipsis}
+/* 공고리스트 우측 사진 사이즈 조절 (시즌채용관/일반공고/검색리스트/검색-알바천국추천알바/상세설정-알바천국추천알바) */
+.albaPick .list li a.info span.photoWork,
+#GeneralJobList .list li a.info span.photoWork,
+#wSearchJobList .list li a.info span.photoWork,
+#recomSearchJobList .list li a.info span.photoWork,
+#suggestJobList .list li a.info span.photoWork {top:39px;width:35px;height:35px}
+.albaPick .list li a.info span.photoWork>img,
+#GeneralJobList .list li a.info span.photoWork>img,
+#wSearchJobList .list li a.info span.photoWork>img,
+#recomSearchJobList .list li a.info span.photoWork>img,
+#suggestJobList .list li a.info span.photoWork>img {width:63px;height:35px;margin-left:-14px}
+.albaPick .list li a.info--photo,
+#GeneralJobList .list li a.info--photo,
+#wSearchJobList .list li a.info--photo,
+#recomSearchJobList .list li a.info--photo,
+#suggestJobList .list li a.info--photo {min-height:auto}
+.albaPick .list li a.info--photo,
+#GeneralJobList .list li a.info--photo,
+#wSearchJobList .list li a.info--photo,
+#recomSearchJobList .list li a.info--photo,
+#suggestJobList .list li a.info--photo {padding-right:60px}
+.albaPick.jobList .list li a.info--photo span.infoBoxBottom.biz,
+#GeneralJobList.jobList .list li a.info--photo span.infoBoxBottom.biz,
+#wSearchJobList.jobList .list li a.info--photo span.infoBoxBottom.biz,
+#recomSearchJobList.jobList .list li a.info--photo span.infoBoxBottom.biz,
+#suggestJobList.jobList .list li a.info--photo span.infoBoxBottom.biz {margin-right:-60px}
+/** // 공고리스트 노출방식 예외 케이스 **/
+
+.jobList .list li.bg,
+.jobList .list li.mBg,
+.jobList .list li.bg .action,
+.jobList .list li.mBg .action,
+.jobList .list li.bg a.info span.infoBoxBottom.biz,
+.jobList .list li.mBg a.info span.infoBoxBottom.biz {background-color:#fffee6}
+.jobList .list li.bg .action,
+.jobList .list li.mBg .action {border-top-color:#efeeda}
+.jobList .list li.bg a.info span.infoBox>span,
+.jobList .list li.mBg a.info span.infoBox>span {border-color:#edebd7;background-color:#fffee6}
+.jobList .list li.color a.info span.title,
+.jobList .list li.mColor a.info span.title {color:#f55200 !important}
+.jobList .list li.icon a.info span.workComnm span.icon,
+.jobList .list li.mIcon a.info span.workComnm span.icon {display:inline-block;width:45px;height:16px;margin:1px 6px 0 0;vertical-align:top;background:url('//image.alba.kr/m/icon_option02.gif') no-repeat 0 0;background-size:45px 16px}
+html.ios .jobList .list li.icon a.info span.workComnm span.icon,
+html.ios .jobList .list li.mIcon a.info span.workComnm span.icon {margin-top:0}
+.jobList .list li.iconPlus .info {background-image:url('//image.alba.kr/m/hot_m.png');background-size:26px;background-repeat:no-repeat}
+#hotplace.jobList .list li a.infoLogo span.logo,
+#HOTPLACE.jobList .list li a.infoLogo span.logo {top:23px}
+html.ios #hotplace.jobList .list li a.infoLogo span.logo,
+html.ios #HOTPLACE.jobList .list li a.infoLogo span.logo {top:22px}
+
+.jobList .list li .like-icon {position:absolute;top:0;right:0;width:20px;height:20px;padding:27px 12px 28px;font-size:0;color:transparent}
+.jobList .list li .like-icon::before {content:"";display:inline-block;width:20px;height:20px;vertical-align:top;background:url("//image.alba.kr/m/interestcorp_icon.png") no-repeat 0 0;background-size:40px auto}
+.jobList .list li .like-icon.on::before {background-position:-20px 0}
+.jobList .list li .action {border-top:1px solid #f1f1f1;letter-spacing:-0.02em;text-align:right;background-color:#fbfbfb}
+.jobList .list li .action>span,
+.jobList .list li .action>a {position:relative;display:inline-block;height:34px;padding:0 10px;line-height:34px;color:#222}
+html.ios .jobList .list li .action>span,
+html.ios .jobList .list li .action>a {line-height:36px}
+.jobList .list li .action>.scrap {position:absolute;top:0;right:0;width:20px;height:20px;padding:11px 12px 9px;font-size:0;color:transparent}
+.jobList .list li .action>.scrap::before {content:"";display:inline-block;width:20px;height:20px;vertical-align:top;background:url("//image.alba.kr/m/list_scrap.png") no-repeat 0 0;background-size:40px auto}
+.jobList .list li .action>.scrap.on::before {background-position:-20px 0}
+.jobList .list li .action>.readyn {padding:0;color:#2346e4}
+.jobList .list li .action>.quickOpen {padding:0 12px;color:#2346e4}
+.jobList .list li .action>.quickOpen::after {content:"";display:inline-block;width:6px;height:11px;margin:12px 0 0 4px;vertical-align:top;background:url('//image.alba.kr/m/job_list_icon.png') no-repeat -36px -72px;background-size:108px 108px}
+.jobList .list li .action>.quickOpen.on::after {background-position:0 -72px}
+.jobList .list li .action>.readyn::before {content:"";display:inline-block;width:1px;height:14px;margin:12px 8px 0 0;vertical-align:top;background-color:#ddd}
+.jobList .list li .action>.readyn.read,
+.jobList .list li .action>.quickOpen.on {color:#aaa}
+.jobList .list li .action>.cancelBtn,
+.jobList .list li .action>.delBtn {margin-left:-5px;padding-right:12px}
+.jobList .list li .action>.memoBtn  {margin-left:-8px}
+.jobList .list li .action>.applBtn::before {content:"";display:inline-block;width:15px;height:15px;margin:11px 4px 0 0;vertical-align:top;background:url('//image.alba.kr/m/job_list_icon.png') no-repeat -36px -36px;background-size:108px 108px}
+.jobList .list li .action>.cancelBtn::before {content:"";display:inline-block;width:15px;height:15px;margin:11px 4px 0 0;vertical-align:top;background:url('//image.alba.kr/m/job_list_icon.png') no-repeat -36px 0;background-size:108px 108px}
+.jobList .list li .action>.cancelBtn::after {content:"";position:absolute;top:12px;left:0;width:1px;height:14px;background-color:#ddd}
+.jobList .list li .action>.cancelBtn:first-child::after {display:none}
+.jobList .list li .action>.memoBtn::before {content:"";position:absolute;top:12px;left:0;width:1px;height:14px;background-color:#ddd}
+.jobList .list li a.infoLogo span.keyword {display:inline-block;padding-top:4px;font-size:12px;vertical-align:top;color:#ff4b64}
+.jobList .list li.noInfo {padding:50px 0;border:none;font-size:13px;text-align:center;line-height:22px;color:#999}
+.jobList .list li.noInfo:before {content:'';display:block;width:30px;height:30px;margin:0 auto 5px;background:url('//image.alba.kr/m/list_nodata.png') no-repeat;background-size:30px 30px}
+.jobList .list li.noInfo .noInfo__job-more {margin-top:30px}
+.jobList .list li.noInfo .likecorp-button {margin:-2px 0 0 0}
+.jobList .listMore {height:48px;margin-top:5px;font-size:16px;line-height:48px;text-align:center;background:#fff}
+.jobList .listMore a {display:block;color:#868686}
+.jobList .listMore span {display:none;overflow:hidden;width:23px;height:23px;margin-top:12px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('/images/icon1.png') no-repeat 0 -576px}
+.jobList .listMore.on a {display:none}
+.jobList .listMore.on span {display:inline-block;-webkit-animation:moreLoading 1.5s linear infinite;animation:moreLoading 1.5s linear infinite}
+#LatelyAreaJob .listMore ,
+#recommendationAreaJob .listMore {margin:5px 0}
+.THECAMP .jobList .list li.noInfo {min-height:400px}
+
+.jobList.select .list li .list-input {z-index:10;position:absolute;top:11px;left:8px}
+.jobList.select .list li .list-input input {position:absolute;left:0}
+.jobList.select .list li .list-input label {display:inline-block;width:26px;height:26px;text-indent:-999em;background:url('//image.alba.kr/m/function_head.png') no-repeat 4px 4px;background-size:72px 72px}
+.jobList.select .list li .list-input input[type="checkbox"]:checked + label {background-position:-32px 4px}
+.jobList.select .list li .info {padding:15px 14px 11px 42px}
+
+/* 인재정보 - 리스트 */
+.resumeListHead {padding:15px 12px 5px;border-bottom:1px solid #eee;background-color:#fff}
+.resumeList__top {position:relative}
+.resumeList__top--title {font-size:16px}
+.resumeList__top--input {position:absolute;top:0;right:0}
+.resumeList__top--input label {font-size:13px}
+.resumeList {position:relative}
+.resumeList .viewMore {position:absolute;top:2px;right:5px;font-size:12px}
+.resumeList .viewMore a {padding:0;font-weight:bold;color:#999}
+.resumeList .viewMore span {display:inline-block;width:6px;height:9px;margin:0 0 0 2px;cursor:pointer;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -324px 0}
+
+.resumeList {overflow:hidden;background-color:#fff}
+.resumeList .list li {position:relative;border-bottom:1px solid #d9d9d9;background-color:#fff}
+.resumeList .list li a.info {position:relative;display:block;padding:15px 12px 0}
+.resumeList .list li a.info span.person {display:block;padding-left:69px;font-weight:bold;font-size:12px;color:#222}
+.resumeList .list li a.info span.person .thecamp {margin-left:2px}
+.resumeList .list li a.info span.person .thecamp__icon {display:inline-block;width:92px;height:22px;margin-top:-6px;font-size:0;vertical-align:top;color:transparent;background:url('//image.alba.kr/m/icon_thecamp.png') no-repeat 0 0;background-size:92px 22px}
+html.ios .resumeList .list li a.info span.person .thecamp__icon {margin-top:-8px}
+@media screen and (max-width:320px) {
+	.resumeList .list li a.info span.person .thecamp__icon {width:68px;background-image:url('//image.alba.kr/m/icon_thecamp_short.png');background-size:68px 22px}
+}
+
+.resumeList .list li a.info span.photo {position:absolute;top:22px;left:12px}
+.resumeList .list li a.info span.photo>img {width:54px;height:54px;border-radius:50%}
+.resumeList .list li a.info span.title {overflow:hidden;display:block;min-height:19px;max-height:40px;margin:5px 0 6px;padding-left:69px;font-size:15px;white-space:nowrap;text-overflow:ellipsis}
+html.ios .resumeList .list li a.info span.title {margin:4px 0 5px}
+.resumeList .list li a.info:visited span,
+.resumeList .list li a.info.visited span {color:#999 !important}
+.resumeList .list li a.info span.jobKind,
+.resumeList .list li a.info span.local {overflow:hidden;display:block;height:15px;padding-left:69px;font-size:11px;letter-spacing:-0.02em;white-space:nowrap;text-overflow:ellipsis;color:#666}
+.resumeList .list li a.info span.career {display:block;height:34px;margin:9px -15px 0;padding:0 15px;border-top:1px solid #f1f1f1;font-size:14px;line-height:34px;color:#2346e4 !important;background-color:#fbfbfb}
+html.ios .resumeList .list li a.info span.career {line-height:36px}
+.resumeList .list li a.info span.career .phoneCheck {color:#666 !important}
+.resumeList .list li a.info span.career .phoneCheck::before {content:"·";margin-right:3px}
+.resumeList .list li a.info span.date {position:absolute;top:17px;right:36px;font-size:11px;color:#444}
+.resumeList.person .list li a.info span.date {right:15px}
+.resumeList .list li a.info span.icon {position:absolute;right:6px;top:50%;width:6px;height:10px;margin-top:-5px;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -252px -36px}
+.resumeList .list li a.scrap {position:absolute;top:0;right:0;width:20px;height:20px;padding:12px 12px 9px 9px;font-size:0;color:transparent}
+html.ios .resumeList .list li a.scrap {padding:10px 12px 9px 9px}
+.resumeList .list li a.scrap::before {content:"";display:inline-block;width:20px;height:20px;vertical-align:top;background:url("//image.alba.kr/m/list_scrap.png") no-repeat 0 0;background-size:40px auto}
+.resumeList .list li a.scrap.on::before {background-position:-20px 0}
+
+.resumeList .list li a.resumeDel-btn {position:absolute;bottom:0;right:0;padding:0 15px 0 10px;font-size:14px;line-height:38px}
+.resumeList .list li.noInfo {padding:50px 0 55px;border:0;font-size:13px;text-align:center;color:#999}
+.resumeList .list li.noInfo:before {content:'';display:block;width:32px;height:32px;margin:0 auto 8px;background:url('//image.alba.kr/m/list_no_data.png') no-repeat;background-size:32px 32px}
+
+.resumeList .listPhoto {width:100%}
+.resumeList .listPhoto li {padding:0;background:#fff;border-bottom:0 none}
+.resumeList .listPhoto li a.info {height:102px;padding:6px 19px 6px 100px;color:#383838}
+.resumeList .listPhoto li a.info span.personImg {position:absolute;top:6px;left:6px;margin:0;padding:0}
+.resumeList .listPhoto li a.info span.personImg img {width:78px;height:100px;border:1px solid #c2c2c2}
+.resumeList .listPhoto li a.info span.person {position:static;display:block;margin:0}
+.resumeList .listPhoto li a.info span.person strong {color:#222}
+.resumeList .listPhoto li a.info span.scrapDate {display:block;;color:#666}
+.resumeList .listPhoto li .magAction {overflow:hidden;width:100%;height:32px;border-top:1px solid #ccc}
+.resumeList .listPhoto li .magAction li {float:left;width:100%;margin-top:0;border:0 none}
+.resumeList .listPhoto li .magAction.two li {width:50%}
+.resumeList .listPhoto li .magAction.three li {width:33.33%}
+.resumeList .listPhoto li .magAction.four li {width:25%}
+.resumeList .listPhoto li .magAction.five li {width:20%}
+.resumeList .listPhoto li .magAction li a {position:relative;display:block;height:32px;padding:0;line-height:32px;font-size:12px;text-align:center;color:#868686;background:#fff;border-left:1px solid #ccc}
+.resumeList .listPhoto li .magAction li a.on {color:#fff;background:#dda632}
+.resumeList .listPhoto li .magAction li:first-child a {border-left:0 none}
+
+.resumeList .listMore {height:48px;margin-top:5px;font-size:16px;line-height:48px;text-align:center;background:#fff}
+.resumeList .listMore a {display:block;color:#868686}
+.resumeList .listMore span {display:none;overflow:hidden;width:23px;height:23px;margin-top:12px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('/images/icon1.png') no-repeat 0 -576px}
+.resumeList .listMore.on a {display:none}
+.resumeList .listMore.on span {display:inline-block;-webkit-animation:moreLoading 1.5s linear infinite;animation:moreLoading 1.5s linear infinite}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.resumeList .viewMore span,
+	.resumeList .list li a.info span.icon,
+	.resumeList .list li a.smsBtn span,
+	.resumeList .list li a.delBtn {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* css animate : moreLoading */
+@-webkit-keyframes moreLoading {0% {-webkit-transform:rotate(0deg)} 100% {-webkit-transform:rotate(360deg)}}
+@keyframes moreLoading {0% {transform:rotate(0deg)} 100% {transform:rotate(360deg)}}
+
+/* 이력서 View */
+.resumeView {position:relative}
+.resumeView .noCertName {margin-bottom:6px;padding:16px;font-size:12px;line-height:1.6;background:#fff}
+.resumeView .noCertName .certGo {display:block;height:40px;margin-top:5px;font-size:14px;line-height:40px}
+.resumeView .title {margin-bottom:6px;padding:16px;font-weight:bold;background:#fff}
+.resumeView .scrap {z-index:201;position:fixed;top:14px;right:16px;width:21px;height:21px}
+.resumeView .scrap span {display:block;width:22px;height:22px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v2.png') no-repeat -252px -216px}
+.resumeView .scrap.on span {background-position:-288px -216px}
+html.ios .resumeView .scrap {position:absolute;top:-44px}/* IOS 헤더 픽스 예외처리 */
+.resumeView .InfoPrimary {position:relative;min-height:100px;padding:16px 16px 16px 115px;font-size:13px;line-height:1.6;background:#fff}
+.resumeView .InfoPrimary li {position:relative}
+.resumeView .InfoPrimary li.name {font-size:16px}
+.resumeView .InfoPrimary li.photo {position:absolute;left:17px;top:50%;width:85px;height:85px;margin:-43px 0 0}
+.resumeView .InfoPrimary li.photo a {display:block;height:85px;border-radius:50%}
+.resumeView .InfoPrimary li.photo img {width:85px;height:85px;border-radius:50%}
+.resumeView .InfoPrimary li.photo img.noBiz {position:absolute;top:0;left:0}
+.resumeView .InfoPrimary .check {position:absolute;right:-5px;top:50%;height:16px;margin-top:-8px;font-size:12px;vertical-align:middle;color:#2cb920}
+.resumeView .InfoPrimary .check em {display:inline-block;width:16px;height:16px;margin-right:2px;vertical-align:text-top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -612px -144px}
+.resumeView .bigPhotoFilter {display:none;z-index:998;position:fixed;left:0;top:0;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.resumeView .bigPhoto {display:none;z-index:99999;position:fixed;left:50%;top:50%;margin:-120px 0 0 -90px;padding:5px;background:#fff;box-shadow:0px 7px 14px rgba(0,0,0,.5)}
+.resumeView .bigPhoto img {display:block;width:170px;height:228px}
+.resumeView .bigPhoto .closeBtn {position:absolute;right:0;top:0;padding:7px;background:#fff}
+.resumeView .bigPhoto .closeBtn span {display:block;width:16px;height:16px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -540px -72px}
+.resumeView .InfoSub {margin-top:6px;padding:16px;background:#fff}
+.resumeView .InfoSub h2 {font-size:16px}
+.resumeView .InfoSub h2 span {font-weight:normal;font-size:12px;color:#999}
+.resumeView .InfoSub li {position:relative;min-height:16px;margin-top:10px;line-height:1.4;color:#0d0d0d}
+.resumeView .InfoSub li .item {position:absolute;left:0;top:0;color:#999}
+.resumeView .InfoSub li .detail {display:block;font-size:13px;color:#999}
+.resumeView .InfoSub li .subList li {min-height:31px;margin:3px 0 0;padding:1px 0 0 70px;font-size:13px;line-height:16px}
+.resumeView .InfoSub li .subList li .itemSub {position:absolute;left:0;top:0;font-size:12px;color:#999}
+.resumeView .InfoSub li .subList li .tag em {display:inline-block;margin:0 0 4px;padding:0 2px 1px;font-size:12px;line-height:1.2;text-align:center;color:#0174ff;background:#d5e8ff;border:1px solid #2346e4}
+.resumeView .InfoSub.workInfo li {padding-left:70px;font-size:13px}
+.resumeView .InfoSub.workInfo li .detail {color:#0d0d0d}
+.resumeView .InfoSub.workInfo li.kind img {margin-top:0 !important}
+.resumeView .InfoSub.workInfo li.kind .detail {line-height:1.6}
+.resumeView .InfoSub.workInfo li.pay img {vertical-align:text-top}
+.resumeView .InfoSub.eduInfo li .major {display:inline-block}
+.resumeView .InfoSub.oaInfo li {font-size:13px}
+.resumeView .InfoSub.specialtyInfo li .specialty {display:inline-block}
+.resumeView .InfoSub.addInfo li {font-size:13px}
+.resumeView .InfoSub.myHistory li .detail {margin-bottom:5px;font-size:14px;color:#0d0d0d}
+.resumeView .InfoSub.photoInfo li {min-height:70px;padding-left:107px;font-size:12px}
+.resumeView .InfoSub.photoInfo li .openyn {display:block;margin-bottom:3px;font-weight:bold}
+.resumeView .InfoSub.photoInfo li .photo {position:absolute;left:0;top:0;width:96px;height:68px;border:1px solid #adadad}
+.resumeView .InfoSub.photoInfo li .photo img {width:96px;height:68px}
+.resumeView .InfoSub.photoInfo li .detail {color:#0d0d0d}
+.resumeView .InfoSub.setInfo li {padding-left:70px;font-size:13px}
+.resumeView .InfoSub.setInfo li .btn {position:absolute;right:0}
+.resumeView .InfoSub.licenseInfo li .certicon {position:relative;display:inline-block;padding:0 10px;margin-left:6px;height:18px;font-size:12px;line-height:18px;vertical-align:top;background:#34a6fe;color:#fff}
+
+.readGuide {font-size:12px;text-align:center;color:#666}
+.readGuide .loginBtnAction {margin-top:10px}
+.readGuide .btn {width:130px;height:38px;line-height:38px}
+.readAction {z-index:99999;position:fixed;left:0;bottom:0;width:100%;margin-top:6px;padding:16px;background:#fff;box-sizing:border-box}
+.readAction .txt {margin-bottom:10px;font-size:12px;line-height:1.6;text-align:center;color:#666}
+.readAction .txt em {color:#222}
+.readAction .txtBox {display:block;padding:10px;text-align:center;color:#222;background-color:#ffd100}
+.readAction .txtBox strong {color:#222}
+.readAction .txtBox .strong {display:block;margin-bottom:5px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.resumeView .InfoPrimary .check em,
+	.resumeView .bigPhoto .closeBtn span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+	.resumeView .scrap span {background-image:url('//image.alba.kr/m/icon_v2_300.png');background-size:360px 360px}
+}
+
+/* 커뮤니티 - 리스트 */
+.storyList {position:relative;padding:0 10px 4px;background-color:#fff}
+body.story .storyList {padding-top:10px}
+.storyList>p {overflow:hidden;padding:12px 0 8px;font-size:15px}
+.storyList>p span {font-weight:normal;font-size:12px}
+.storyList>p #ListCnt {letter-spacing:0;color:#2346e4}
+.storyList .viewMore {position:absolute;top:2px;right:5px;font-size:12px}
+.storyList .viewMore a {padding:0;font-weight:bold;color:#999}
+.storyList .viewMore span {display:inline-block;width:6px;height:9px;margin:0 0 0 2px;cursor:pointer;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -324px 0}
+.storyList .list {width:100%}
+.storyList .list li {position:relative;margin-top:6px;border:1px solid #eee;font-size:12px;background:#fff}
+.storyList .list li:first-child {margin-top:0}
+.storyList .list li a.info {position:relative;display:block;padding:13px 15px}
+.storyList .list li a.info span.boardType,
+.storyList .list li a.info span.category {display:block;margin-bottom:5px;font-size:12px;color:#3d4362}
+.storyList .list li a.info span.title {display:block;margin-bottom:5px;padding-right:20px;font-size:15px;white-space:nowrap}
+.storyList .list li a.info span.title strong {overflow:hidden;display:inline-block;max-width:80%;padding-right:1px;font-weight:normal;font-size:15px;white-space:nowrap;vertical-align:top;text-overflow:ellipsis}
+.storyList .list li a.info span.title strong strong {display:inline;padding:0}
+.storyList .list li a.info span.title strong .replyN {color:#999}
+.storyList .list li a.info span.title strong .replyY {color:#2346e4}
+.storyList .list li a.info span.title em {display:inline-block;margin:3px 0 0 3px;vertical-align:top;color:#ff6000}
+.storyList .list li a.info span.title em.newIcon {width:13px;height:13px;margin-left:0;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/list_new.png') no-repeat;background-size:13px 13px}
+.storyList .list li a.info span.title em.imgIcon {width:12px;height:12px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -468px -144px}
+.storyList .list li a.info span.infoBox {font-size:12px;color:#666}
+.storyList .list li a.info span.infoBox span::before {content:'·';padding-right:3px;color:#666}
+.storyList .list li a.info .title + span.infoBox span.regdt::before {display:none}
+.storyList .list li a.info span.infoBox span.userid::before {content:none}
+.storyList .list li a.info span.bar {display:none}
+.storyList .list li a.info span.pay b {color:#ff4b64}
+.storyList .list li a.info span.reputeScore {color:#2346e4}
+.storyList .list li a.info span.etc {overflow:hidden;display:block;letter-spacing:-0.8px;white-space:nowrap;text-overflow:ellipsis;color:#666}
+.storyList .list li .replyYn {position:absolute;top:17px;right:10px;width:30px;height:18px;line-height:18px;text-align:center;color:#a39c92;border:1px solid #a39c92;border-top:1px solid #beb9b2;border-left:1px solid #beb9b2;border-radius:2px}
+.storyList .list li.noInfo {padding:50px 0;border:none;font-size:13px;text-align:center;line-height:normal;color:#999}
+.storyList .list li.noInfo:before {content:'';display:block;width:30px;height:30px;margin:0 auto 5px;background:url('//image.alba.kr/m/list_nodata.png') no-repeat;background-size:30px 30px}
+.storyList .list li.notice a.info span.icon {display:inline-block;width:30px;height:14px;margin-top:1px;border:1px solid #5b79fe;border-radius:10px;font-size:10px;line-height:15px;text-align:center;vertical-align:top;color:#2346e4;background-color:#fff}
+html.ios .storyList .list li.notice a.info span.icon {margin-top:0;line-height:16px}
+.storyList .list .story-nudge {overflow:hidden;position:relative;text-align:center;background-color:#f6f7f8}
+.storyList .list .story-nudge__target {display:block;padding:15px 0 !important}
+.storyList .list .story-nudge__img {width:276px;height:55px}
+
+.storyList .listPhoto li a.info {height:52px;padding:15px 10px 15px 130px}
+.storyList .listPhoto li a.info span.storyImg {position:absolute;top:10px;left:10px;width:110px;height:62px}
+.storyList .listPhoto li a.info span.storyImg img {width:110px;height:62px}
+.storyList .listPhoto li a.info span.title strong {max-width:100%}
+.storyList .listImg {width:auto;margin:0 -3px}
+.storyList .listImg:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.storyList .listImg li {float:left;width:50%;background:none;box-shadow:0 0 0 transparent}
+.storyList .listImg li a.info {height:220px;margin:0 3px;padding:0;background:#fff}
+.storyList .listImg li a.info span.storyImg {display:block}
+.storyList .listImg li a.info span.storyImg img {width:100%;height:170px}
+.storyList .listImg li a.info span.title {overflow:hidden;display:block;height:30px;margin:0;padding:8px 8px 0;color:#222}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.storyList .viewMore span,
+	/*.storyList .list li a.info span.title em.newIcon,*/
+	.storyList .list li a.info span.title em.imgIcon {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+.albaDicList .list li a.info span.boardType {display:inline;font-size:15px;vertical-align:top;color:#2346e4}
+.albaDicList .list li a.info span.title {display:inline;font-size:15px;vertical-align:top;color:#999}
+.albaDicList .list li a.info span.title strong {font-weight:normal}
+.albaDicList .list li a.info span.infoBox {overflow:hidden;display:block;display:-webkit-box;margin-top:4px;text-overflow:ellipsis;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;font-size:12px;line-height:1.4em;height:2.6em;color:#666}
+html.ios .albaDicList .list li a.info span.infoBox {margin-top:5px}
+
+#StoryListNotice {margin-bottom:4px}
+
+/* 이력서열람 상품 / 정액권 상품 / 알람이용권 */
+.goobsGuide {margin:0 0 10px}
+.goobsGuide h1 {height:44px;padding:0 10px;font-size:1.143em;line-height:44px}
+.goobsGuide ul.guide {margin:0 10px;line-height:0;font-size:0;font-family:Dotum;color:transparent;border-top:1px solid #959595;border-bottom:1px solid #959595}
+.goobsGuide div {padding:15px;font-size:0.917em;line-height:1.4;color:#666}
+.goobsGuide dl {padding:0 0 20px;background-color:#f8f9fa;border-top:1px solid #d4d6d9;border-bottom:1px solid #d4d6d9;box-shadow:inset 0 1px #fff, inset 0 -1px #fff}
+.goobsGuide dt {margin:16px 0 0;padding:0 10px;font-size:0.917em;font-weight:bold;color:#137ed0}
+.goobsGuide dd {margin:3px 0 0;padding:0 20px;font-size:0.857em;line-height:1.4;color:#666}
+.goobsTable {position:relative}
+.goobsTable h1 {padding:0 0 20px;font-size:1.5em;text-align:center;background:none;border:0 none}
+.goobsTable h2,
+.goobsTable h3 {height:35px;font-size:1.143em;line-height:35px;color:#292929}
+.goobsTable p {position:absolute;right:10px;font-size:0.786em;color:#999}
+.goobsTable p.memo {margin-top:-20px}
+.goobsTable table {width:100%}
+.goobsTable table caption {display:none}
+.goobsTable table th {height:33px;color:#505050;background-color:#fff;border-top:1px solid #b7b7b7;border-bottom:1px solid #959595}
+.goobsTable table th.name {border-left:0 none}
+.goobsTable table th.bonus {width:14%}
+.goobsTable table th.valid {width:23%}
+.goobsTable table td {height:40px;color:#505050;background-color:#fff}
+.goobsTable table tr:nth-child(even) td {background-color:#f4f4f5}
+.goobsTable table td.select {text-align:center}
+.goobsTable table td.select label {width:19px;padding:0;text-indent:-999em}
+.goobsTable table td.name {padding-left:7px;line-height:1.4;border-left:0 none}
+.goobsTable table td.name strong {display:block;color:#222}
+.goobsTable table td.name span.price {display:block}
+.goobsTable table td.name em {color:#ff4e00}
+.goobsTable table td.cnt {padding-left:4px}
+.goobsTable table td.cnt label {padding-left:20px;font-weight:bold;line-height:19px}
+.goobsTable table td.cnt label strong {vertical-align:top}
+.goobsTable table td.benefit {padding-left:5px}
+.goobsTable table td.benefit.noinfo {text-align:center}
+.goobsTable table td.benefit span.price {text-decoration:line-through}
+.goobsTable table td.benefit del {display:block}
+.goobsTable table td.benefit span.icon {overflow:hidden;display:inline-block;width:12px;height:10px;margin:-1px 0 0 3px;vertical-align:middle;text-indent:-999em;background:url('/image/icon5.png') no-repeat -314px -255px}
+.goobsTable table td.benefit strong {font-weight:bold;font-size:1em;font-family:tahoma;vertical-align:top;color:#ff4e00}
+.goobsTable table td.price {padding-right:5px;text-align:right}
+.goobsTable table td.price strong {line-height:1em;font-weight:bold;font-size:1.15em;font-family:tahoma;padding-right:1px;vertical-align:top}
+.goobsTable table td.valid {padding-left:10px;padding-right:5px}
+.goobsTable table td.valid span {display:block;margin-bottom:5px;font-size:0.917em;line-height:1.4}
+.goobsTable table td.valid em {color:#909090}
+.goobsTable table td.bonus {padding-left:7px;text-align:center}
+.goobsTable table td.unit {padding-right:5px;text-align:right}
+.goobsTable table td.location {padding-left:7px;line-height:1.4}
+.goobsTable table td.location strong {display:block}
+.goobsTable table td.location strong span {font-weight:normal}
+.goobsTable table td.detail {text-align:center}
+.goobsTable table td.detail a {display:inline-block;height:16px;padding:2px 5px 0;font-size:1em;line-height:16px;background:#fff;border:1px solid #dcdcde;border-radius:18px}
+.goobsTable table td.detail a span {position:relative;display:inline-block;top:1px;width:12px;height:12px;margin-left:3px;vertical-align:top;background:url('/images/icon1.png') no-repeat -170px -170px}
+.goobsTable .guide {position:relative;margin:15px 0 0;padding:0 10px 0 20px;font-size:0.857em;line-height:1.4;color:#ff6d0c}
+.goobsTable .guide span {position:absolute;left:7px}
+.goobsTable .submit {margin-top:20px;text-align:center}
+.goobsTable .submit a.btn {display:block;height:45px;font-size:1.2em;line-height:45px}
+
+#BizFlatrateRegist .goobsGuide ul {height:108px;background:url('/images/FlatrateRegist.png') no-repeat center 15px} /* 정액권 구매 */
+#BizPushRegist .goobsGuide ul {height:107px;background:url('/images/PushRegist.png') no-repeat center 15px} /* 알림이용권 구매 */
+#MbizMain .goobsGuide {position:relative;width:320px;height:263px;margin:0 auto;background:url('/image/login.png') no-repeat 0 30px} /* 로그인 */
+#MbizMain .goobsGuide .login {position:absolute;top:145px;left:51px}
+#MbizMain .goobsGuide .login a {display:block;width:217px;height:37px;text-indent:-999em}
+
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.goobsTable table td.benefit span.icon {background-image:url('/image/icon5_200.png');background-size:336px 336px}
+	.goobsTable table td.detail a span {background-image:url('/images/icon1_200.png');background-size:320px 640px}
+	#BizFlatrateRegist .goobsGuide ul {background-image:url('/images/FlatrateRegist_200.png');background-size:292px 78px}
+	#BizPushRegist .goobsGuide ul {background-image:url('/images/PushRegist_200.png');background-size:271px 77px}
+	#MbizMain .goobsGuide {background-image:url('/image/login_200.png');background-size:320px 223px}
+}
+
+/* 에러 */
+.errorMsg {padding-bottom:180px;background:url('/image/error_img.gif') no-repeat center bottom}
+.errorMsg .state {margin:10px;padding:10px;line-height:1.3;font-weight:bold;font-size:1.143em;font-family:dotum;text-align:center;color:#1273a4;border:1px dashed #7bc4e8}
+.errorMsg .help {margin:15px 0 0;font-size:0.85em;line-height:1.4;letter-spacing:-1px;text-align:center}
+.errorMsg .help strong {display:block;margin:0 0 7px}
+.errorMsg .action {margin:10px 0;font-size:0.85em;text-align:center}
+.errorMsg .action a {display:inline-block;margin:0 2px;padding:8px 10px;font-weight:bold;color:#222;background:#f3f3f3;border:1px solid #aaa;border-right:1px solid #767676;border-bottom:1px solid #767676;border-radius:2px;box-shadow:inset 1px 1px 1px #f5f5f4,inset -1px -1px 1px #f5f5f4;border-radius:3px}
+.errorMsg .action a.linkMain {color:#fff;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#40b2e9), to(#1e9ad9));background-color:#1f9fde;border:1px solid #2096d0;border-right:1px solid #0078b4;border-bottom:1px solid #0078b4;box-shadow:inset 1px 1px 1px #50b6e7,inset -1px -1px 1px #50b6e7}
+
+/* 이벤트 배너 */
+.eventBanner {display:none;position:relative;width:100%;margin:0;text-align:center;background-color:#fceeaf}
+.eventBanner img {width:300px;height:33px}
+.eventBanner a.close {position:absolute;top:5px;left:50%;width:21px;height:21px;margin-left:125px;text-indent:-999em}
+
+#EventPr {background-color:#ebebeb}
+.eventPr section {padding:10px}
+
+/* 다음/애드센스/배너관리자 광고 */
+#PR_Middle,
+#AdSense {overflow:hidden;position:relative !important;padding:0 !important;margin:8px 0 !important;background-color:#fff}
+body.sub #PR_Middle,
+body.sub #AdSense {margin:0 7px 8px !important}
+.adBannerBottom {z-index:110;overflow:hidden;position:static !important;top:auto !important;bottom:0 !important;width:100%;text-align:center;background-color:#fff}
+body.sub .adBannerBottom {display:none}
+#Inmobi div,
+#InterActive div {display:block !important;width:100% !important}
+#InterActive div {margin:0 auto !important}
+#Inmobi iframe,
+#InterActive iframe,
+#AdOp iframe,
+#LinkPrice iframe {display:block !important;margin:0 auto !important;border:0 none}
+#PR_Bottom a {display:block;height:50px;margin:0 auto;text-align:center;background:#fff}
+#PR_Bottom img,
+.adsbygoogle {display:block;width:320px;height:50px;margin:0 auto}
+html.app .adBannerBottom {position:static !important}
+html.app .adBannerBottom#cauly_ad_area_bannerDisplay {position:relative !important}
+
+/* 이용약관 동의체크 */
+.agreementCheck {display:none}
+.agreementCheck .location {width:300px;margin-left:-150px;background:#fff;border-radius:6px;box-shadow:0px 7px 14px rgba(0,0,0,.5)}
+.agreementCheck a.allView {position:absolute;right:20px;top:13px;width:50px;height:24px;font-size:12px;line-height:24px}
+.agreementCheck .document {margin:0 16px;padding:5px;font-size:12px;line-height:1.6;border:1px solid #545454}
+.agreementCheck .agreeCheck {margin:10px 0;text-align:center}
+.agreementCheck .agreeCheck a {width:100px;height:34px;font-size:1em;line-height:34px}
+
+/* 앱다운로드 프로모션 */
+.appDownPromotion {z-index:99999;display:none;position:fixed;left:0;top:0;width:100%;height:100%}
+.appDownPromotion .filter {z-index:99998;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.appDownPromotion .layerContents {z-index:99999;position:fixed;left:50%;top:50%;width:360px;height:640px;margin:-320px 0 0 -180px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/appDownPR_albacus1.png') no-repeat center;background-size:360px 640px}
+.appDownPromotion .layerContents a {position:absolute}
+.appDownPromotion .layerContents a.downloadBtn {left:87px;top:324px;width:187px;height:52px}
+.appDownPromotion .layerContents a.closeBtn {left:240px;top:167px;width:34px;height:34px}
+.appDownPromotion .layerContents a.closeBtn.oneday {left:87px;top:426px;width:187px;height:21px}
+
+/* 앱다운레이어 */
+.appSetupLayer .filter {filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.appSetupLayer .layerContents {padding:10px 15px;font-size:15px;line-height:1.4;color:#666}
+.appSetupLayer .layerContents strong {font-weight:normal;color:#222}
+.appSetupLayer .layerAction .onedayBtn {position:absolute;left:15px;top:0}
+.appSetupLayer .layerAction .onedayBtn .btn {padding:0;font-weight:normal;font-size:13px}
+.appSetupLayer .layerAction .onedayBtn .btn span {display:inline-block;width:12px;height:12px;margin:-1px 3px 0 0;vertical-align:middle;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -288px -36px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.appSetupLayer .layerAction .onedayBtn .btn span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 마이메뉴 */
+.myMenuView {z-index:9999;display:none;position:fixed;top:auto;right:25px;bottom:35px;width:60px;height:60px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v2.png') no-repeat -216px -144px}
+.myMenuView.on {display:block}
+.myMenuListWrap {z-index:99999;display:none;position:fixed;top:0;left:0;width:100%;height:100%}
+.myMenuListWrap.on {display:block}
+.myMenuList {z-index:99999;position:fixed;top:0;left:0;width:100%;height:100%;padding:84px 0 40px;box-sizing:border-box}
+.myMenuList>h1 {position:fixed;top:44px;left:0;width:100%;font-size:17px;color:#ffd100;text-align:center}
+.myMenuList>ul {overflow-x:hidden;overflow-y:auto;width:100%;height:100%;text-align:center}
+.myMenuList>ul>li {width:100%}
+.myMenuList>ul>li>a {display:block;padding:12px;color:#fff}
+.myMenuList>ul>li.add>a>span {display:block;width:19px;height:19px;margin:0 auto;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v2.png') no-repeat 0 -180px}
+.myMenuList>.close {position:fixed;top:auto;right:25px;bottom:35px;width:40px;height:40px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/icon_v2.png') no-repeat -288px -144px}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.myMenuView,
+	.myMenuList>ul>li.add>a>span,
+	.myMenuList>.close {background-image:url('//image.alba.kr/m/icon_v2_300.png');background-size:360px 360px}
+}
+
+.job-restriction ,
+.job-restrictionLayer {display:none !important}
+/* 채팅상담 */
+.customerChat-btn {z-index:9999;position:fixed;right:25px;bottom:35px;width:58px;height:58px}
+.customerChat-btn img {width:100%;vertical-align:top}
+.customerChat-layerWrap {display:none;z-index:999999;position:fixed;left:0;top:0;width:100%;height:100%;display:none}
+.customerChat-layer {z-index:999998;position:fixed;right:33px;left:33px;background-color:#fff}
+.customerChat-layerContent {position:relative}
+.customerChat-layerClose {position:absolute;right:16px;top:17px;width:26px;height:26px;line-height:0;font-size:0;font-family:Dotum;color:transparent;background:url('//image.alba.kr/m/chatting_icon.png') no-repeat -67px -31px;background-size:166px 59px}
+
+/* 채팅상담 - 정보입력 */
+#CustomerChat-infoWrite .customerChat-layer {overflow-y:scroll;top:50%;padding:25px 25px 15px;margin-top:-206px;box-sizing:border-box}
+#CustomerChat-infoWrite .customerChat-layer * {font-weight:bold;font-family:'Malgun Gothic';letter-spacing:-0.05em}
+#CustomerChat-infoWrite p {margin-bottom:8px;font-size:12px;color:#a9a9a9}
+#CustomerChat-infoWrite .title {margin-bottom:22px;font-size:19px;text-align:center;color:#955c3f}
+#CustomerChat-infoWrite .title>.balloon {position:relative;top:1px;display:inline-block;width:43px;height:23px;margin-left:5px;vertical-align:top;background:url('//image.alba.kr/m/chatting_icon.png') no-repeat 0 -36px;background-size:166px 59px}
+#CustomerChat-infoWrite .customerChat-write>li {overflow:hidden;height:32px;margin-top:-1px;border:1px solid #cfcfcf}
+#CustomerChat-infoWrite .customerChat-write>li:first-child {margin-top:0}
+#CustomerChat-infoWrite .customerChat-write>li>.item {float:left;width:70px;padding:0 0 0 5px}
+#CustomerChat-infoWrite .customerChat-write>li>.item>label {display:block;height:32px;line-height:32px;font-weight:bold;font-size:12px;letter-spacing:-0.05em}
+#CustomerChat-infoWrite .customerChat-write>li>.itemDetail {overflow:hidden;padding:0 5px}
+#CustomerChat-infoWrite .customerChat-write>li>.itemDetail>input {width:100%;height:32px;font-weight:normal;font-size:12px;vertical-align:top;color:#ababab;border:0 none;letter-spacing:0}
+#CustomerChat-infoWrite .customerChat-write>li>.itemDetail .selectBox-dropdown .selectBox-label {padding-left:5px;border:1px solid #ededed}
+#CustomerChat-infoWrite .customerChat-write>li.full {height:auto;margin:0;padding:14px 0 0;border:0 none}
+#CustomerChat-infoWrite .customerChat-write>li.full>.item {float:none;width:auto}
+#CustomerChat-infoWrite .customerChat-write>li.full>.item>label {height:auto;padding:0 0 8px;line-height:normal;color:#8b8b8b}
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail {overflow:visible;padding:0;}
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail::after {content:"";display:block;clear:both}
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail> select {float:left;padding:0 10px;width:47.8%;height:36px;box-sizing:border-box;border:1px solid #cfcfcf;line-height:34px}
+#CustomerChat-infoWrite .customerChat-write>li.full>.itemDetail> select:nth-child(2) {float:right;}
+#CustomerChat-infoWrite .infomationAgree-wrap {padding:10px 0}
+#CustomerChat-infoWrite .infomationAgree-check>.input {position:relative;display:inline-block;vertical-align:top}
+#CustomerChat-infoWrite .infomationAgree-check>.input>input {z-index:1;position:absolute;left:0;top:0}
+#CustomerChat-infoWrite .infomationAgree-check>.input>label {z-index:2;position:relative;display:inline-block;font-size:11px}
+#CustomerChat-infoWrite .infomationAgree-check>.agree-check-moreView {display:inline-block;font-size:11px;line-height:20px;letter-spacing:-0.05em;vertical-align:top;color:#ffa200;text-decoration:underline}
+#CustomerChat-infoWrite .infomationAgree {display:none;padding:0 0 15px}
+#CustomerChat-infoWrite .infomationAgree>p {font-size:12px}
+#CustomerChat-infoWrite .infomationAgree>ul>li {padding:3px 0 2px;font-size:12px;color:#222}
+#CustomerChat-infoWrite .customerChat-startBtn {display:block;height:38px;font-weight:bold;font-size:14px;line-height:38px;text-align:center;color:#3c3c3c;background:#ffd100}
+
+html.android .infomationAgree-check>.agree-check-moreView {line-height:24px !important}
+html.ios .infomationAgree-check>.agree-check-moreView {line-height:16px !important}
+html.ios .infomationAgree-check>.input>label {line-height:18px !important}
+
+/* 채팅상담 - 시간안내 */
+#CustomerChat-timeOver .customerChat-layer {top:50%;padding:25px 20px 15px;margin-top:-121px;border:1px solid #c6c6c6}
+#CustomerChat-timeOver .customerChat-layer * {font-weight:bold;font-family:'Malgun Gothic';letter-spacing:-0.05em;text-align:center}
+#CustomerChat-timeOver .customerChat-timeInfo-guide1 {margin-bottom:12px;font-size:12px;}
+#CustomerChat-timeOver .customerChat-timeInfo-guide1>span {position:relative;top:3px;display:inline-block;width:20px;height:20px;margin-right:5px;vertical-align:top;background:url('//image.alba.kr/common/customer_chat_bg.png') no-repeat -80px -30px}
+#CustomerChat-timeOver .customerChat-timeInfo-title {margin-bottom:11px;font-size:14px;letter-spacing:-0.07em;}
+#CustomerChat-timeOver .customerChat-timeInfo-list {margin-bottom:13px;}
+#CustomerChat-timeOver .customerChat-timeInfo-list>li {margin-top:3px;font-size:12px}
+#CustomerChat-timeOver .customerChat-timeInfo-list>li:first-child {margin-top:0}
+#CustomerChat-timeOver .customerChat-timeInfo-list>li>span {position:relative;top:6px;display:inline-block;width:2px;height:2px;margin-right:5px;vertical-align:top;background:#545454}
+#CustomerChat-timeOver .customerChat-timeInfo-guide2 {margin-bottom:15px;font-size:12px}
+#CustomerChat-timeOver .customerChat-timeInfo-btn {display:block;height:38px;font-weight:bold;font-size:14px;line-height:38px;text-align:center;color:#3c3c3c;background:#ffd100}
+
+/* 상품안내 레이어 */
+.goods-info-layer {z-index:99999;overflow:hidden;position:fixed;top:50%;left:50%;width:300px;margin-left:-150px;border-radius:5px}
+.goods-info-layer .infoLayer-link {display:none} /* 기존 신청버튼 */
+.goods-info__title {height:45px;border-bottom:1px solid #ddd;font-weight:bold;font-size:16px;line-height:45px;text-align:center;background-color:#fff}
+.goods-info__contents {padding:15px;background-color:#fff}
+.goods-info__contents>dl {margin-bottom:15px}
+.goods-info__term {position:relative;padding-left:23px;font-size:13px;line-height:1.46}
+.goods-info__term--service {display:none}
+.goods-info__term::before {content:'';position:absolute;top:0;left:0;width:15px;height:15px;background:url('//image.alba.kr/m/pop_goods.png') no-repeat 0 0;background-size:48px 24px}
+.goods-info__description p {display:none;padding-left:23px;font-size:12px;line-height:1.5;color:#666}
+.goods-info__description p:first-child {display:block}
+.goods-info__explain {position:relative;padding-left:23px;font-size:13px;line-height:1.46}
+.goods-info__explain::before {content:'';position:absolute;top:0;left:0;width:15px;height:15px;}
+.goods-info__explain--first::before {background:url('//image.alba.kr/m/pop_goods.png') no-repeat -24px 0;background-size:48px 24px}
+.goods-info__explain--noimage::before {background-image:none}
+.goods-info__explain>em {color:#2346e4}
+.goods-info__explain--genius {display:none}
+.goods-info-btn--apply {display:block;width:100%;height:50px;font-size:15px;line-height:50px;text-align:center;background-color:#ffe000}
+.goods-info-btn--close {position:absolute;top:0;right:0;padding:15px;font-size:0;color:transparent}
+.goods-info-btn--close::before {content:'';display:block;width:15px;height:15px;background:url('//image.alba.kr/m/pop.png') no-repeat 0 0;background-size:48px 24px}
+
+.infoLayerFilter {display:none;z-index:998;position:fixed;left:0;top:0;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+
+/* 기업평판 NEW 아이콘 */
+.infoDetail>ul>li {position:relative}
+.infoDetail>ul>li>a>.iconNew {position:absolute;display:inline-block;right:14px;width:5px;height:5px;margin:9px 0 0;border-radius:50%;line-height:0;font-size:0;font-family:Dotum;color:transparent;background-color:#ffd100}
+
+/* 알바천국 백과사전 리스트 */
+.text-blue {color:#2346e4 !important}
+.albaDic-search {padding:26px 0 23px;margin:-8px 0 0 -7px;width:calc(100% + 14px);text-align:center;background:#fff}
+.albaDic-search__title {font-size:17px;color:#222}
+.albaDic-search__about {margin-top:9px;font-size:13px;color:#666}
+.albaDic-search__bar {position:relative;margin:16px auto 0;padding:0 70px 0 14px;width:calc(93% - 90px);height:41px;border:3px solid #ffd100}
+.albaDic-search__bar--link {position:absolute;top: 0;right: 0;width: 32px;height: 36px;font-size:0;color:transparent;background: url('//image.alba.kr/m/albaDicIcon.png') no-repeat 0 10px;background-size:216px 216px;}
+.albaDic-search__bar--icon {position:absolute;background-image:url('//image.alba.kr/m/icon_v2_300.png');background-size:360px 360px}
+.albaDic-search__bar--icon.icon-del.on {display:block}
+.albaDic-search__bar--icon.icon-del {display:none;top:0;right:32px;width:32px;height:36px;background-position:-36px -99px}
+
+input.albaDic-search__bar--input {width:100%;height:34px;-webkit-appearance:none;border-radius:0;border:none;font-size:13px;color:#999;background:#fff}
+.android input.albaDic-search__bar--input {margin-top:2px}
+input.albaDic-search__bar--input::-webkit-search-cancel-button {-webkit-appearance:none}
+input.albaDic-search__bar--input:focus {outline:none !important}
+
+.hope-job {margin:10px 0 0 -7px;width:calc(100% + 14px);background:#fff}
+.hope-job__title {padding-left:13px;border-bottom:1px solid #e0e0e0;font-size:16px;line-height:44px;font-weight:bold;color:#222}
+.hope-job__field {position:relative;padding-top:23px;text-align:center}
+.hope-job__field-contents {padding-bottom:23px}
+.hope-job__field--about {font-size:13px;color:#999}
+.hope-job__field .hope-job__field--btn {display:inline-block;margin-top:11px;box-sizing:border-box;padding:0 34px;min-width:110px;font-size:13px;line-height:30px;color:#222}
+.hope-job__field--btn.set {background:#e0e0e0}
+.hope-job__field--btn.login {background:#ffd511}
+
+.hope-swiper {overflow:hidden;padding-bottom:23px;margin:0 auto;width:calc(100% - 48px);height:auto}
+.hope-swiper .swiper-slide {text-align:left}
+.hope-job__list {overflow:hidden;margin-top:-16px}
+.hope-job__list--item {float:left;margin-top:16px;width:50%}
+.hope-job__list--item a {padding-left:6px;position:relative;width:100%;box-sizing:border-box;font-size:15px;text-align:left}
+.hope-job__list--item a:before {display:block;content:"";position:absolute;top:8px;left:0;border-radius:50%;width:2px;height:2px;background:#999}
+.hope-pagination {position:static;padding:13px 0;margin-left:-10px;width:calc(100% + 10px);border-top:1px solid #e8e8e8;font-size:0}
+.hope-pagination .swiper-pagination-bullet {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #d4d4d4;border-radius:50%;background:#e5e6e7;opacity:1}
+.hope-pagination .swiper-pagination-bullet-active {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #e9c104;border-radius:50%;background:#ffd511}
+
+.job-category {margin:20px 10px 0 10px}
+.job-category__title {font-size:15px;font-weight:bold;color:#7b7b7b}
+.job-category__depth01--list:nth-child(1) {margin-top:8px}
+.job-category__depth01--list {position:relative;margin-bottom:5px;font-size:0;background:#fff}
+.job-category__depth01--list:before {content:"";position:absolute;top:21px;right:15px;width:14.66px;height:8px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -36px 0;background-size:216px 216px;}
+.job-category__depth01--list.on:before {background-position:-72px 0}
+.job-category__depth01--link {display:inline-block;position:relative;padding:0 15px 0 49px;width:100%;box-sizing:border-box;border-bottom:1px solid #e0e0e0;font-size:15px;line-height:51px;color:#222}
+.job-category__depth01--link:before {content:"";position:absolute;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat 0 0;background-size:216px 216px;}
+.job-category__depth01--link.job-category-ico0:before {width:19px;height:19px;top:15px;left:17px;background-position:0 -36px}
+.job-category__depth01--link.job-category-ico1:before {width:17px;height:18px;top:16px;left:19px;background-position:-144px -36px}
+.job-category__depth01--link.job-category-ico2:before {width:18px;height:15px;top:17px;left:18px;background-position:-36px -36px}
+.job-category__depth01--link.job-category-ico3:before {width:20px;height:20px;top:15px;left:17px;background-position:0 -72px}
+.job-category__depth01--link.job-category-ico4:before {width:18px;height:18px;top:16px;left:18px;background-position:-72px -36px}
+.job-category__depth01--link.job-category-ico5:before {width:19px;height:18px;top:16px;left:17px;background-position:-180px -36px}
+.job-category__depth01--link.job-category-ico6:before {width:20px;height:17px;top:16px;left:17px;background-position:-108px -36px}
+.job-category__depth01--link.job-category-ico7:before {width:20px;height:19px;top:16px;left:17px;background-position:-36px -72px}
+.job-category__depth01--link.job-category-ico8:before {width:20px;height:19px;top:15px;left:17px;background-position:-72px -72px}
+
+.job-category__list {overflow:hidden;padding:4px 17px 20px}
+.job-category__list--item {float:left;margin-top:16px;width:50%}
+.job-category__list--item a {padding-left:6px;position:relative;width:100%;box-sizing:border-box;font-size:15px;text-align:left}
+.job-category__list--item a:before {display:block;content:"";position:absolute;top:8px;left:0;border-radius:50%;width:2px;height:2px;background:#999}
+
+.category-swiper {overflow:hidden;position:relative;margin:0 auto;-webkit-transition: all 2s ease;transition: all 2s ease;width:100%;height:0}
+.category-swiper.on {-webkit-transition: all 2s ease;transition: all 2s ease;height:auto}
+.category-swiper .swiper-slide {text-align:left}
+.category-pagination {padding:13px 0;margin-left:-10px;width:calc(100% + 10px);border-top:1px solid #e8e8e8;font-size:0;text-align:center}
+.category-pagination .swiper-pagination-bullet {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #d4d4d4;border-radius:50%;background:#e5e6e7}
+.category-pagination .swiper-pagination-bullet-active {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #e9c104;border-radius:50%;background:#ffd511}
+
+/*알바백과사전 상세페이지*/
+.kind-list-info {padding:28px 0;margin-left:-7px;width:calc(100% + 14px);text-align:center;background:#fff}
+.kind-list-info__location {margin-bottom:2px;font-size:13px;color:#666}
+.kind-list-info__title {font-size:30px;font-weight:bold;color:#222}
+
+body.sub #Section>article.kind-summary {padding:0;margin:10px 13px;width:auto}
+.kind-summary {margin-top:10px;background:#fff}
+.kind-summary .storyList {overflow:hidden}
+.kind-summary__title {padding-left:13px;border-bottom:1px solid #e0e0e0;font-size:16px;font-weight:bold;line-height:44px;color:#222}
+.kind-summary__field {padding:30px 13px 25px;font-size:17px;line-height:26px;color:#222}
+.kind-summary__field * {font-size:17px !important;line-height:26px;color:#222}
+.kind-summary__text {padding:11px 13px;font-size:12px;line-height:16px;color:#999}
+
+/*알바백과사전 목차 메뉴*/
+body.dic #Header {z-index:99999;position:fixed;top:0;left:0;width:100%;box-sizing:border-box}
+body.dic #Section {padding-top:104px !important}
+body.dic.dicView #Section {padding-top:44px !important}
+html.fixedOn,
+body.fixedOn {position:relative}
+body.dic {-webkit-overflow-scrolling:touch}
+.summary-filter {display:none;overflow:hidden;z-index:100;position:absolute;left:0;top:0;width:100%;height:100%;background:#222;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.summary-filter.on {display:block}
+.summary-wrap {z-index:999;position:fixed;top:45px;left:0;right:0;}
+.summary-menu {overflow:hidden;position:relative;width:100%;height:51px;box-sizing:border-box;background:#e0e0e0}
+.summary-menu:before {z-index:20;content:"";margin-top:-4px;position:absolute;top:50%;right:13px;width:15px;height:8px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -36px 0;background-size:216px 216px;}
+.summary-menu.on:before {background-position:-72px 0}
+.summary-menu__top {display:block;height:49px;background:#fff}
+.summary-menu__top--title {z-index:10;position:absolute;top:0;left:0}
+.summary-menu__top--title-list.on {display:block}
+.summary-menu__top--title-list {display:none;padding-left:14px;margin-bottom:2px;line-height:49px;font-size:15px;color:#222}
+.summary-menu__progress {position:absolute;top:0;left:0;height:51px;background:#ffd200}
+.summary-menu__progress--bar {width:100%;height:49px;background:#f4f4f4}
+.summary-list {display:none;-webkit-box-shadow:0px 0px 3px #222;box-shadow:0px 0px 3px #222}
+.summary-list__item {font-size:0;border-top:1px solid #e0e0e0;background:#fff}
+.summary-list__item:nth-child(1) {border-top:none}
+.summary-list__item  .summary-list__item--link {display:inline-block;padding-left:20px;width:calc(100% - 20px);line-height:43px;font-size:15px;color:#999}
+.summary-list__item  .summary-list__item--link.on {font-weight:bold;color:#222}
+
+/*알바백과사전 레이어*/
+.dic-layer-form.on {display:flex}
+.dic-layer-form {display:none;z-index:99997;margin:0;position:fixed;left:0;top:0;width:100%;height:100%;align-items:center;justify-content:center}
+.dic-layer-form .filter {z-index:-1}
+.dic-layer-box {display:inline-block;z-index:99999;width:92%;max-width:334px;box-sizing:border-box;background:#fff}
+.dic-layer-box__top {position:relative;padding:0 17px 0 18px;height:40px;box-sizing:border-box;background:#ffd100}
+.dic-layer-box__top--title {font-size:15px;line-height:40px;color:#fff}
+.dic-layer-box__top--close {display:block;padding:10px;width:15px;height:15px;position:absolute;top:2px;right:7px;font-size:0;color:transparent;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -170px 10px;background-size:216px 216px}
+.dic-layer-box__contents {padding:20px 18px 0}
+.dic-layer-box__contents--about {margin-bottom:20px;font-size:15px;text-align:center;color:#222}
+.dic-layer-box__contents--about .text-blue {font-weight:bold}
+input.dic-layer-box__contents--input {margin-bottom:16px;width:100%;padding:13px 9px;box-sizing:border-box;-webkit-appearance:none;border-radius:0;border:1px solid #e0e0e0;font-size:14px;line-height:20px;color:#222}
+.dic-layer-box__contents--textarea {width:100%;padding:13px 9px;box-sizing:border-box;-webkit-appearance:none;border-radius:0;border:1px solid #e0e0e0;font-size:14px;line-height:20px;color:#222}
+.dic-layer-box__contents--input:focus, .dic-layer-box__contents--textarea:focus {outline:none !important;border-bottom:1px solid #ffd100}
+.dic-layer-box__button {overflow:hidden;padding:10px 18px 14px;text-align:center}
+.dic-layer-box__button .dic-layer-box__button--cancel {display:block;float:left;width:calc(50% - 2px);font-size:14px;line-height:31px;color:#222;background:#e0e0e0}
+.dic-layer-box__button .dic-layer-box__button--confirm {display:block;float:right;width:calc(50% - 2px);font-size:14px;line-height:31px;color:#222;background:#ffd100}
+
+/*알바백과사전 숫자 카운트*/
+.count-wrap {overflow:hidden;padding-bottom:5px;text-align:right}
+.count-wrap__title {float:left;font-size:13px;color:#7b7b7b}
+.count-wrap__number {font-size:12px;color:#b9b9b9}
+.count-wrap__number--ing {color:#499cec}
+
+/*알바백과사전 통합검색*/
+.searchWordList .wordList li em {color:#b9b9b9}
+.searchWordList .wordList li em.new:after {display:inline-block;margin-left:1px;content:"";width:4px;height:4px;border-radius:50%;vertical-align:top;background:#fdd61d}
+
+#AreaKindList .albaDicList {margin:0}
+#AreaKindList .albaDicList p {padding:17px 0 5px 10px;font-size:13px}
+#AreaKindList .albaDicList p span {font-weight:normal;color:#2346e4}
+#AreaKindList .albaDicList .list {margin:0 10px}
+#AreaKindList .albaDicList .list li {margin-top:10px}
+#AreaKindList .albaDicList .list li.noInfo {padding:60px 15px;font-size:14px;line-height:20px;text-align:center;color:#222;background:#fff}
+
+/*알바백과사전 통계정보*/
+body.dic #Header {display:none}
+
+/*가로 통계*/
+.urgency {padding:15px 0;border-bottom:1px solid #e0e0e0}
+.urgency__title {padding:0 13px;margin-bottom:31px;font-size:15px;color:#222}
+.urgency__field {margin:0 18px;position:relative}
+.urgency__field--horizon-bg {overflow:hidden;box-sizing:border-box;border-left:1px solid #e0e0e0;}
+.urgency__field--horizon-bg li {float:left;width:20%;height:83px;box-sizing:border-box;border-right:1px solid #f3f3f3}
+.urgency__noinfo {padding:60px 15px;border-bottom:1px solid #e0e0e0;font-size:14px;line-height:20px;text-align:center;color:#222;background:#fff}
+.urgency-progress-horizon {width:100%;position:absolute;top:-15px;left:0;box-sizing:border-box;padding-left:1px}
+.urgency-progress-horizon__list:nth-child(1) {margin-top:0}
+.urgency-progress-horizon__list {margin-top:13px}
+.urgency-progress-horizon__list--title {padding:0 0 6px 5px;font-size:13px;color:#222}
+
+.progress-horizon {font-size:0}
+.progress-horizon__bar {display:inline-block;width:0%;height:20px;vertical-align:middle;background:#dedede}
+.progress-horizon__title {margin-left:5px;font-size:14px;line-height:20px;vertical-align:middle;color:#999}
+
+/*세로 통계*/
+.urgency--vertical {padding:15px 0 33px;border-bottom:1px solid #e0e0e0}
+.urgency__field--vertical-bg {overflow:hidden;padding-top:14px;height:75px;border-bottom:1px solid #e0e0e0;border-top:1px solid #f3f3f3}
+.urgency__field--vertical-bg li {height:20%;box-sizing:border-box;border-top:1px solid #f3f3f3}
+.urgency-progress-vertical {display:flex;-webkit-display:flex;justify-content:center;-webkit-justify-content:center;width:100%;max-height:75px;position:absolute;bottom:0px;box-sizing:border-box;padding-bottom:1px}
+.urgency-progress-vertical__list:nth-child(1) {margin-left:0px}
+.urgency-progress-vertical__list {float:left;margin-left:8px}
+
+.progress-vertical {display:table-cell;height:75px;font-size:0;vertical-align:bottom}
+.progress-vertical__title {display:inline-block;margin-bottom:5px;font-size:14px;color:#999}
+.progress-vertical__bar {display:block;margin:0 auto;width:20px;background:#dedede}
+.progress-vertical__age {position:absolute;display:inline-block;bottom:-20px;font-size:11px;color:#222}
+
+/*성별 분포 통계*/
+.gender-progress.first {margin-left:33px}
+.gender-progress {float:left;margin:-17px 0 0 19px}
+.gender-progress__list {display:table-cell;height:92px;font-size:0;vertical-align:bottom}
+.gender-progress__list--percent {display:inline-block;margin-bottom:2px;width:31px;font-size:14px;color:#999;text-align:center}
+.gender-progress__list--field {display:block;position:relative;margin:3px auto 0;height:74px;}
+.gender-progress__list--field:after {display:block;content:"";width:31px}
+.gender-progress__list--field .gender-progress__bar {display:block;overflow:hidden;position:relative;width:31px}
+.gender-progress__list--field.bg-man {display:table-cell;width:31px;height:74px;vertical-align:bottom;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat 3px -108px;background-size:216px 216px}
+.gender-progress__list--field.bg-man .gender-progress__bar--bg {display:block;width:31px;height:74px;position:absolute;bottom:0;left:0;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -69px -108px;background-size:216px 216px}
+.gender-progress__list--field.bg-woman {display:table-cell;width:31px;height:74px;vertical-align:bottom;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -36px -108px;background-size:216px 216px}
+.gender-progress__list--field.bg-woman .gender-progress__bar--bg {display:block;width:31px;height:74px;position:absolute;bottom:0;left:0;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -108px -108px;background-size:216px 216px}
+.gender-progress__list--title {display:inline-block;width:31px;position:absolute;bottom:-20px;font-size:11px;text-align:center;color:#222}
+
+/*통계 하이라이트*/
+.highlight .progress-horizon__bar {background:#ffd511}
+.highlight .progress-vertical__bar {background:#ffd511}
+.highlight .progress-horizon__title {color:#222}
+.highlight .progress-vertical__title {color:#222}
+.highlight .gender-progress__list--percent {color:#222}
+
+/*알바업무 및 용어사전*/
+.kind-summary-toggle {position:relative;margin:20px 6px 0}
+.kind-summary-toggle__title {margin-bottom:7px;font-size:16px;font-weight:bold;color:#222}
+.kind-summary-toggle__title--num {margin-left:7px;font-size:14px;font-weight:normal;vertical-align:bottom;color:#999}
+.kind-summary-toggle__title--num em {vertical-align:bottom}
+.kind-summary-toggle .kind-summary-toggle__title--add {display:inline-block;position:absolute;top:-5px;right:0;padding:0 8px;height:26px;border:1px solid #e0e0e0;line-height:26px;font-size:13px;font-weight:normal;color:#222;background:#fff}
+
+.toggle-category__list:nth-child(1) {margin-top:0}
+.toggle-category__list {margin-top:5px;padding:0 13px;border:1px solid #e0e0e0;background:#fff}
+.toggle-category__list--title {z-index:1;position:relative;border-bottom:1px solid #e0e0e0}
+.toggle-category__list--title:before {z-index:-1;content:"";margin-top:-4px;position:absolute;top:50%;right:0;width:15px;height:8px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -72px 0;background-size:216px 216px}
+.toggle-category__list.off .toggle-category__list--title:before {background-position:-36px 0}
+
+.toggle-category__list--title .toggle-category__list--title-link {display:inline-block;padding:15px 0;width:100%;font-size:15px;color:#222}
+.toggle-category__list--field {margin:15px 0 18px}
+.toggle-category__list.off .toggle-category__list--field {display:-webkit-box;overflow:hidden;margin:15px 0 10px;text-overflow:ellipsis;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;font-size:13px;word-break:break-word;line-height:1.2em;height:2.3em;color:#666}
+.toggle-category__list.off .toggle-category__list--field * {font-size:13px;color:#666}
+.toggle-category__list .toggle-category__list--field {font-size:15px;line-height:1.2em;color:#666}
+.toggle-category__list .toggle-category__list--field * {font-size:15px;line-height:1.2em;color:#666}
+
+.toggle-category__list .toggle-category__list--coment {display:none}
+.toggle-category__list .toggle-category__list--date {display:none}
+.toggle-category__list.off .toggle-category__list--coment {display:inline-block;margin-bottom:18px;padding-left:16px;font-size:13px;color:#b9b9b9;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -107px 2px;background-size:216px 216px}
+.toggle-category__list.off .toggle-category__list--date {display:inline-block;margin-bottom:18px;font-size:13px;color:#b9b9b9}
+.toggle-category__list.off .coment-list {display:none}
+.toggle-category__list.off .coment-dic {display:none}
+.toggle-category__list .toggle-category__list--bottom {display:block;padding:0 13px;margin-top:-1px;margin-left:-13px;width:100%;border-top:1px solid #e0e0e0;font-size:0;text-align:right}
+.toggle-category__list.off .toggle-category__list--bottom {display:none}
+.toggle-category__list--bottom .toggle-category__list--bottom-close {position:relative;display:inline-block;padding-right:21px;font-size:12px;line-height:39px;color:#c0c0c0;}
+.toggle-category__list--bottom .toggle-category__list--bottom-close:after {content:"";margin-top:-4px;position:absolute;top:50%;right:0;width:15px;height:8px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -72px 0;background-size:216px 216px}
+
+/*백과사전 배너 바로가기 리스트*/
+.toggle-category__banner {margin-top:5px;padding:0 13px;height:138px;border:1px solid #e0e0e0;background:#fff}
+.toggle-category__banner .toggle-category__banner--text {margin-top:26px;font-size:13px;line-height:18px;text-align:center;color:#999}
+.toggle-category__banner a.toggle-category__banner--link {display:block;margin:13px auto 0;width:170px;height:30px;font-size:13px;line-height:30px;font-weight:bold;text-align:center;color:#222;background:#e0e0e0}
+
+.coment-list.comentView {margin:0;width:auto}
+.coment-list {padding:0 13px;margin-left:-13px;width:100%;border-top:1px solid #e0e0e0}
+.coment-dic {width:100%}
+.coment-dic .comment-list__item {padding:13px 0;border-top:none}
+.coment-dic .comment-list__item--user {margin-bottom:0}
+.coment-dic .comment-list__item--util {position:absolute;top:11px;right:0}
+.comment-list__item:nth-child(1) {border-top:none}
+.comment-list__item {position:relative;padding:15px 0;border-top:1px solid #e0e0e0}
+.comment-list__item--user {margin-bottom:8px;font-size:12px;font-weight:bold;color:#222}
+.comment-list__item--bar {margin:0 5px;font-size:9px;font-weight:normal;color:#b9b9b9}
+.comment-list__item--date {font-weight:normal;color:#b9b9b9}
+.comment-list__item--comment {font-size:14px;color:#222;word-break:break-word}
+.comment-list__item--util {position:absolute;top:15px;right:0}
+.comment-list__item--util .comment-list__item--util-link {font-size:12px;font-weight:normal;color:#499cec}
+.comment-list__item--util .comment-list__item--util-bar {margin:0 10px;font-size:9px;font-weight:normal;color:#b9b9b9}
+
+.toggle-pagination {padding:10px 0;margin-left:-10px;width:calc(100% + 10px);font-size:0;text-align:center}
+.toggle-pagination.task-pagination {padding:10px 0 0}
+.toggle-pagination .swiper-pagination-bullet {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #d4d4d4;border-radius:50%;background:#e5e6e7}
+.toggle-pagination .swiper-pagination-bullet-active {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #e9c104;border-radius:50%;background:#ffd511}
+
+.kind-category {padding:15px 13px;border-bottom:1px solid #e0e0e0}
+.kind-category .kind-category__title {margin-bottom:10px;font-size:13px;color:#999}
+.kind-category .kind-category__list {font-size:13px;color:#222}
+
+/*관련채용정보*/
+.brand-category {overflow:hidden;padding:15px 13px}
+.brand-category__title {margin-bottom:10px;font-size:13px;color:#999}
+.brand-category__list {overflow:hidden;margin-top:-10px}
+.brand-category__list--item {float:left;padding-top:10px;width:50%}
+.brand-category__list--link {display:block;width:80%;font-size:13px;color:#222}
+.brand-category__list--count {margin-left:5px;color:#499cec}
+
+.brand-pagination {padding:15px 13px 0;margin-top:21px;margin-left:-23px;width:calc(100% + 10px);border-top:1px solid #e8e8e8;font-size:0;text-align:center}
+.brand-pagination .swiper-pagination-bullet {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #d4d4d4;border-radius:50%;background:#e5e6e7}
+.brand-pagination .swiper-pagination-bullet-active {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #e9c104;border-radius:50%;background:#ffd511}
+
+.kind-category__list--bar {margin:0 5px}
+.kind-category__list--num {margin-left:5px;color:#499cec}
+
+.category-new {display:inline-block;margin-left:3px;width:13px;height:13px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -107px -71px;background-size:216px 216px}
+.toggle-category__list .toggle-category__list--field .btn__knowledge, .kind-summary .kind-summary__field .btn__knowledge {display:block;margin-top:25px;width:100%;height:43px;line-height:43px;text-align:center;font-size:15px !important;color:#222;background:#e0e0e0}
+
+/*커뮤니티 관련글*/
+.kind-summary-tab {overflow:hidden;border-bottom:1px solid #e0e0e0}
+.kind-summary-tab__list {float:left;width:50%}
+.kind-summary-tab__list--link {display:block;width:100%;text-align:center;font-size:0}
+.kind-summary-tab__list .highlight {display:inline-block;padding:0 11px;font-size:15px;line-height:40px;color:#999}
+.kind-summary-tab__list.on .highlight {border-bottom:2px solid #ffd200;color:#222}
+.kind-summary__about .kind-summary__about--text, .kind-summary__about-view .kind-summary__about--text {padding-left:13px;height:33px;border-bottom:1px solid #e0e0e0;font-size:13px;line-height:33px;font-weight:normal;color:#222;background:#f6f6f6}
+.kind-summary__about-view {display:none}
+
+.kind-summary__list .noInfo {padding:60px 15px;font-size:14px;line-height:20px;text-align:center;color:#222;background:#fff}
+.kind-summary-list__item {position:relative;padding:15px 13px;border-bottom:1px solid #e0e0e0}
+.kind-summary-list__item--link {display:block;font-size:0}
+.kind-summary-list__item--link .title {display:inline-block;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;font-size:15px;color:#222}
+.kind-summary-list__item--link .title em.newIcon {display:inline-block;width:12px;height:12px;line-height:0;font-size:0;font-family:Dotum;vertical-align:middle;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -432px -144px}
+.kind-summary-list__item--link .title em.imgIcon {display:inline-block;width:12px;height:12px;line-height:0;font-size:0;font-family:Dotum;vertical-align:middle;color:transparent;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -468px -144px}
+.kind-summary-list__item--link .infoBox {display:block;overflow:hidden;padding-top:7px}
+.kind-summary-list__item--link .infoBox span {float:left;font-size:12px;color:#b9b9b9}
+.kind-summary-list__item--link .infoBox span.userid {float:right}
+.kind-summary-list__item--link .infoBox span.bar {padding:0 5px}
+.kind-summary-list__item--link .infoBox span.complete {display:inline-block;padding:3px 5px;position:absolute;bottom:9px;right:13px;color:#fff;background:#ffd100;}
+.kind-summary-list__item--link .infoBox span.waiting {display:inline-block;padding:3px 5px;position:absolute;bottom:9px;right:13px;color:#fff;background:#978d84;}
+
+.news-pagination {padding:16px 0;margin:0 0 0 -10px;width:calc(100% + 10px);font-size:0;text-align:center}
+.news-pagination .swiper-pagination-bullet {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #d4d4d4;border-radius:50%;background:#e5e6e7}
+.news-pagination .swiper-pagination-bullet-active {display:inline-block;margin-left:10px;width:7px;height:7px;box-sizing:border-box;border:1px solid #e9c104;border-radius:50%;background:#ffd511}
+
+.albadic-view__list:nth-child(1) {border-top:none}
+.albadic-view__list {border-top:1px solid #e0e0e0;font-size:0}
+.albadic-view__list .albadic-view__list--link {display:-webkit-flex;display:flex;padding:0 13px 0 15px;width:calc(100% - 26px);height:40px;font-size:13px;line-height:40px;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;color:#222}
+.albadic-view__list--dot {display:inline-block;margin-right:4px;width:2px;height:2px;border-radius:50%;background:#999}
+.albadic-view__list--depth {display:inline-block;position:relative;overflow:hidden;margin:0 5px;width:5px;height:13px}
+.albadic-view__list--depth:before {display:inline-block;content:"";position:absolute;top:50%;left:-4px;margin-top:-4px;width:5px;height:5px;transform:rotate(45deg);border:1px solid #222}
+
+.bottom-link {margin-top:10px;padding-bottom:60px;font-size:0;text-align:right}
+.bottom-link .bottom-link__top {display:inline-block;position:relative;padding:0 38px 0 16px;height:33px;line-height:33px;border:1px solid #e0e0e0;font-size:14px;color:#222;background:#fff}
+.bottom-link .bottom-link__top:after {display:block;content:"";margin-top:-10px;width:17px;height:20px;position:absolute;top:50%;right:11px;background:url('//image.alba.kr/m/albaDicIcon.png') no-repeat -144px 0;background-size:216px 216px}
+
+/* modal-layer */
+.modal-layer {display:none;z-index:99999;position:fixed;top:0;left:0;box-sizing:border-box;width:100%;height:100%;padding:0 10px}
+.modal-layer__wrap {z-index:99999;overflow:scroll;display:block;width:100%;border-radius:5px;background-color:#fff}
+.modal-layer__h1 {padding:0 20px;height:50px;font-size:17px;line-height:50px;text-align:center;border-bottom:2px solid #ffd200;color:#222}
+.modal-layer__h1>a {display:inline-block;width:93px;height:30px;margin-left:10px;line-height:30px;text-align:center;color:#222;background-color:#f2f2f2}
+.modal-layer__guide {padding:10px 15px 10px 25px;border-bottom:1px solid #ededed;background-color:#fafafa}
+.modal-layer__guide>li {font-size:12px;line-height:1.4;color:#999}
+.modal-layer__guide>li::before {content:"-";position:absolute;left:15px}
+.modal-layer__content {padding:20px}
+.modal-layer__action {display:block;height:43px;font-size:15px;font-weight:bold;line-height:43px;text-align:center;background:#f2f2f2}
+.modal-layer__action>.cssIcon-arrow::before ,
+.modal-layer__action>.cssIcon-arrow::after {border-width:1px}
+.modal-layer__action>.cssIcon-arrow.top {top:4px;margin-left:7px}
+.modal-layer__action>.cssIcon-arrow.bottom {top:-2px;margin-left:7px}
+.modal-layer__close {z-index:99999;position:absolute;right:0;top:0;width:50px;height:50px;line-height:0;font-size:0;font-family:Dotum;text-align:center;color:transparent}
+.modal-layer__close::before,
+.modal-layer__close::after {left:50%;width:24px;height:1px;margin-left:-12px;background:#222}
+.modal-layer.full {padding:0}
+.modal-layer.full .modal-layer__wrap {position:fixed;top:0;left:0;right:0;bottom:0;border-radius:0}
+.modal-layer.full .modal-layer__h1 {text-align:left}
+.modal-layer.on {display:-webkit-box;display:box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-box-orient:vertical;-webkit-box-pack:center;-webkit-align-items:center;align-items:center;justify-content:center}
+.modal-layer__button {overflow:hidden;padding-right:16px;text-align:right;border-top:1px solid #ddd}
+.modal-layer__button-list {display:inline-block}
+.modal-layer__button-list .button-item {display:block;height:50px;padding:0 16px;font-size:13px;line-height:50px;color:#999}
+.modal-layer__button-list .button-item--blue {color:#2346e4}
+
+.modal-memo {z-index:99999;display:none;position:absolute;padding:15px;border:1px solid #666;border-radius:5px;background-color:#fff}
+.modal-memo.on {display:block}
+.modal-memo__h1 {padding:0 0 5px;font-weight:normal;font-size:13px;line-height:1.5;color:#222}
+.modal-memo__list>li {height:auto !important;margin:0 !important;padding:0 !important;font-size:12px !important;line-height:1.5 !important;color:#666 !important}
+.modal-memo__close {position:absolute;top:5px;right:5px;width:23px;height:23px;text-indent:-999em;color:transparent;background:url('//image.alba.kr/m/resume/explain_icon.png') no-repeat 4px -32px;background-size:36px 72px}
+
+/* 얼럿폼 */
+.alert-form.on {display:-webkit-flex;display:flex;display:-webkit-box;display:box;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-box-orient:vertical;-webkit-box-pack:center}
+.alert-form {display:none;z-index:999999;margin:0;position:fixed;left:0;top:0;width:100%;height:100%;align-items:center;justify-content:center}
+.alert-form .filter {z-index:999998;opacity:0.4}
+.alert-box {z-index:999999;display:inline-block;position:relative;width:300px;padding:25px 15px 71px;box-sizing:border-box;border-radius:5px;background:#fff}
+.alert-box__text {font-size:14px;line-height:1.5;text-align:center;color:#222}
+.alert-box__text--about {padding:11px 0;font-size:14px;line-height:1.5;text-align:center;color:#222}
+.alert-box__text--about2 {display:none}
+.alert-box__text--multi {font-size:14px;line-height:1.5;text-align:center;color:#222}
+.alert-box__text-guide {font-size:13px;line-height:1.5;color:#222}
+.alert-box__text-help {padding-top:5px;font-size:12px;line-height:1.5;color:#666}
+.alert-box__button {overflow:hidden;position:absolute;right:0;bottom:0;left:0;border-top:1px solid #eee}
+.alert-box__button-list {float:left;width:50%;box-sizing:border-box}
+.alert-box__button-list:first-child {border-right:1px solid #eee}
+.alert-box__button-list .alert-box__button-list--item {display:block;height:45px;font-size:15px;text-align:center;line-height:45px;color:#999}
+.alert-box__button-list .alert-box__button-list--item-blue {display:block;height:45px;font-size:15px;text-align:center;line-height:45px;color:#2346e4}
+.alert-box__button-full {display:block;height:45px;font-size:15px;line-height:45px;text-align:center;color:#999 !important;}
+.alert-form--apply,
+.alert-form--common {position:fixed;left:50%;top:50%;margin:-57px 0 0 -150px}
+
+/* ios fixed 수정 */
+.ios-fixed {content:'';z-index:-1;position:absolute;top:0;left:0;height:44px}
+
+/* 공통 토스트 팝업 */
+.toast-pop {z-index:9999999;position:fixed;left:0;right:0;bottom:-93px;width:100%;text-align:center}
+.toast-pop__link {display:block;text-align:center}
+.toast-pop img {max-width:320px;vertical-align:top}
+.toast-pop.on {animation:.3s showToast forwards;-webkit-animation:.3s showToast forwards}
+@keyframes showToast {
+	0% {bottom:-93px}
+	100% {bottom:0}
+}
+@-webkit-keyframes showToast {
+	0% {bottom:-93px}
+	100% {bottom:0}
+}
+.toast-pop.off {animation:.3s hideToast forwards;-webkit-animation:.3s hideToast forwards}
+@keyframes hideToast {
+	0% {bottom:0}
+	100% {bottom:-93px}
+}
+@-webkit-keyframes hideToast {
+	0% {bottom:0}
+	100% {bottom:-93px}
+}
+
+/* 공통 팝오버 */
+.pop-over.on {display:block}
+.pop-over {display:none;z-index:20;padding:15px;box-sizing:border-box;position:absolute;border-radius:5px;border:1px solid #666;letter-spacing:-0.5px;background-color:#fff}
+.pop-over__guide--title {padding-bottom:5px;font-size:13px;line-height:1.5;color:#222}
+.pop-over__guide--content {position:relative;/*padding-left:5px;*/font-size:12px;line-height:1.5;color:#666}
+.pop-over__guide--content>span {position:absolute;top:0;left:0}
+.pop-over__list--item:first-child {margin-top:0}
+.pop-over__list--item {position:relative;padding-left:5px;font-size:12px;line-height:1.5;color:#666}
+.pop-over__list--item>span {position:absolute;top:0;left:0}
+.pop-over__close {position:absolute;top:0;right:0;padding:10px;width:16px;height:16px}
+.pop-over__close span {display:block;overflow:hidden;position:relative;width:16px;height:16px;color:transparent}
+.pop-over__close span::before {display:block;content:"";position:absolute;top:0;left:50%;width:1px;height:16px;transform:rotate(-135deg);background:#666}
+.pop-over__close span::after {display:block;content:"";position:absolute;top:0;left:50%;width:1px;height:16px;transform:rotate(-45deg);background:#666}
+.pop-over__close-btn {position:absolute;top:6px;right:6px;padding:4px;font-size:0;text-indent:-999em;color:transparent;background-color:#fff}
+.pop-over__close-btn::before {content:'';display:block;width:15px;height:15px;background:url('//image.alba.kr/m/pop.png') no-repeat;background-size:48px 24px}
+.pop-over__link {margin-top:5px;line-height:normal}
+.pop-over__link .pop-over__link--btn {display:inline-block;font-size:12px;color:#2346e4 !important}
+.pop-over__link .pop-over__link--btn .cssIcon-arrow {margin-left:4px;width:6px;height:11px}
+.pop-over__link .pop-over__link--btn .cssIcon-arrow::after {margin-top:-3px;left:-3px;top:50%}
+.pop-over__link .pop-over__link--btn .cssIcon-arrow.right::after {width:6px;height:6px;border:1px solid #5b79fe}
+
+/* 개인정보 이용동의 */
+.agreement-wrapper {position:relative;padding:25px 10px 0;background:#fff}
+.agreement__title {padding-bottom:10px;font-weight:bold;font-size:11px}
+.agreement__table {width:100%;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.agreement__table-title {width:80px;padding:11px 0;border-top:1px solid #eee;text-align:center;background:#f9f9f9}
+.agreement__table-contents {padding:11px 10px;border-top:1px solid #eee}
+.agreement__table-first-row .agreement__table-title,
+.agreement__table-first-row .agreement__table-contents {border-top:0 none}
+.agreement__confirm {padding:20px 0;text-align:center}
+
+/* modal-form1 */
+.modal-form1 {z-index:99999;display:none;position:fixed;top:0;right:0;bottom:0;left:0;letter-spacing:-0.5px}
+.modal-form1.on {display:-webkit-box;display:box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-box-orient:vertical;-webkit-box-pack:center;-webkit-align-items:center;align-items:center;justify-content:center}
+.modal-form1__wrap {z-index:99999;position:relative;box-sizing:border-box;width:300px;border-radius:5px;background-color:#fff}
+.modal-form1__title {height:45px;border-bottom:1px solid #eee;font-weight:bold;font-size:16px;line-height:45px;text-align:center;color:#222}
+.modal-form1__action {overflow:hidden;border-top:1px solid #eee}
+.modal-form1__action>a {float:left;width:50%;height:45px;box-sizing:border-box;font-size:14px;line-height:45px;text-align:center;color:#999;background-color:#fff}
+.modal-form1__action>a.modal-form1__action--cancel,
+.modal-form1__action>a.modal-form1__action--continue {border-radius:0 0 0 3px;border-right:1px solid #eee}
+.modal-form1__action>a.modal-form1__action--confirm,
+.modal-form1__action>a.modal-form1__action--login {float:right;border-radius:0 0 3px 0;color:#2346e4}
+.modal-form1__action>a.full {float:none;display:block;width:100%;background:#ffd200;color:#999}
+.modal-form1__close {position:absolute;top:11px;right:11px;padding:4px;font-size:0;text-indent:-999em;color:transparent;background-color:#fff}
+.modal-form1__close::before {content:'';display:block;width:15px;height:15px;background:url('//image.alba.kr/m/pop.png') no-repeat;background-size:48px 24px}
+.modal-form1>.filter {z-index:999998}
+
+/* modal-form1 - 지원하기 */
+.modal-apply,
+.modal-apply>.modal-form1__wrap {z-index:999999}
+.modal-apply>.filter {z-index:999998}
+.modal-apply__guide {padding:15px 15px 0;font-size:13px;line-height:1.5;color:#222}
+.modal-apply__help {padding:5px 15px 15px;font-size:12px;line-height:1.5;color:#666}
+
+/* tooltip layer */
+.tooltip {z-index:10;position:absolute;left:50%;top:66px;width:max-content;width:-webkit-max-content;width:-moz-max-content;padding:4px 12px 6px;margin-left:-61px;font-size:12px;line-height:1.38;letter-spacing:-0.3px;border-radius:4px;color:#fff;background-color:rgba(0, 0, 0, 0.6)}
+.tooltip-tail {position:absolute;width:6px;height:10px}
+.tooltip-tail--top-right {top:-6px;left:50%;margin-left:-6px}
+.tooltip-tail--bottom {bottom:-10px;left:50%;transform:translate(-50%, 0);-webkit-transform:translate(-50%, 0)}
+.tooltip-tail::before {display:block;content:'';width:0;height:0;border:6px solid transparent;border-top-width:0;border-bottom-color:rgba(0, 0, 0, 0.6)}
+.tooltip-tail--bottom::before {-webkit-transform:rotate(-180deg)}
+.tooltip-emphasis {color:#ffd200}
+
+/* alert layer */
+.alert-dialog {z-index:999999;display:none;position:fixed;top:0;right:0;bottom:0;left:0}
+.alert-dialog>.filter {z-index:999998}
+.alert-dialog__wrap {z-index:999999;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%);width:89%;border-radius:3px;background-color:#fff}
+.alert-dialog__guide {padding:30px;font-size:14px;text-align:center;line-height:1.43;color:#222}
+.alert-dialog__action {overflow:hidden}
+.alert-action-btn {height:50px;font-size:14px;line-height:50px;text-align:center}
+.alert-action-btn--cancel {float:left;width:35%;border-radius:0 0 0 3px;color:#666;background-color:#e5e5e5}
+.alert-action-btn--confirm {float:right;width:65%;border-radius:0 0 3px 0;color:#2c2100;background-color:#ffd200}
+.alert-action-btn--full {display:block;width:100%;border-radius:0 0 3px 3px;color:#2c2100;background-color:#ffd200}
+
+/* List Function Head */
+.func-head {height:40px;line-height:40px;padding:0 10px;border-bottom:1px solid #eee;font-size:12px;background-color:#f5f5f5}
+.ios .func-head {line-height:42px;}
+.func-head::after {content:'';clear:both;display:table;width:100%;height:0}
+.func-head__left {float:left;font-size:13px}
+.func-head__left--count {color:#666}
+.func-head__right {float:right;font-size:13px}
+.func-head-check {margin-right:11px}
+.func-head-emphasis {color:#000}
+.func-head-btn--delete {display:inline-block;height:27px;line-height:27px;padding:0 7px;box-sizing:border-box;border:1px solid #ddd;border-radius:2px;background-color:#fff}
+/* .func-head-btn::before {content:'';display:inline-block;vertical-align:sub;background:url('//image.alba.kr/m/function_head.png') no-repeat;background-size:72px 72px} */
+.func-head-input {position:absolute}
+.func-head-label {display:inline-block;position:relative;height:18px;padding-left:23px;line-height:18px}
+.func-head-label::before {content:'';position:absolute;top:0;left:0;width:18px;height:18px;background:url('//image.alba.kr/m/function_head.png') no-repeat;background-size:72px 72px}
+.func-head-input[type="checkbox"]:checked + .func-head-label::before {background-position:-36px 0}
+/*.ios .func-head-btn::before {vertical-align:sub}*/
+
+/* 설명 팝업 */
+.explain__wrap {font-size:13px;letter-spacing:-0.5px;color:#444}
+.explain__wrap--right {float:right}
+
+.explain-button {padding:0;text-indent:-999em;color:transparent;background:url('//image.alba.kr/m/resume/explain_icon.png') no-repeat;background-size:36px 72px}
+.explain-button--open {display:inline-block;width:15px;height:15px;margin:-2px 0 0 1px;vertical-align:middle}
+.explain-button--close {position:absolute;top:5px;right:5px;width:23px;height:23px;background-position:4px -32px}
+.explain-layer {z-index:10;display:none;position:absolute;top:0;left:15px;padding:14px;box-sizing:border-box;border-radius:5px;border:1px solid #666;background-color:#fff}
+.explain-layer--full,
+.explain-layer--suggest {right:15px}
+.explain-layer__title {margin-bottom:5px;font-size:13px}
+.explain-layer__text {position:relative;padding-left:8px;font-size:12px;line-height:1.5;color:#666}
+.explain-layer__text>span {position:absolute;left:0;color:#666}
+
+/* 공통 팝업 - BizNew.css 함께 관리 */
+.layer__wrap {z-index:99999;overflow:hidden;position:fixed;top:50%;left:50%;width:300px;border-radius:5px;-webkit-transform:translate(-50%, -50%);letter-spacing:-0.5px;background-color:#fff}
+.layer__title {height:45px;border-bottom:1px solid #ddd;font-weight:bold;font-size:16px;text-align:center;line-height:45px;color:#222}
+.layer__sub-title {padding-bottom:5px;font-size:13px;color:#222}
+.layer__contents {padding:15px}
+.formLayer-confirm .layer__contents {padding:25px}
+.layer__contents-text {height:57px;padding-top:21px;box-sizing:border-box;font-size:14px;text-align:center;line-height:1.5;color:#222}
+.formLayer-confirm .layer__contents-text {height:auto;padding-top:0}
+.layer__contents-text--exception {padding-top:10px}
+.layer__contents-item {font-size:13px;line-height:1.46;color:#222}
+.layer__button-list {border-top:1px solid #eee}
+.layer__button-item {float:left;position:relative;width:50%;box-sizing:border-box}
+.layer__button-item:first-child {border-right:1px solid #eee}
+.layer__button-item a {display:block;height:45px;font-size:15px;text-align:center;line-height:45px;color:#222;letter-spacing:-0.32px;}
+.layer__button-icon {display:inline-block;position:relative;top:4px;width:20px;height:20px;margin-right:4px;background-image:url(//image.alba.kr/m/brand_pop.png);background-size:40px 20px;background-repeat: no-repeat;}
+.layer__button-icon--mail {background-position: -20px 0px;}
+.formLayer-confirm .layer__close>a {position:absolute;top:13px;right:13px;width:15px;height:15px;font-size:0;background:url('//image.alba.kr/m/pop.png') no-repeat;background-size:48px 24px}
+
+.layer__guide {font-size:12px;line-height:1.5;color:#666}
+.layer__box-guide {border:1px solid #eee;padding:10px;font-size:11px;line-height:1.5;color:#999;background-color:#f5f5f5}
+.layer__explain-title {font-size:13px;line-height:1.46;color:#222}
+.layer__explain-table {table-layout:fixed;width:100%;margin:10px 0 5px;box-sizing:border-box;border:1px solid #eee;font-size:11px;text-align:center}
+.layer__explain-table th {height:30px;border-left:1px solid #eee;font-weight:normal;line-height:30px;color:#2346e4;background-color:#f5f5f5}
+.layer__explain-table th:first-child {border-left:0}
+.layer__explain-table td {height:31px;padding:5px 0 4px;box-sizing:border-box;border-top:1px solid #eee;border-left:1px solid #eee;line-height:1.54;color:#666}
+.layer__explain-table td:first-child {border-left:0}
+.layer__explain-text {padding:5px 0 10px;font-size:12px;line-height:1.5;color:#666}
+.layer__explain-sub-text {font-size:11px;line-height:1.54;color:#999}
+.layer__explain-footer {padding:9px;border:1px solid #eee;font-size:11px;line-height:1.54;color:#999;background-color:#f5f5f5}
+.layer__explain-footer--overtime {margin-top:10px}
+.layer-action-button {display:block;height:50px;font-size:15px;line-height:50px;text-align:center;color:#222;background-color:#ffe000}
+
+.layer__share-wrap {text-align:center}
+.layer__share-list {display:inline-block;overflow:hidden;padding-top:5px}
+.layer__share-item {float:left;margin-left:20px}
+.layer__share-item:first-child {margin-left:0}
+.layer__share-button {display:block;padding:0 8px;font-size:12px;text-align:center}
+.layer__share-button::before {content:'';display:inline-block;width:30px;height:31px;vertical-align:top;background:url('//image.alba.kr/sns/icon_sns_m_202104.png') no-repeat -40px -27px;background-size:204px auto}
+.layer__share-button--facebook::before {background-position:-80px -26px}
+.layer__share-button--twitter::before {background-position:-120px -26px}
+.layer__share-button--copy::before {background-position:-160px -26px}
+.share-button-name {display:block;padding-top:5px;color:#666}
+
+.layer__season-wrap {padding-top:10px}
+.layer__season-table {border-top:1px solid #ddd;border-bottom:1px solid #ddd;font-size:11px;text-align:center}
+.layer__season-table:first-child {margin-bottom:10px}
+.layer__season-table th {padding:6px 8px;border-left:1px solid #eee;font-weight:normal;color:#2346e4;background-color:#f5f5f5}
+.layer__season-table th:first-child {border-left:0}
+.layer__season-table td {padding:6px 8px;border-left:1px solid #eee;line-height:1.4;color:#666}
+.layer__season-table td:first-child {border-left:0}
+
+.layer__definition-wrap {padding-top:15px}
+.layer__definition-wrap:first-child {padding-top:0}
+.layer__definition-title {padding-bottom:5px;font-size:13px;line-height:1.5;color:#222}
+.layer__definition-list {padding-bottom:10px}
+.layer__definition-text {padding-bottom:15px;font-size:12px;line-height:1.5;color:#666}
+
+.layer__caution-title {font-weight:normal;font-size:16px;color:#222}
+.layer__caution-text {padding-bottom:15px;font-size:12px;line-height:1.5;color:#666}
+
+.layer__postscript {padding-top:15px;border-top:1px solid #eee;font-size:11px;line-height:1.5;color:#999}
+.layer-postscript-emphasis {color:#666}
+.layer-postscript-link {display:block;margin-top:5px;font-size:12px;color:#2346e4 !important}
+.layer-postscript-link::after {content:'';display:inline-block;width:6px;height:11px;margin:4px 0 0 4px;vertical-align:top;background:url('//image.alba.kr/m/pop.png') no-repeat -24px 0;background-size:48px 24px}
+.ios .layer-postscript-link::after {margin-top:3px}
+
+.layer__close-button {position:absolute;top:11px;right:11px;padding:4px;font-size:0;text-indent:-999em;color:transparent;background-color:#fff}
+.layer__close-button::before {content:'';display:block;width:15px;height:15px;background:url('//image.alba.kr/m/pop.png') no-repeat;background-size:48px 24px}
+
+.layer__button-wrap {overflow:hidden;margin-top:-5px}
+.layer__button {float:left;height:45px;box-sizing:border-box;border-top:1px solid #eee;font-size:15px;text-align:center;line-height:45px;background-color:#fff}
+.layer__button--cancel {width:50%;border-right:1px solid #eee}
+.layer__button--submit {width:50%;color:#2346e4 !important}
+.layer__button--full {width:100%}
+
+.layer__agreement-title {padding-bottom:5px;font-size:14px;font-weight:normal;color:#222}
+.layer__agreement-text {font-size:12px;line-height:1.5;color:#666}
+.layer-negative-color {color:#ff2a2a}
+
+.tabmenu-list {position:relative;border-bottom:1px solid #ddd;background-color:#fff}
+.tabmenu-list:after {content:'';clear:both;display:block}
+.tabmenu-item {position:relative;float:left;width:33.33%;text-align:center}
+.tabmenu-item a {display:block;height:40px;font-size:13px;line-height:40px}
+.tabmenu-item a::before {content:'';position:absolute;top:50%;left:0;width:1px;height:9px;-webkit-transform:translate(0, -50%);background-color:#ddd}
+.tabmenu-item:first-child a::before {display:none}
+.tabmenu-item span {display:inline-block;box-sizing:border-box;color:#666}
+.tabmenu-item.on span {position:relative;color:#2346e4}
+.tabmenu-item.on span::after {content:'';position:absolute;bottom:-1px;left:0;width:100%;height:1px;background-color:#5b79fe}
+
+/* 55104 : 통합검색 결과 UI 변경 */
+.jobList .list-setup {padding-top:20px;margin:0 20px 20px}
+body.search .jobList .list-setup {margin-bottom:8px}
+.jobList .list-setup>p {position:relative;height:39px;padding-left:15px;line-height:39px;font-size:12px;color:#666;box-sizing:border-box;border:1px solid #eee}
+.jobList .list-setup>p::before {content:'';position:relative;display:inline-block;top:4px;width:13px;height:15px;margin-right:3px;background:url('//image.alba.kr/m/setting_202008.png') no-repeat 0 -17px;background-size:33px auto}
+.jobList .list-setup dl {padding:15px;border:1px solid #eee;border-top:0;border-bottom:0}
+.jobList .list-setup dl dd {position:relative;padding-left:55px;margin-top:5px}
+.jobList .list-setup dl dd:first-child {margin-top:0}
+.jobList .list-setup dl .setup-title {position:absolute;top:0;left:0;width:51px;line-height:18px;font-size:12px;font-weight:bold}
+.jobList .list-setup dl .setup-contents {line-height:18px;font-size:12px;color:#666}
+.jobList .list-setup dl .setup-contents>span::before {content:'/';display:inline;margin:0 3px}
+.jobList .list-setup dl .setup-contents>span:first-child::before {display:none}
+.jobList .list-setup .setup-btns {padding-bottom:15px;text-align:center;border:1px solid #eee;border-top:0}
+.jobList .list-setup .setup-btns>span {display:inline-block;width:auto;margin:0 2px;}
+.jobList .list-setup .setup-btns>span>a {display:inline-block;height:35px;padding:0 28px;line-height:35px;font-size:12px;box-sizing:border-box;border:1px solid #ddd;border-radius:2px}
+.jobList .list-setup .setup-btns .setup-btn--ty1>a {border-color:#ffe000;background-color:#ffe000}
+
+/* 결과 내 재검색 */
+.rescan {padding:10px 12px;border-bottom:1px solid #ddd;font-size:13px;line-height:1.4;background-color:#fffee6}
+.rescan strong,
+.rescan em {font-weight:bold;color:#2346e4}
+
+/* 59398 : 채용관 정렬조건 최단거리순 추가 */
+.infoDistance {display:inline-block;margin-bottom:6px;line-height:17px;vertical-align:middle;font-size:11px;color:#3d4362}
+.infoDistance-icon {display:inline-block;width:10px;height:13px;margin:2px 3px 0 0;vertical-align:top;background:url('//image.alba.kr/m/icon_location.png') no-repeat 0 0;background-size:10px auto}
+html.ios .infoDistance-icon {margin-top:1px}
+.infoDistance > i {display:inline-block;width:1px;height:10px;margin:-3px 5px 0;vertical-align:middle;background-color:#ebebeb}
+
+/*하단 플로팅 버튼*/
+.full-layer__action {overflow:hidden;position:fixed;top:auto;right:0;bottom:0;left:0}
+.full-layer__action-button {display:block;width:100%;height:50px;font-size:15px;line-height:50px;text-align:center;background-color:#ffe003}
+.full-layer__action-button--sub {float:left;width:30%;color:#fff;background-color:#7b7e8c}
+.full-layer__action-button--main {float:right;width:70%}
+
+/* 52364 : 관심기업 등록 추가 */
+.likecorp-button {display:inline-block;height:20px;padding:0 7px 0 4px;margin:-2px 0 0 10px;line-height:20px;vertical-align:middle;border:1px solid #ddd;border-radius:14px}
+.likecorp-button>span {display:inline-block;font-size:11px;color:#666}
+.likecorp-icon::before {content:"";display:inline-block;width:15px;height:15px;vertical-align:middle;margin:-1px 2px 0 0;background:url('http://image.alba.kr/m/interestcorp_icon.png') no-repeat;background-size:30px auto}
+.likecorp-icon.on::before {background-position:-15px 0}
+.announce-detail--likeCorp .list li a.info span.title {width:88%;margin-top:0}
+html.ios .announce-detail--likeCorp .list li a.info span.title {margin:0}
+.announce-detail--likeCorp .list li a.info span.announce-detail__info-data {font-size:0}
+.announce-detail--likeCorp .list li a.info span.announce-detail__info-data>span {margin-top:3px;padding:0;font-size:12px;color:#666 !important;border:0}
+.announce-detail--likeCorp .list li a.info span.announce-detail__info-data>span::after {content:'·';padding:0 2px;vertical-align:top;color:#666}
+.announce-detail--likeCorp .list li a.info span.announce-detail__info-data>span:last-child::after {display:none}
+
+/* 추천 알바 */
+#suggestJobList {border-top:1px solid #d4d4d4}
+#suggestJobList>p {height:auto;padding:15px 12px 10px;border-top:10px solid #eee;font-size:16px;line-height:1.2;color:#222;background:url('//image.alba.kr/m/icon_recomlist.png') no-repeat 96% 15px;background-size:38px 38px}
+#suggestJobList>p>span {display:block;margin-top:4px;font-size:12px;color:#999}
+
+
+/*개인회원 대상 넛징*/
+#LayerNudgeApply {display:none}
+.nudge-layerwrap .filter {z-index:10000;filter:alpha(opacity=40);opacity:0.4;touch-action:none;-webkit-touch-action:none}
+.nudge-layer {z-index:100001;overflow:hidden;position:fixed;background:#fff}
+.nudge-layer__close {position:absolute;top:0;right:0;padding:17px;font-size:0;color:transparent;background-color:transparent}
+.nudge-layer__close::before {content:'';display:inline-block;width:24px;height:24px;background:url('//image.alba.kr/m/resume/cv_manage.png') no-repeat -30px 0;background-size:240px auto}
+.nudge-layer__contents {padding:35px 24px 30px 25px;line-height:1.3}
+.nudge-layer__title {font-size:20px;font-family:'HGSoftGGothicssi99g';letter-spacing:0;color:#222}
+.nudge-layer__title em {display:block;margin-bottom:5px;font-size:16px;font-family:'HGSoftGGothicssi60g'}
+.nudge-layer__title strong {font-weight:normal;color:#2e89e5}
+.nudge-layer__subtitle {display:block;margin-bottom:10px;font-family:'HGSoftGGothicssi60g';letter-spacing:0;font-size:16px;letter-spacing:0}
+.nudge-layer__postscript {margin-top:10px;font-size:14px;color:#666}
+.nudge-layer__action {margin-top:40px;text-align:right}
+.nudge-layer__btn {display:inline-block;margin:0 8px;font-family:'HGSoftGGothicssi80g';letter-spacing:0;font-size:14px;background-color:transparent}
+.nudge-layer__btn:last-of-type {margin-right:0}
+.nudge-layer__btn--close {font-family:'HGSoftGGothicssi60g';border-bottom:1px solid #abafb4;color:#abafb4}
+.nudge-layer__btn--submit {padding:10px 16px;color:#222;border-radius:25px;background-color:#ffeb35}
+.nudge-layer__function {height:41px;line-height:41px;padding:0 20px;background-color:#f5f5f5}
+.nudge-layer__function span.input input[type="checkbox"] + label {font-size:13px;color:#999;vertical-align:baseline;background:url('//image.alba.kr/m/checkbox_btn.png')no-repeat 0 0;background-size:20px 80px}
+.nudge-layer__function span.input input[type="checkbox"]:checked + label {background-position:0 -60px}
+
+/*개인회원 대상 넛징>중앙 레이어*/
+.nudge-layer--type1 {top:50%;left:50%;width:320px;border-radius:24px;box-shadow:0 0 4px 0 rgba(0,0,0,0.1);transform:translate(-50%, -50%);-webkit-transform:translate(-50%, -50%)}
+/*개인회원 대상 넛징>하단 플로팅(이력서등록유도)*/
+.nudge-layer--type2 {bottom:0;width:100%;border-radius:24px 24px 0 0;box-shadow:0 0 10px 0 rgba(44,51,58,0.25)}
+.nudge-layer--type2 .nudge-layer__contents {padding:35px 25px 26px}
+.nudge-layer--type2 .nudge-layer__action {margin-top:20px}
+/*개인회원 대상 넛징>하단 플로팅(공고지원유도)*/
+.nudge-layer--type3 {bottom:0;width:100%;border-radius:24px 24px 0 0;background:url('//image.alba.kr/m/nudge_endjob_bg.png') no-repeat center bottom;background-size:cover;background-color:#e9eff5}
+.nudge-layer--type3 .nudge-layer__contents {padding:40px 0 35px 26px}
+.nudge-endjob__title {position:relative;padding-right:38px;font-family:'HGSoftGGothicssi99g';letter-spacing:0;font-size:20px}
+.nudge-endjob__title::after {content:'';position:absolute;bottom:4px;width:25px;height:32px;margin-left:7px;background:url('//image.alba.kr/m/nudge_endjob_hand.png') no-repeat 0 0;background-size:25px 32px}
+.nudge-endjob__text {margin-top:6px;font-size:15px}
+.nudge-endjob__title em, 
+.nudge-endjob__text strong {color:#2e89e5}
+.nudge-endjob__listwrap {margin-top:30px}
+.nudge-endjob__item {width:180px;height:146px}
+.nudge-endjob__item a {display:block;padding:20px 15px;box-sizing:border-box;border-radius:5px;background-color:#fff}
+.nudge-endjob__item .company {display:block;font-size:14px;font-weight:bold}
+.nudge-endjob__item .deadline {display:inline-block;padding:1px 3px;margin-top:4px;font-size:9px;border:1px solid #ffcdcd;color:#ff2a2a;background-color:#fff9f9}
+.nudge-endjob__item .deadline--type2 {border:1px solid #cdd4ff;color:#2346e4;background-color:#f7f9ff}
+.nudge-endjob__item .title {overflow:hidden;display:block;height:38px;min-height:19px;max-height:38px;margin-top:12px;line-height:1.27;font-size:15px}
+.nudge-endjob__item .local {display:block;margin-top:4px;font-size:11px;color:#666}
+
+/*게재예정공고 블러 배너*/
+.job-expected {position:absolute;top:0;width:100%;height:100%;text-align:center;background-color:rgba(255,255,255,0.4);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.job-expected__target {display:block;height:100%}
+.job-expected__target img {position:relative;top:50%;width:320px;height:89px;margin-top:-49px}
+/*게재예정공고 중 안내 배너*/
+.job-expected__floating {display:none;position:relative;text-align:center;background-color:#343638}
+.job-expected__floating img {display:inline-block;width:320px;height:60px}
+.job-expected__floating-close {position:absolute;top:0;right:0;width:12px;height:12px;padding:10px;font-size:0;color:transparent;box-sizing:content-box;background:url('//image.alba.kr/m/nudge_icon_close_white.png') no-repeat center;background-size:12px 12px}

@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* *******************************************************
+ * filename : main_responsive.css
+ * description : 메인 레이아웃 및 컨텐츠 반응형 CSS
+ * date : 2019-02-01
+******************************************************** */
+
+/* ******************  메인 컨텐츠 ********************** */
+/* -------- 메인 컨텐츠 :: 공통 -------- */
+@media all and ( max-width: 800px ){
+	.main-tit{font-size: 20px; line-height: 1.2;}
+}
+
+
+/* -------- 메인 컨텐츠 :: 컨텐츠1(잡캔소개) -------- */
+@media all and ( max-width: 1220px ){
+	#mainInfoCon{padding:180px 0 120px;}
+	.main-bg01{width: 25%;}
+	.main-bg01 img{width: 100%;}
+	.main-bg02{width: 60%; left: auto; right: 0;}
+	.main-bg02 img{width: 100%;}
+
+}
+@media all and ( max-width: 800px ){
+	#mainInfoCon{padding:115px 0 250px; text-align: center; -ms-word-break: keep-all; word-break: keep-all;}
+	#mainInfoCon .txt01{font-size: 12px;}
+	#mainInfoCon .txt02{margin-top: 12px; font-size: 35px; line-height: 40px;}
+	#mainInfoCon .txt03{margin-top: 12px; font-size: 13px; line-height: 21px;}
+	#mainInfoCon .btn-group{margin-top: 40px;}
+	#mainInfoCon .btn-group a{margin:0 5px; display: inline-block; width: 150px; line-height: 40px; font-size: 13px;}
+	#mainInfoCon .btn-group a:first-child{margin-left: 5px;}
+	#mainInfoCon .btn-group a i{display: inline-block; vertical-align: middle;}
+	#mainInfoCon .btn-group a span{top: 0; margin-left: 7px; display: inline-block; vertical-align: middle;}
+	.main-bg01{width: 110px;}
+	.main-bg01 img{width: 100%;}
+	.main-bg02{max-width: 350px; width: calc(100% - 30px); left: 15px; right: 15px; margin: auto;}
+	.main-bg02 img{width: 100%;}
+}
+@media all and (max-width:359px){
+	#mainInfoCon .btn-group a {margin: 0 3px; width: 130px;}
+}
+
+
+/* -------- 메인 컨텐츠 :: 컨텐츠2(근태관리 솔루션 도입의 고민거리) -------- */
+@media all and ( max-width: 800px ){
+	#mainSolutionCon{padding:75px 0 45px;}
+	.main-solution-wrapper{margin-top: 35px;}
+	ul.main-solution-list .item .question{float: left; margin-bottom: 15px; padding-left: 62px; position: relative;}
+	ul.main-solution-list .item .question .icon{position: absolute; top: 0; left: 0; width: 40px; height: 40px;}
+	ul.main-solution-list .item .question .icon img{height: 100%;}
+	ul.main-solution-list .item .question .name{font-size: 12px;}
+	ul.main-solution-list .item .question .talk{position: relative; padding: 10px 15px; font-size: 13px; line-height: 20px; margin-top: 15px;}
+	ul.main-solution-list .item .question .talk:before{position: absolute; top: 12px; left: -11px; display: block; content: ''; width: 11px; height: 22px; background: url("../images/main/icon_talk01.png") 0 0 no-repeat; -webkit-background-size: cover; background-size: cover;}
+	ul.main-solution-list .item .answer{float: right; padding-right: 11px; margin-bottom: 35px;}
+	ul.main-solution-list .item .answer .talk:before{position: absolute; top: 12px; right: -11px; display: block; content: ''; width: 11px; height: 22px; background: url("../images/main/icon_talk02.png") 0 0 no-repeat; -webkit-background-size: cover; background-size: cover;}
+	ul.main-solution-list .item .answer .talk{position: relative; padding: 10px 15px; font-size: 13px; line-height: 20px; margin-top: 15px; -webkit-box-shadow: 3px 6px 10px 0px rgba(0,0,0,0.19); -moz-box-shadow: 6px 3px 6px 10px 0px rgba(0,0,0,0.19); box-shadow: 3px 6px 10px 0px rgba(0,0,0,0.19);}
+
+	ul.main-solution-list .slick-dots li{margin: 0 5px;}
+	ul.main-solution-list .slick-dots li button{width: 6px; height: 6px; border: 2px solid #bababa}
+}
+
+@media all and ( max-width: 1220){
+.main-banner-list li{width:100%; height:auto}
+}
+/* -------- 메인 컨텐츠 :: 컨텐츠3(인사담당자의 스트레스를 날려주는) -------- */
+@media all and ( max-width: 1220px ){
+	.main-bg03{width: 60%; left: 0; right: auto; margin-right: 0;}
+	.main-bg03 img{width: 100%;}
+}
+@media all and ( max-width: 800px ){
+	#mainManageCon{padding:55px 0 210px; position: relative; text-align: right;}
+	#mainManageCon .main-tit{text-align: center;}
+	#mainManageCon .menu-group{margin-top: 15px;}
+	#mainManageCon .menu-group li{margin-top: 10px; width: 100%; display: block; vertical-align: middle; margin-left: 0;}
+	#mainManageCon .menu-grou0 li:first-child{margin-left: 0; margin-right: 0;}
+	#mainManageCon .menu-group li a{padding: 15px 25px; display: block; width: calc(100% - 50px); height: auto; text-align: left;}
+	#mainManageCon .menu-group li a img{display: inline-block; vertical-align: middle; height: 40px; margin: 0;}
+	#mainManageCon .menu-group li a span{margin-left: 20px; margin-top: 0; width: calc(100% - 70px); display: inline-block; vertical-align: middle; font-size: 14px; line-height: 1.3; -ms-word-break: keep-all; word-break: keep-all;}
+	#mainManageCon .menu-group li a span br{display: none;}
+
+	.main-bg03{max-width: 350px; width: calc(100% - 30px); left: 15px; right: 15px; margin: auto;}
+	.main-bg03 img{width: 100%;}
+}
+
+
+
+/* -------- 메인 컨텐츠 :: 컨텐츠4(PC는 물론 모바일에서도 간편하게) -------- */
+@media all and ( max-width: 1220px ){
+	.main-bg04{width: 60%; right: 0; left: auto; margin-left: 0;}
+	.main-bg04 img{width: 100%;}
+}
+@media all and ( max-width: 800px ){
+	#mainMobileCon{padding:60px 0 255px; position: relative; text-align: right;}
+	#mainMobileCon .main-tit{text-align: center;}
+	#mainMobileCon .menu-group{margin-top: 15px;}
+	#mainMobileCon .menu-group li{margin-top: 10px; width: 100%; display: block; vertical-align: middle; margin-left: 0;}
+	#mainMobileCon .menu-grou0 li:first-child{margin-left: 0; margin-right: 0;}
+	#mainMobileCon .menu-group li a{padding: 15px 25px; display: block; width: calc(100% - 50px); height: auto; text-align: left;}
+	#mainMobileCon .menu-group li a img{display: inline-block; vertical-align: middle; height: 40px; margin: 0;}
+	#mainMobileCon .menu-group li a span{margin-left: 20px; margin-top: 0; width: calc(100% - 70px); display: inline-block; vertical-align: middle; font-size: 14px; line-height: 1.3; -ms-word-break: keep-all; word-break: keep-all;}
+	#mainMobileCon .menu-group li a span br{display: none;}
+
+	.main-bg04{max-width: 350px; width: calc(100% - 30px); bottom: -11px; left: 15px; right: 15px; margin: auto;}
+	.main-bg04 img{width: 100%;}
+}
+
+
+
+/* -------- 메인 컨텐츠 :: 컨텐츠5(JOBCAN 주요 고객사) -------- */
+@media all and ( max-width: 800px ){
+	#mainPartnerCon{padding:50px 0 40px;}
+	#mainPartnerCon .partner-list-wrapper{margin-top: 20px;}
+	#mainPartnerCon .partner-list{margin: -5px -1%;}
+	#mainPartnerCon .partner-list li{width: 30.33%; margin: 5px 1.5%; height: 42px;}
+	#mainPartnerCon .partner-list li img{max-width: 80%; max-height: 80%;}
+}
+
+
+
+/* -------- 메인 컨텐츠 :: 컨텐츠6(비용 안내) -------- */
+@media all and ( max-width: 1220px ){
+	.main-price-con{margin-top: 50px;}
+	/* 왼쪽 */
+	.main-price-con .left{width: 100%; float: none; text-align: center;}
+	.main-price-con .left ul li{display: inline-block; width: 145px; margin: 0 3px; margin-bottom: 20px;}
+	/* 오른쪽 */
+	.main-price-con .right{width: 100%; float: none;}
+}
+@media all and ( max-width: 800px ){
+	#mainPriceCon{padding:30px 0 40px; background-color: #f9f9f9;}
+	.main-price-con{margin-top: 20px;}
+	/* 왼쪽 */
+	.main-price-con .left ul li{display: inline-block; width: 30%; margin: 0 3px; margin-bottom: 15px; line-height: 32px; font-size: 13px;}
+	/* 오른쪽 */
+	.main-price-con .right ul{margin: -5px 0;}
+	.main-price-con .right ul li{float: left; width: 100%; padding: 20px 0 !important; margin: 5px 0; height: auto;}
+	.main-price-con .right ul li.li-01{padding: 0;}
+	.main-price-con .right ul li.li-01 .dot-con{height: auto;}
+	.main-price-con .right ul li.li-02{padding: 0;}
+	.main-price-con .right ul li.li-02 .dot-con{height: auto;}
+	.main-price-con .right ul li.li-03{padding: 0;}
+	.main-price-con .right ul li.li-03 .dot-con{height: auto;}
+	.main-price-con .right ul li .dot-con{width: 130px; display: inline-block; vertical-align: middle; text-align: center;}
+	.main-price-con .right ul li .dot-con .dot{display: inline-block; margin: 0 5px; width: 13px; height: 13px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; background-color: #333;}
+	.main-price-con .right ul li .dot-con .dot:first-child{margin-top: 0;}
+	.main-price-con .right ul li .txt-con{margin-top: 0; text-align: left; width: calc(100% - 145px); padding-right: 10px; display: inline-block; vertical-align: middle; -ms-word-break: keep-all; word-break: keep-all;}
+	.main-price-con .right ul li .txt-con .txt01{font-size: 18px;}
+	.main-price-con .right ul li .txt-con .txt02{margin-top: 10px; font-size: 13px; line-height: 18px; height: auto;}
+	.main-price-con .right ul li .txt-con .txt03{margin-top: 10px; font-size: 13px;}
+}
+@media all and (max-width:359px){
+	/* 왼쪽 */
+	.main-price-con .left ul li{font-size: 11px;}
+}
+
+
+/* *********** 210603 유지보수 추가 css *********** */
+@media all and ( max-width: 1220px ){
+	.main-banner-list{margin: 0 -10px;}
+	.main-banner-list li{width: calc(50% - 20px); margin: 0 10px;}
+	.main-banner-list li span{display: block; position: relative; width: 100%; height: 0; padding-top: 31.35%;}
+	.main-banner-list li img{position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important;}
+}
+@media all and ( max-width: 800px ){
+	/* -------- 메인 컨텐츠 :: 컨텐츠 추가(배너) -------- */
+	#mainBannerCon{padding: 55px 0;}
+	.main-banner-list{margin: -10px;}
+	.main-banner-list li{float: none; width: calc(100% - 20px); margin: 10px;}
+
+	/* -------- 메인 컨텐츠 :: 컨텐츠5(JOBCAN 주요 고객사) -------- */
+	.partner-info-wrapper{width: calc(100% - 60px); margin: 35px auto 0;}
+	.partner-info-inner{padding: 45px 20px 55px;}
+	.partner-info-inner .logo-img img{max-height: 20px;}
+	.partner-info-inner .txt{margin-top: 20px; font-size: 13px; min-height: 120px;}
+	.partner-info-list .slick-arrow{margin-top: -15px;}
+	.partner-info-list .slick-arrow i{font-size: 24px;}
+	.partner-info-list .slick-arrow.slick-prev{left: -35px;}
+	.partner-info-list .slick-arrow.slick-next{right: -35px;}
+
+	.partner-info-list .slick-dots{bottom: 25px;}
+	.partner-info-list .slick-dots li{margin: 0 5px;}
+	.partner-info-list .slick-dots li button{width: 10px; height: 10px; border: 2px solid #3481fa;}
+}
